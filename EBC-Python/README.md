@@ -26,7 +26,15 @@ In a nutshell we will
  
  The next thing you would like to use is an Integrated Developer Environment (IDE), the MatLab GUI is an example of an IDE. An IDE offers you syntax highlighting, code completion and it can point out errors in your code. Furthermore it normally comes with a green play button to run your program code. And it features a debugger (yes, there is a way more efficient way on squashing bug than using print statements). The most used IDEs at our institute are PyCharme and Spyder. Eclipse and Visual Studio are rarely used (and they are a bit more complicated to configure). You probably ask your advisor which IDE he uses and settle on the same.
  
+ - [ ] Abbildung Zusammenhang IDE / Sprache / Interpreter
+ 
  An IDE can **not** run any code without an interpreter. Although PyCharme and Spyder are __Python only__ IDEs, Eclipse for example is not (and even Spyder and PyCharme will have to handle different language version of Python). Depending on your installation, the IDE may be pre-configured to default to an Interpreter, but if your IDE is doing nothing, it is probably because it does not know how to do it.
  
 ### Take away
  Python is the description, how to write code, the interpreter translates your code to the PC, an IDE helps with code development. Python is **not** a piece of software, it is no Graphical User Interface (GUI) and, Peter Remmen asked to mention this: It is also not Teaser. 
+
+# How do I install Python?
+We strongly recommend to follow these instructions step by step.
+1. Create a folder on D:, name it something like 'my_name_my_python_installation' (and yes, you should **never** save something on 'D:/' because it is not backed up. Never except now...)
+2. Download the current WinPython distribution from [WinPython Download Site](http://winpython.github.io/#releases). Click on Download and be a lemming, run with the herd: Download the must downloaded one. To avoid confusion: When we say 'Download it from...' we mean exactly this. We do not mean: Install it through the 'Softwareverteilung'. 
+3. Save this in your folder created in step 1.
