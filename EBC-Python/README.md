@@ -17,6 +17,7 @@ In a nutshell we will
 * point you to some "learn to code" tutorials
 * show you some concepts that may help you improving your coding efficiency (We made already a lot of mistakes for you, you do not have to re-do those)
 
+In the end, we want you to be able to use the EBC own Python libraries and even advance them. You should also recognize the advantages of object orientation and be able to use them.
 
 # A short introduction 
 ## What is Python, and what not
@@ -61,3 +62,28 @@ We strongly recommend to follow these instructions step by step.
 2. Download the current WinPython distribution from [WinPython Download Site](http://winpython.github.io/#releases). Click on Download and be a lemming, run with the herd: Download the must downloaded one. To avoid confusion: When we say 'Download it from...' we mean exactly this. We do not mean: Install it through the 'Softwareverteilung'. And to add some confusion: If you are expected to work with Gurobi (If you do not know, you are probably not expected to...), ask your advisor which version to download. I was told Gurobi and Python is sometimes a bit difficult
 
 3. Save this in your folder created in step 1.
+
+- [ ] Welche EBC eigenen Libraries sollen eingebunden werden, Vorschläge bitte hinzufügen
+- EBC Python Library
+- AixPy
+- [ ] Methodik, wie diese (sich in Entwicklung befindlichen) Pakete installieren lassen
+- [ ] Link zu einer Erklärung, was die unterschiedlichen Pip Installationsvarianten tun (-e, wheel...)
+
+# Time to say goodbye
+This is the part, where we would like to wish you good bye for some time. Go away and learn Python (but ignore any tutorials how to install python. We got you covered above).
+
+- For those of you who read, [A Byte of Python](http://python.swaroopch.com/) is not only a silly pun but also a good introduction to Python. May take you some days to work through it.
+- If you are really ambitious, you may want to take the really good (but also really time consuming) Python course on [edx](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-8).
+
+How deep you dive into learning to code is probably up to your interest and specific needs. We think that the ability to code efficiently is a key requirement (but we are also the guys that fancy [octocat](https://octodex.github.com/), so your mileage may vary). But you should have at least an idea about these concepts:
+
+- [ ] What are objects, and what is inheritance
+- [ ] What is the difference between a class and an instance
+- [ ] Your class `bar` has the attribute `foo`, how do you change it
+- [ ] What is a list comprehension?
+- [ ] Why is this a bad way of using a for loop (hint: Iterate over the list itself):
+```python
+numbers = [1,2,3]
+for i in xrange(3):
+    print(numbers[i] * numbers[i])
+```
