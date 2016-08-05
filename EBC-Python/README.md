@@ -31,7 +31,7 @@ So obviously, you need some more stuff to get a programming language to do work.
  
 An IDE can **not** run any code without an interpreter. Although PyCharme and Spyder are __Python only__ IDEs, Eclipse for example is not (and even Spyder and PyCharme will have to handle different language version of Python). Depending on your installation, the IDE may be pre-configured to default to an Interpreter, but if your IDE is doing nothing, it is probably because it does not know how to do it. The good thing is: Every IDE has somewhere in its options something called "configure interpreter" (or something similar) and you just have to point it the python.exe in your python folder (see Installation Guide further down). The IDE will than do all the heavy lifting on its own.
 
--[ ] Add Link to a file that shows how to change the interpreter for the relevant IDEs
+- [ ] Add Link to a file that shows how to change the interpreter for the relevant IDEs
 
  
 ### Take away
@@ -68,22 +68,50 @@ We strongly recommend to follow these instructions step by step.
 - AixPy
 - [ ] Methodik, wie diese (sich in Entwicklung befindlichen) Pakete installieren lassen
 - [ ] Link zu einer Erklärung, was die unterschiedlichen Pip Installationsvarianten tun (-e, wheel...)
+- [ ] Hier muss dann auch noch der Hinweis hin, dass sie immer ihre Kommandozeile verwenden sollen.
 
 # Time to say goodbye
-This is the part, where we would like to wish you good bye for some time. Go away and learn Python (but ignore any tutorials how to install python. We got you covered above).
+This is the part, where we would like to wish you good bye for some time. Go away and learn Python (but ignore any tutorials how to install python. We got you covered above). If you aren't an experienced programmer, learning python will take some time. But doing it not correctly will save you a lot of time later on. And based on experience: Most students have enough time at the start of their thesis, at the end it is sometimes a bit more exhausting... .
 
 - For those of you who read, [A Byte of Python](http://python.swaroopch.com/) is not only a silly pun but also a good introduction to Python. May take you some days to work through it.
+- A [youtube playlist](https://www.youtube.com/playlist?list=PLkHsKoi6eZnwpn7P5G8gEBebAY8Jbky4N) with a fundamental programming course in Python from coursera (its about twice as long as Batman v. Superman but at least twice as fun!)
 - If you are really ambitious, you may want to take the really good (but also really time consuming) Python course on [edx](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-8).
+- We'd also suggest that you take a short look at pandas, this is a package that can really help you to get work done. There is a [10 minutes to pandas](http://pandas.pydata.org/pandas-docs/stable/10min.htmlhttp://pandas.pydata.org/pandas-docs/stable/10min.html) guide, we are sure this won't be the 10 most wasted minutes in your life (remember the "cute cat" videos you watched last week? Or the last lecture you attended?). 
 
-How deep you dive into learning to code is probably up to your interest and specific needs. We think that the ability to code efficiently is a key requirement (but we are also the guys that fancy [octocat](https://octodex.github.com/), so your mileage may vary). But you should have at least an idea about these concepts:
+How deep you dive into learning to code is probably up to your interest and specific needs. We think that the ability to code efficiently is a key requirement (but we are also the guys that fancy [octocat](https://octodex.github.com/), so your mileage may vary). But before you continue, you should have at least an idea about these concepts (and if all of the concepts below are already clear to you: Go directly ahead):
 
-- [ ] What are objects, and what is inheritance
-- [ ] What is the difference between a class and an instance
-- [ ] Your class `bar` has the attribute `foo`, how do you change it
+- [ ] What are objects, and what is inheritance?
+- [ ] What is the difference between a class and an instance?
+- [ ] Your class `bar` has the attribute `foo`, how do you change it?
 - [ ] What is a list comprehension?
-- [ ] Why is this a bad way of using a for loop (hint: Iterate over the list itself):
+- [ ] Why is this a bad way of using a for loop (hint: Iterate over the list itself)?:
 ```python
 numbers = [1,2,3]
 for i in xrange(3):
     print(numbers[i] * numbers[i])
 ```
+
+# Advanced concepts
+We don't know if the concepts we suggests are really that advanced, but we believe that they may be helpful. Besides introducing those concepts, we tried to back them up with some examples, presented in a Jupyter notebook
+
+## What is a Jupyter Notebook
+A Jupyter Notebook is a Textfile, similar to this one, but besides layouted text, it allows you to include program code that can be executed. You can start a Jupyter Notebook by entering `jupyter notebook <path_to_the_notebook>` into the WinPython Command Prompt of your Python installation. It will take some time and than open in your browser. The Jupyter Notebook resides in the same folder of the git Repository as this file does and is called Python_at_EBC.ipynb. Before you start it, make sure you got the latest version by pulling from the repository.
+
+## Plan before you code
+Yes, you probably have heard that before, and yes, each of us also started coding before thinking. Most time it is a bad decision, because it costs you time at, you run into errors you would have avoided otherwise and maintaining the code is difficult.
+
+So before you code, you should have a goal, for example: I want to plot the measured temperature data of two measurements. So than, what are your steps:
+
+- Reading the data from the measurement file into python
+- handle the data (even if temperatures where measured, you may want to check for measurement errors, missing data etc.)
+- create the plot and save it
+
+So you have at least three functions: Read the data, clean the data, create the plot. And if cleaning the data is some more work, this may be more than one function. After you got an idea, which functions you need, write the documentation for the functions. This will force you to do three things: 
+
+- Describe in one sentence, what the function does. If it this is difficult and/or contains a lot of "and"s, your function is probably to complex and should be broken down into some more functions
+- Think about the input: What type of data is coming into your functions, may several data type be possible? Are there optional parameters to change the behavior of the function?
+- Think about the output: What type of data does your data return? Is this always the same data type (it should be, because subsequent functions may expect a special data type)
+
+If some of your functions are very similar, you may consider to write a smaller function, that is called by the other functions (if there is a bug in your code, you have to fix it only in one place, not in 42). And after you wrote the documentation (please write it as docstring and adhere to the docstring standards !LINK FEHLT), write the pseudo-code. That is a verbal expression of what you expect the code to do. This helps you to structure your work further, anticipate problems and works as documentation afterwards.
+
+Yes, this all sounds borring. But it may save you some time. Time you could use to get your adrenaline kick elsewhere. And honestly: Otherwise you will be debugging the code mor often. That is way more boring than creating code.
