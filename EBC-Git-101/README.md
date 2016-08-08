@@ -1,6 +1,6 @@
 # Introduction
 
-This tutorial aims at helping you to get started with version control using Git from an EBC-perspective. If you have suggestions on how to improve this tutorial, please make sure to bring this to our attention using the [issue tracker](https://github.com/RWTH-EBC/AixLib/issues). Don't be shy about this, if something does not become clear in this tutorial, it is likely not your fault, but a usability bug of this tutorial, so the issue tracker is a good place to talk about it.
+This tutorial aims at helping you to get started with version control using Git from an EBC-perspective. If you have suggestions on how to improve this tutorial, please make sure to bring this to our attention using the [issue tracker](https://github.com/RWTH-EBC/EBC-Tutorials/issues). Don't be shy about this, if something does not become clear in this tutorial, it is likely not your fault, but a usability bug of this tutorial, so the issue tracker is a good place to talk about it.
 
 The intended audience of this tutorial are students with no prior experience in version control systems, but we hope that it is also helpful for every interested reader.
 
@@ -245,7 +245,7 @@ Great! Now our local repo is back in synch with the server repo and we successfu
 
 # What next?
 
-We hope this tutorial gave you an idea about how Git works. If anything is still unclear, please help us to improve this tutorial and create an issue on our [issue tracker](https://github.com/RWTH-EBC/AixLib/issues)!
+We hope this tutorial gave you an idea about how Git works. In any case, **please help us to improve this tutorial and make a suggestion for improvement by creating an issue on our [issue tracker](https://github.com/RWTH-EBC/EBC-Tutorials/issues)**! We are convinced that you noticed at least one thing about the tutorial that we can improve on.
 
 If you want to have a look at other tutorials, we can recommend these links:
 
