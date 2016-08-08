@@ -1,0 +1,5 @@
+All material included in the EBC-Tutorials repository is made available under
+the following license:
+Creative Commons Attribution Share Alike 4.0 (CC-BY-SA-4.0)
+
+See https://creativecommons.org/licenses/by-sa/4.0/ for more information.
