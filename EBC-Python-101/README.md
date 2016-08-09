@@ -94,10 +94,10 @@ for i in xrange(3):
 ```
 
 # Advanced concepts
-We don't know if the concepts we suggests are really that advanced, but we believe that they may be helpful. Besides introducing those concepts, we tried to back them up with some examples, presented in a Jupyter notebook
+We don't know if the concepts we suggests are really that advanced, but we believe that they may be helpful. Besides introducing those concepts, we tried to back them up with some examples, presented in Jupyter notebooks
 
 ## What is a Jupyter Notebook
-A Jupyter Notebook is a Textfile, similar to this one, but besides layouted text, it allows you to include program code that can be executed. You can start a Jupyter Notebook by entering `jupyter notebook <path_to_the_notebook>` into the WinPython Command Prompt of your Python installation. It will take some time and than open in your browser. The Jupyter Notebook resides in the same folder of the git Repository as this file does and is called Python_at_EBC.ipynb. Before you start it, make sure you got the latest version by pulling from the repository.
+A Jupyter Notebook is a Textfile, similar to this one, but besides layouted text, it allows you to include program code that can be executed. You can start a Jupyter Notebook by entering `jupyter notebook <path_to_the_notebook>` into the WinPython Command Prompt of your Python installation. It will take some time and than open in your browser. The Jupyter Notebooks reside in the same folder of the git Repository as this file. Before you start it, make sure you got the latest version by pulling from the repository.
 
 ## Plan before you code
 Yes, you probably have heard that before, and yes, each of us also started coding before thinking. Most time it is a bad decision, because it costs you time at, you run into errors you would have avoided otherwise and maintaining the code is difficult.
@@ -110,10 +110,38 @@ So before you code, you should have a goal, for example: I want to plot the meas
 
 So you have at least three functions: Read the data, clean the data, create the plot. And if cleaning the data is some more work, this may be more than one function. After you got an idea, which functions you need, write the documentation for the functions. This will force you to do three things:
 
-- Describe in one sentence, what the function does. If it this is difficult and/or contains a lot of "and"s, your function is probably to complex and should be broken down into some more functions
+- Describe in one sentence, what the function does. If it this is difficult and/or contains a lot of "and"s, your function is probably too complex and should be broken down into some more functions
 - Think about the input: What type of data is coming into your functions, may several data type be possible? Are there optional parameters to change the behavior of the function?
 - Think about the output: What type of data does your data return? Is this always the same data type (it should be, because subsequent functions may expect a special data type)
 
 If some of your functions are very similar, you may consider to write a smaller function, that is called by the other functions (if there is a bug in your code, you have to fix it only in one place, not in 42). And after you wrote the documentation (please write it as docstring and adhere to the docstring standards !LINK FEHLT), write the pseudo-code. That is a verbal expression of what you expect the code to do. This helps you to structure your work further, anticipate problems and works as documentation afterwards.
 
-Yes, this all sounds borring. But it may save you some time. Time you could use to get your adrenaline kick elsewhere. And honestly: Otherwise you will be debugging the code mor often. That is way more boring than creating code.
+Yes, this all sounds boring. But it may save you some time. Time you could use to get your adrenaline kick elsewhere. And honestly: Otherwise you will be debugging the code more often. That is way more boring than creating code.
+
+### Take away
+Think what you want to achieve, structure this into functions, make up your mind about parameters and return values. Write the documentation. Write pseudo code. Now you may proceed to start coding.
+
+## Creating plots
+Structuring plots can save a lot of time, and they represent the results of your work. You may want to get those plots right. We start with some general explanations, how matplotlib works and go one with some concepts that improve the reusability of your code.
+
+A general [description](http://matplotlib.org/api/index.html) about available methods can be found on the [matplotlib homepage](http://matplotlib.org/api/index.html), they also have a [gallery](http://matplotlib.org/gallery.html) with source code to get some ideas how to create plots.
+
+- [ ] Verweis auf das passende Jupyter Notebook
+
+### Plotting: General remarks
+We strongly recommend that you create plots at the size that you need them. If you include them into LaTeX, LaTeX does a great job in scaling them (especially if you use `\includegraphics[width=\textwidth{filename}`), but scaling will distort the size of your text and increase or decrease the size of your markers. If your original plots were of different size, there will be differences between the font size and the line size. You are better off to create two or three possible sizes and create every figure at one of those sizes. And if you need the same plots for a presentation: Do not scale them either. Re-plot them, with a more viewer friendly design (Using a good structured plot, it is really fast to re-create it)
+
+The same comment is also valid for colors and markers: Use the same color and marker sequence to create similar looking plots.
+
+Furthermore we would encourage you to create a metafile for each plot. This textfile should contain information which data you used to create the plot and which file and version to create the plot. 
+
+There is a subpackage `ebcplots` in our Git-Repository. This package provides you with some convenience functions (some are already superseded by pylab functions), but the `optimize_and_save`-function is still very useful. This method also supports the writing of metadata about a file and contains design dictionaries for different usage scenarios (We get back to design dictionaries in the next section)
+
+### Matplotlib: General introduction
+You can import matplotlib with `import matplotlib`, but normally you would use `import pylab as plt`, which wraps some matplotlib functions conveniently. This is a bit confusing and sometimes you can not access methods via pylab, that exist in matplotlib. This is a rare event but keep in mind that you can access **all** matplotlib methods via `pylab.matplotlib.[...]`
+
+Matplotlib uses a hierarchical system to create your plot, this means that a figure contains one or more pairs of axes, these axes contain the plotted data. Properties are normally located where you would look for them (axes labels at the axes, figure dimensions at the figure, linesize at the plot etc.) Therefore it is good practice to keep track of your figure and axes handles.
+
+To store plotting defaults, matplotlib uses the (well hidden) rcParams and refers by default to the file `matplotlibrc` in its home folder (if you followed the instructions above, this should be `Path_to_your_installation\python-[version].amd[bit]\Lib\site-packages\matplotlib\mpl-data`). You can alter this file to ensure a general change in layout, but we would recommend to define several layout dictionaries and alter the rcParams for the current session with pylab.rcParams.update(design_dict). 
+
+- [ ] Verweis auf das entsprechende Jupyter Notebook Kapitel
