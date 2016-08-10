@@ -1,4 +1,4 @@
-**This is currently under construction**
+﻿**This is currently under construction**
 
 # Introduction
 
@@ -65,12 +65,13 @@ We strongly recommend to follow these instructions step by step.
 
 3. Save this in your folder created in step 1.
 
-- [ ] Welche EBC eigenen Libraries sollen eingebunden werden, Vorschl�ge bitte hinzuf�gen
+- [ ] Welche EBC eigenen Libraries sollen eingebunden werden, Vorschläge bitte hinzufügen
 - EBC Python Library
 - AixPy
 - [ ] Methodik, wie diese (sich in Entwicklung befindlichen) Pakete installieren lassen
-- [ ] Link zu einer Erkl�rung, was die unterschiedlichen Pip Installationsvarianten tun (-e, wheel...)
+- [ ] Link zu einer Erklärung, was die unterschiedlichen Pip Installationsvarianten tun (-e, wheel...)
 - [ ] Hier muss dann auch noch der Hinweis hin, dass sie immer ihre Kommandozeile verwenden sollen.
+- [ ] Das Cycler Paket muss installiert werden (benötigt fürs plotten, sonst folgend ständig deprecated Warnungen)
 
 # Time to say goodbye
 This is the part, where we would like to wish you good bye for some time. Go away and learn Python (but ignore any tutorials how to install python. We got you covered above). If you aren't an experienced programmer, learning python will take some time. But doing it not correctly will save you a lot of time later on. And based on experience: Most students have enough time at the start of their thesis, at the end it is sometimes a bit more exhausting... .
@@ -126,8 +127,8 @@ Structuring plots can save a lot of time, and they represent the results of your
 
 A general [description](http://matplotlib.org/api/index.html) about available methods can be found on the [matplotlib homepage](http://matplotlib.org/api/index.html), they also have a [gallery](http://matplotlib.org/gallery.html) with source code to get some ideas how to create plots.
 
-- [ ] Verweis auf das passende Jupyter Notebook
-
+ To access our own examples stored in a Jupyter Notebook, please open the WinPython Command Prompt from your python distribution and then enter `jupyter notebook `Git_path\EBC-Python-101\plotting.ipynb`. 'Git_path' is the path to your local working copy of the EBC_Tutorial repository. It may take several seconds, but the notebook should than open in your browser.
+ 
 ### Plotting: General remarks
 We strongly recommend that you create plots at the size that you need them. If you include them into LaTeX, LaTeX does a great job in scaling them (especially if you use `\includegraphics[width=\textwidth{filename}`), but scaling will distort the size of your text and increase or decrease the size of your markers. If your original plots were of different size, there will be differences between the font size and the line size. You are better off to create two or three possible sizes and create every figure at one of those sizes. And if you need the same plots for a presentation: Do not scale them either. Re-plot them, with a more viewer friendly design (Using a good structured plot, it is really fast to re-create it)
 
@@ -144,4 +145,4 @@ Matplotlib uses a hierarchical system to create your plot, this means that a fig
 
 To store plotting defaults, matplotlib uses the (well hidden) rcParams and refers by default to the file `matplotlibrc` in its home folder (if you followed the instructions above, this should be `Path_to_your_installation\python-[version].amd[bit]\Lib\site-packages\matplotlib\mpl-data`). You can alter this file to ensure a general change in layout, but we would recommend to define several layout dictionaries and alter the rcParams for the current session with pylab.rcParams.update(design_dict). 
 
-- [ ] Verweis auf das entsprechende Jupyter Notebook Kapitel
+For an exemplary usage of different plot layouts have a look at the section 'Configuring the plot layout' in the Jupyter Notebook 'Plotting' in this repository.
