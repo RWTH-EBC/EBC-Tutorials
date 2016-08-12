@@ -1,4 +1,4 @@
-﻿**This is currently under construction**
+﻿﻿**This is currently under construction**
 
 # Introduction
 
@@ -127,7 +127,7 @@ Structuring plots can save a lot of time, and they represent the results of your
 
 A general [description](http://matplotlib.org/api/index.html) about available methods can be found on the [matplotlib homepage](http://matplotlib.org/api/index.html), they also have a [gallery](http://matplotlib.org/gallery.html) with source code to get some ideas how to create plots.
 
- To access our own examples stored in a Jupyter Notebook, please open the WinPython Command Prompt from your python distribution and then enter `jupyter notebook `Git_path\EBC-Python-101\plotting.ipynb`. 'Git_path' is the path to your local working copy of the EBC_Tutorial repository. It may take several seconds, but the notebook should than open in your browser.
+ To access our own examples stored in a Jupyter Notebook, please open the WinPython Command Prompt from your python distribution and then enter `jupyter notebook Git_path\EBC-Python-101\plotting.ipynb`. 'Git_path' is the path to your local working copy of the EBC_Tutorial repository. It may take several seconds, but the notebook should than open in your browser.
  
 ### Plotting: General remarks
 We strongly recommend that you create plots at the size that you need them. If you include them into LaTeX, LaTeX does a great job in scaling them (especially if you use `\includegraphics[width=\textwidth{filename}`), but scaling will distort the size of your text and increase or decrease the size of your markers. If your original plots were of different size, there will be differences between the font size and the line size. You are better off to create two or three possible sizes and create every figure at one of those sizes. And if you need the same plots for a presentation: Do not scale them either. Re-plot them, with a more viewer friendly design (Using a good structured plot, it is really fast to re-create it)
@@ -145,4 +145,7 @@ Matplotlib uses a hierarchical system to create your plot, this means that a fig
 
 To store plotting defaults, matplotlib uses the (well hidden) rcParams and refers by default to the file `matplotlibrc` in its home folder (if you followed the instructions above, this should be `Path_to_your_installation\python-[version].amd[bit]\Lib\site-packages\matplotlib\mpl-data`). You can alter this file to ensure a general change in layout, but we would recommend to define several layout dictionaries and alter the rcParams for the current session with pylab.rcParams.update(design_dict). 
 
-For an exemplary usage of different plot layouts have a look at the section 'Configuring the plot layout' in the Jupyter Notebook 'Plotting' in this repository.
+For an exemplary usage of different plot layouts have a look at the section *Configuring the plot layout* in the Jupyter Notebook *Plotting* in this repository.
+
+### Ensuring reusability
+Keep your plotting functions simple, never plot more than **one** thing per plot! If you have datasets from two measurements, you could of course load them into Python and then plot them into one graph using a function that takes care of both datasets (or you create ugly spaghetti code). The better method would be, to call the function twice with different parameters: Starting with the first dataset then the second. Because if you happen to get a third measurement, you could just call that function a third time. Even more: If one of the measurements is a reference value and you would like to create to plots: Each plot with the reference and one dataset, this can be easily achieved with that function. ![Create a figure from three subsequent function calls](https://michaeladolph.github.io/plotting_code_reusability.png)
