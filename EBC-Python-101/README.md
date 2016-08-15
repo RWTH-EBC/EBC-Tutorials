@@ -2,15 +2,15 @@
 
 # Introduction
 
-This is the EBCs Tutorial to use Python at our institute. This is **not** a tutorial to teach you the basics of programming or python. There are a lot better tutorials online (we included some links), we'd refer you to use those.
-So what will you find in this tutorial? You'll mainly find three things. At first we'll give a brief introduction into some aspects of programming. We want to make sure that we talk about the same things using the correct wording. If you are already familiar with those concepts: Great, if not, it may avoid some misunderstanding. The second one is an instruction how to get your python installation running. Following these instructions we'll make sure that
+This is a Tutorial to use Python at our institute. This is **not** a tutorial to teach you the basics of programming or python. There are a lot better tutorials online (we included some links), we'd refer you to use those.
+So what will you find in this tutorial? You'll mainly find three things. At first we'll give a brief introduction into some aspects of programming. We want to make sure that we talk about the same things using the correct wording. If you are already familiar with these concepts: Great, if not, it may avoid some misunderstandings. The second one is an instruction how to get your python installation running. With following these instructions you'll make sure that
 * all necessary packages are up to date
 * you can access EBC libraries
 * you don't use a version somebody may have toyed around with
 
-All of this will ensure that you can start working with Python without running into some nasty and unnecessary obstacles, keeping you away from getting work done.
+This will ensure that you can start working with Python without running into some nasty and unnecessary obstacles, keeping you away from getting work done.
 
-In the third part we'll introduce some concepts that may help you to become better at programming, fit into EBCs style of programming (something we are still developing) and give you some ideas for a best practice that we expect to save you some time. We are not without faults, so if you find better or more efficient solutions: Feel free to suggest them. In the best case you contribute to our EBC Libraries via Git (it is a version control system. You can not destroy anything, so have no fear). The concepts are backed up by examples in an Jupyter Notebook. We don't expect everybody to understand all the examples, especially not at the beginning. But if you are planning your code and move forward in your project, we hope that some of these concepts resurface in your brain and you come back here to have a look. Everything in here has, for sure, already been written, probably in a better way. But here we have everything in one place, this is the true advantage of this tutorial.
+In the third part we'll introduce some concepts that may help you to become better at programming, fit into EBCs style of programming (something we are still developing) and give you some ideas for a best practice that we expect to save you some time. We are not without faults, so if you find better or more efficient solutions: Feel free to suggest them. In the best case you contribute to our EBC Libraries via Git (it is a version control system. You can not destroy anything, so have no fear). The concepts are backed up by examples in Jupyter Notebooks. We don't expect everybody to understand all the examples, especially not at the beginning. But if you are planning your code and move forward in your project, we hope that some of these concepts resurface in your brain and you come back here to have a look. Everything in here has, for sure, already been written, probably in a better way. But here we have everything in one place, this is the true advantage of this tutorial.
 
 In a nutshell we will
 
@@ -19,10 +19,10 @@ In a nutshell we will
 * point you to some "learn to code" tutorials
 * show you some concepts that may help you improving your coding efficiency (We made already a lot of mistakes for you, you do not have to re-do those)
 
-In the end, we want you to be able to use the EBC own Python libraries and even advance them. You should also recognize the advantages of object orientation and be able to use them.
+In the end, we want you to be able to use EBC's own Python libraries and even advance them. You should also recognize the advantages of object orientation and be able to use it.
 
 # A short introduction
-## What is Python, and what not
+## What is Python, and what is it not
 Python is a programming language. Basically, a programming language is a set of instructions to tell the PC to do something. Every programming language has it's own grammar. And they are only theoretical constructs. You can not write software just with the language definition of python.
 
 So obviously, you need some more stuff to get a programming language to do work. First of all, PCs don't understand text, they understand zeros and ones. So everything you have written, must be interpreted so you need an **Interpreter** (Later on, when we tell you how to install python, we truly tell you how to install the Python Interpreter). After the installation is done, you could fire up Notepad and write your code. Although ~~all~~ most of us would not recommend this.
@@ -31,7 +31,7 @@ So obviously, you need some more stuff to get a programming language to do work.
 
 - [ ] Abbildung Zusammenhang IDE / Sprache / Interpreter
 
-An IDE can **not** run any code without an interpreter. Although PyCharme and Spyder are __Python only__ IDEs, Eclipse for example is not (and even Spyder and PyCharme will have to handle different language version of Python). Depending on your installation, the IDE may be pre-configured to default to an Interpreter, but if your IDE is doing nothing, it is probably because it does not know how to do it. The good thing is: Every IDE has somewhere in its options something called "configure interpreter" (or something similar) and you just have to point it the python.exe in your python folder (see Installation Guide further down). The IDE will than do all the heavy lifting on its own.
+An IDE can **not** run any code without an interpreter. Although PyCharme and Spyder are __Python only__ IDEs, Eclipse for example is not (and even Spyder and PyCharme will have to handle different language versions of Python). Depending on your installation, the IDE may be pre-configured to default to an Interpreter, but if your IDE is doing nothing, it is probably because it does not know how to do it. The good thing is: Every IDE has somewhere in its options something called "configure interpreter" (or something similar) and you just have to point it the python.exe in your python folder (see Installation Guide further down). The IDE will than do all the heavy lifting on its own.
 
 - [ ] Add Link to a file that shows how to change the interpreter for the relevant IDEs
 
@@ -61,7 +61,7 @@ We strongly recommend to follow these instructions step by step.
 
 1. Create a folder on D:, name it something like 'my_name_my_python_installation' (and yes, you should **never** save something on 'D:/' because it is not backed up. Never except now...)
 
-2. Download the current WinPython distribution from [WinPython Download Site](http://winpython.github.io/#releases). Click on Download and be a lemming, run with the herd: Download the must downloaded one. To avoid confusion: When we say 'Download it from...' we mean exactly this. We do not mean: Install it through the 'Softwareverteilung'. And to add some confusion: If you are expected to work with Gurobi (If you do not know, you are probably not expected to...), ask your advisor which version to download. I was told Gurobi and Python is sometimes a bit difficult
+2. Download the current WinPython distribution from [WinPython Download Site](http://winpython.github.io/#releases). Click on Download and be a lemming, run with the herd: Download the must downloaded one. To avoid confusion: When we say 'Download it from...' we mean exactly this. We do not mean: Install it through the 'Softwareverteilung'. And to add some confusion: If you are expected to work with Gurobi (If you do not know, you are probably not expected to...), ask your advisor which version to download. Gurobi and Python can sometimes be a bit difficult
 
 3. Save this in your folder created in step 1.
 
@@ -74,14 +74,14 @@ We strongly recommend to follow these instructions step by step.
 - [ ] Das Cycler Paket muss installiert werden (benötigt fürs plotten, sonst folgend ständig deprecated Warnungen)
 
 # Time to say goodbye
-This is the part, where we would like to wish you good bye for some time. Go away and learn Python (but ignore any tutorials how to install python. We got you covered above). If you aren't an experienced programmer, learning python will take some time. But doing it not correctly will save you a lot of time later on. And based on experience: Most students have enough time at the start of their thesis, at the end it is sometimes a bit more exhausting... .
+This is the part, where we would like to wish you good bye for some time. Go away and learn Python (but ignore any tutorials how to install python. We got you covered above). If you aren't an experienced programmer, learning python will take some time. But doing it now correctly will save you a lot of time later on. And based on experience: Most students have enough time at the start of their thesis, at the end it is sometimes a bit more exhausting... .
 
 - For those of you who read, [A Byte of Python](http://python.swaroopch.com/) is not only a silly pun but also a good introduction to Python. May take you some days to work through it.
 - A [youtube playlist](https://www.youtube.com/playlist?list=PLkHsKoi6eZnwpn7P5G8gEBebAY8Jbky4N) with a fundamental programming course in Python from coursera (its about twice as long as Batman v. Superman but at least twice as fun!)
 - If you are really ambitious, you may want to take the really good (but also really time consuming) Python course on [edx](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-8).
 - We'd also suggest that you take a short look at pandas, this is a package that can really help you to get work done. There is a [10 minutes to pandas](http://pandas.pydata.org/pandas-docs/stable/10min.htmlhttp://pandas.pydata.org/pandas-docs/stable/10min.html) guide, we are sure this won't be the 10 most wasted minutes in your life (remember the "cute cat" videos you watched last week? Or the last lecture you attended?).
 
-How deep you dive into learning to code is probably up to your interest and specific needs. We think that the ability to code efficiently is a key requirement (but we are also the guys that fancy [octocat](https://octodex.github.com/), so your mileage may vary). But before you continue, you should have at least an idea about these concepts (and if all of the concepts below are already clear to you: Go directly ahead):
+How deep you dive into learning to code is probably up to your interest and specific needs. We think that the ability to code efficiently is a key requirement (but we are also the guys that fancy [octocat](https://octodex.github.com/), so your mileage may vary). But before you continue, you should have at least an idea about these concepts (and if all of the concepts below are already clear to you: You may directly proceed):
 
 - [ ] What are objects, and what is inheritance?
 - [ ] What is the difference between a class and an instance?
@@ -101,7 +101,7 @@ We don't know if the concepts we suggests are really that advanced, but we belie
 A Jupyter Notebook is a Textfile, similar to this one, but besides layouted text, it allows you to include program code that can be executed. You can start a Jupyter Notebook by entering `jupyter notebook <path_to_the_notebook>` into the WinPython Command Prompt of your Python installation. It will take some time and than open in your browser. The Jupyter Notebooks reside in the same folder of the git Repository as this file. Before you start it, make sure you got the latest version by pulling from the repository.
 
 ## Plan before you code
-Yes, you probably have heard that before, and yes, each of us also started coding before thinking. Most time it is a bad decision, because it costs you time at, you run into errors you would have avoided otherwise and maintaining the code is difficult.
+Yes, you probably have heard that before, and yes, each of us also started coding before thinking. Most time it is a bad decision, because it costs you time, you run into errors you would have avoided otherwise and maintaining the code is difficult.
 
 So before you code, you should have a goal, for example: I want to plot the measured temperature data of two measurements. So than, what are your steps:
 
@@ -112,7 +112,7 @@ So before you code, you should have a goal, for example: I want to plot the meas
 So you have at least three functions: Read the data, clean the data, create the plot. And if cleaning the data is some more work, this may be more than one function. After you got an idea, which functions you need, write the documentation for the functions. This will force you to do three things:
 
 - Describe in one sentence, what the function does. If it this is difficult and/or contains a lot of "and"s, your function is probably too complex and should be broken down into some more functions
-- Think about the input: What type of data is coming into your functions, may several data type be possible? Are there optional parameters to change the behavior of the function?
+- Think about the input: What type of data is coming into your functions, may several data types be possible? Are there optional parameters to change the behavior of the function?
 - Think about the output: What type of data does your data return? Is this always the same data type (it should be, because subsequent functions may expect a special data type)
 
 If some of your functions are very similar, you may consider to write a smaller function, that is called by the other functions (if there is a bug in your code, you have to fix it only in one place, not in 42). And after you wrote the documentation (please write it as docstring and adhere to the docstring standards !LINK FEHLT), write the pseudo-code. That is a verbal expression of what you expect the code to do. This helps you to structure your work further, anticipate problems and works as documentation afterwards.
@@ -123,7 +123,7 @@ Yes, this all sounds boring. But it may save you some time. Time you could use t
 Think what you want to achieve, structure this into functions, make up your mind about parameters and return values. Write the documentation. Write pseudo code. Now you may proceed to start coding.
 
 ## Creating plots
-Structuring plots can save a lot of time, and they represent the results of your work. You may want to get those plots right. We start with some general explanations, how matplotlib works and go one with some concepts that improve the reusability of your code.
+Structuring plots can save a lot of time, and they represent the results of your work. You may want to get these plots right. We start with some general explanations, how matplotlib works and go on with some concepts that improve the reusability of your code.
 
 A general [description](http://matplotlib.org/api/index.html) about available methods can be found on the [matplotlib homepage](http://matplotlib.org/api/index.html), they also have a [gallery](http://matplotlib.org/gallery.html) with source code to get some ideas how to create plots.
 
@@ -147,5 +147,15 @@ To store plotting defaults, matplotlib uses the (well hidden) rcParams and refer
 
 For an exemplary usage of different plot layouts have a look at the section *Configuring the plot layout* in the Jupyter Notebook *Plotting* in this repository.
 
-### Ensuring reusability
-Keep your plotting functions simple, never plot more than **one** thing per plot! If you have datasets from two measurements, you could of course load them into Python and then plot them into one graph using a function that takes care of both datasets (or you create ugly spaghetti code). The better method would be, to call the function twice with different parameters: Starting with the first dataset then the second. Because if you happen to get a third measurement, you could just call that function a third time. Even more: If one of the measurements is a reference value and you would like to create to plots: Each plot with the reference and one dataset, this can be easily achieved with that function. ![Create a figure from three subsequent function calls](https://michaeladolph.github.io/plotting_code_reusability.png)
+### Take away
+Setup a dictionary for your layout, plot your figures directly in the size you need them and use just three different sizes for plotting if you want to use them in a document.
+
+## Ensuring reusability
+Keep your plotting functions simple, never plot more than **one** thing per plot! If you have datasets from two measurements, you could of course load them into Python and then plot them into one graph using a function that takes care of both datasets. The better method would be, to call the function twice with different parameters: Starting with the first dataset then the second. Because if you happen to get a third measurement, you could just call that function a third time. Even more: If one of the measurements is a reference value and you would like to create two plots: Each plot with the reference and one dataset, this can be easily achieved with that function. ![Create a figure from three subsequent function calls](https://michaeladolph.github.io/plotting_code_reusability.png).
+
+To make a function work this way, your function needs at least two parameters: The data you want to plot and an axes handle, e.g. the place where you want your data to appear. With this method you can separate the creation of the figure and the layout of the figure. This is a flexibility you will surely appreciate.
+
+See the section *Ensure the reusability of plots* section in the *Plotting* Notebook for examples.
+
+### Take away
+A function plots only one dataset at once into the axes. Separate the layout of the figure from the content creation.
