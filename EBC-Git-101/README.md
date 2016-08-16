@@ -67,6 +67,8 @@ Now you are almost ready to use Git for version control. For this tutorial we wi
 
 ![06_path](https://cloud.githubusercontent.com/assets/5516900/16152765/9cde5a92-34a3-11e6-8ff0-53feafd4bf23.gif)
 
+If you want to use a graphical user interface (GUI), you can use TortoiseGit [https://tortoisegit.org/](https://tortoisegit.org/). At a EBC computer, you can use the Software-Center to install the program.
+
 # A simple Git example
 
 For this example, we will use the RWTH GitLab Server. But if you have no access to that server, any other Git Server is pretty similar.
@@ -88,7 +90,7 @@ At this moment, the repo is empty and exists only on the server. Using the visua
 ## Cloning the repo to our local machine
 
 Now we want to start working with this repository. In a limited way, some Git platforms will allow us to modify files
-on their web interface, but usually we will want to have the repo locally and work there. Thus, we *clone* the repo to our local machine. To do that, we use the command `git clone <server address of our new repo>` in the command prompt (right-click on the image and chose "show image" for a larger version):
+on their web interface, but usually we will want to have the repo locally and work there. Thus, we *clone* the repo to our local machine. To do that, we use the command `git clone <server address of our new repo>` in the command prompt or in TortoiseGIT `right-click`&#8594;`Git Clone...` and `input of server address` (right-click on the image and chose "show image" for a larger version):
 
 ![11_clone](https://cloud.githubusercontent.com/assets/5516900/16154153/e0477fb0-34a9-11e6-8280-e3e211c024fe.gif)
 
@@ -102,6 +104,10 @@ With `git clone https://...` we created a local repository that is linked to the
 
 ## Commiting a text file to the repo
 
+### Preparing TortoiseGit
+
+If you use TortoiseGit don't want to enter the username and password for each command, you have to prepare TortoiseGit. You have to follow this way: `right-click`&#8594;`TortoiseGit`&#8594;`Settings`. There, you have to go to `Git`&#8594;`Credential` and choose `wincred - current Windows user` as `Credential helper`.
+
 ### Creating example1.txt
 
 Now we can start to demonstrate a few Git features and workflows. First we'll add an empty text file to the working copy (The green symbol on the newly created text file is added by Tortoise Git, a GUI that we will talk about in a short while. Please ignore the symbol for now):
@@ -112,7 +118,7 @@ Remember that this change until now only affects the working copy. The repo has 
 
 ### Checking the current status of working copy and repo
 
-We can use `git status` to get some information about the current state of our working copy and the repo:
+We can use `git status` or `right-click`&#8594;`TortoiseGit`&#8594;`Check for modifications` to get some information about the current state of our working copy and the repo:
 
 ![15_status](https://cloud.githubusercontent.com/assets/5516900/16154859/fd048118-34ac-11e6-996e-6bbdf32c416f.gif)
 
@@ -124,7 +130,7 @@ Before we can commit the file into the repo, first we will thus have to add it t
 
 ![14_add](https://cloud.githubusercontent.com/assets/5516900/16154906/3c7c4dda-34ad-11e6-817e-5e68d3e09927.png)
 
-To add the file to the stage, we use the command `git add example1.txt`. After checking again with `git status`, we see that the file is now staged for commit.
+To add the file to the stage, we use the command `git add example1.txt` or in TortoiseGIT `right-click`&#8594;`TortoiseGit`&#8594;`Add...`. After checking again with `git status`, we see that the file is now staged for commit.
 
 ![16_add](https://cloud.githubusercontent.com/assets/5516900/16154950/6fe3978c-34ad-11e6-9608-079e05d05fea.gif)
 
@@ -145,9 +151,11 @@ Agreed? Ok, then let's do our first commit. To do this, we have at least to opti
 
 ![17_commit](https://cloud.githubusercontent.com/assets/5516900/16155747/24e915fa-34b1-11e6-998b-ec5e118499e5.gif)
 
+In TortoiseGit, we can commit with the following command: `right-click`&#8594;`Git Commit->"master"...` and `enter commit message`.
+
 ## Pushing our changes from the local repo to the server
 
-So far, we have made a first commit to our local repo. If you have also done these steps on your own, you can see that your repo on the server is still empty. In order to get the two repos back in synch, we will send our local changes to the server repo. In Git-lingo, this is called to *push* the local changes to the server. The corresponding git command is `git push`. But in order to tell our local Git repo, which server and branch to push to, we have to add two more keywords to `git push`. The first can be interpreted as the "address" where to send our package of data. Such a connection is called a *remote*. When cloning from a server, Git automatically sets a remote with the name `origin` to the server. You can add many more remotes and juggle your data with multiple server repos, but we will not cover that here. Instead, we are satisfied to push to the server's `master` branch by using `git push origin master` for the moment. Here is our concept view of this step:
+So far, we have made a first commit to our local repo. If you have also done these steps on your own, you can see that your repo on the server is still empty. In order to get the two repos back in synch, we will send our local changes to the server repo. In Git-lingo, this is called to *push* the local changes to the server. The corresponding git command is `git push`. But in order to tell our local Git repo, which server and branch to push to, we have to add two more keywords to `git push`. The first can be interpreted as the "address" where to send our package of data. Such a connection is called a *remote*. When cloning from a server, Git automatically sets a remote with the name `origin` to the server. You can add many more remotes and juggle your data with multiple server repos, but we will not cover that here. Instead, we are satisfied to push to the server's `master` branch by using `git push origin master` for the moment or in TortoiseGit `right-click`&#8594;`Git Push...` and choose `master` as `Ref`. Here is our concept view of this step:
 
 ![18_push](https://cloud.githubusercontent.com/assets/5516900/16155996/4e624c5c-34b2-11e6-91be-cb631d4c5e38.png)
 
@@ -175,7 +183,7 @@ For the next steps, we will assume our example project to be a bit larger than i
 
 ![22branch](https://cloud.githubusercontent.com/assets/5516900/16156701/c0e4da9e-34b5-11e6-9c0b-401932399125.png)
 
-We will create and switch our working copy to a new branch by typing `git checkout -b issue1_text`:
+We will create and switch our working copy to a new branch by typing `git checkout -b issue1_text` or in TortoiseGit `right-click`&#8594;`TortoiseGit`&#8594;`Switch/Checkout`:
 
 ![23branch](https://cloud.githubusercontent.com/assets/5516900/16156856/60421656-34b6-11e6-87db-afd9c6348e17.gif)
 
@@ -185,7 +193,7 @@ Next, we add some text to the example file:
 
 ![24text](https://cloud.githubusercontent.com/assets/5516900/16157052/45e5dbac-34b7-11e6-82bb-0a2dda983de4.gif)
 
-Again, we have to stage the changes before committing. In order to net let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. But please be careful with this an do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
+Again, we have to stage the changes before committing. In order to net let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. In TortoiseGit, you have to check `Select/deselect all` at `right-click`&#8594;`TortoiseGit`&#8594;`Add...`. But please be careful with this an do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
 
 ![25stage](https://cloud.githubusercontent.com/assets/5516900/16157114/7d9bae5a-34b7-11e6-8eb5-d36a386fff12.gif)
 
@@ -229,7 +237,7 @@ In order to get the changes from the server repo to our local repo, we have to a
 
 ![32_status](https://cloud.githubusercontent.com/assets/5516900/16190923/ea7755e8-36e1-11e6-8fee-3059e60f5ed0.gif)
 
-And of course, branch `issue1_text` has not been changed on the server repo. The changes affected the server's `master` branch, into which we merged branch `issue1_text`. What we actually want now is to *pull* the latest changes from the server's `master` branch into our local `master` branch. To do that, we thus switch back our local working copy to the master branch. We can do this by calling `git checkout master`:
+And of course, branch `issue1_text` has not been changed on the server repo. The changes affected the server's `master` branch, into which we merged branch `issue1_text`. What we actually want now is to *pull* the latest changes from the server's `master` branch into our local `master` branch. To do that, we thus switch back our local working copy to the master branch. We can do this by calling `git checkout master` or in TortoiseGit `right-click`&#8594;`TortoiseGit`&#8594;`Switch/Checkout` and choose `master` as Branch:
 
 ![33_master](https://cloud.githubusercontent.com/assets/5516900/16191065/b9cc9cfe-36e2-11e6-87ea-d8f3d675996a.gif)
 
@@ -237,7 +245,7 @@ Now our local working copy is back on the master, enabling us to pull the server
 
 ![34_pull](https://cloud.githubusercontent.com/assets/5516900/16191363/23c718e0-36e4-11e6-8747-95524656eaf3.png)
 
-Just like with the `git push` command, we use the name of the `remote` (by default, that is `origin`) and the name of the branch we want to *pull* (in our example: `master`) to construct the *pull command* to be `git pull origin master`. We can think of this command as if it were "Please `git`, `pull` the `master` branch from the remote at `origin` and merge it with the current state of my working copy". In action, this looks like this:
+Just like with the `git push` command, we use the name of the `remote` (by default, that is `origin`) and the name of the branch we want to *pull* (in our example: `master`) to construct the *pull command* to be `git pull origin master`. We can think of this command as if it were "Please `git`, `pull` the `master` branch from the remote at `origin` and merge it with the current state of my working copy". In TortoiseGit satisfy `right-click`&#8594;`Pull..` and selection of `origin` as `Remote`. In action, this looks like this:
 
 ![35 pull](https://cloud.githubusercontent.com/assets/5516900/16191589/4c7e92bc-36e5-11e6-9443-1ce0347b4555.gif)
 
