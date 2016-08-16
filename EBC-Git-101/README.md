@@ -87,6 +87,16 @@ At this moment, the repo is empty and exists only on the server. Using the visua
 
 ![09_start](https://cloud.githubusercontent.com/assets/5516900/16153880/9410830e-34a8-11e6-93fa-558667fc5ae1.png)
 
+## User interface
+
+### Command prompt
+
+To get the command prompt with the correct Git folder, you have to go to your Git folder and hold `shift` and `right-click` and click on `Eingabeaufforderung hier öffnen`.
+
+### Preparing TortoiseGit
+
+If you use TortoiseGit and don't want to enter the username and password for each command, you have to prepare TortoiseGit. You have to follow this way: `right-click`&#8594;`TortoiseGit`&#8594;`Settings`. There, you have to go to `Git`&#8594;`Credential` and choose `wincred - current Windows user` as `Credential helper`.
+
 ## Cloning the repo to our local machine
 
 Now we want to start working with this repository. In a limited way, some Git platforms will allow us to modify files
@@ -103,10 +113,6 @@ With `git clone https://...` we created a local repository that is linked to the
 ![12_files](https://cloud.githubusercontent.com/assets/5516900/16154403/f3d9c438-34aa-11e6-8fea-d85c2d0e5f3a.png)
 
 ## Commiting a text file to the repo
-
-### Preparing TortoiseGit
-
-If you use TortoiseGit don't want to enter the username and password for each command, you have to prepare TortoiseGit. You have to follow this way: `right-click`&#8594;`TortoiseGit`&#8594;`Settings`. There, you have to go to `Git`&#8594;`Credential` and choose `wincred - current Windows user` as `Credential helper`.
 
 ### Creating example1.txt
 
