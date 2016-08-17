@@ -159,3 +159,31 @@ See the section *Ensure the reusability of plots* section in the *Plotting* Note
 
 ### Take away
 A function plots only one dataset at once into the axes. Separate the layout of the figure from the content creation.
+
+## Fine Tuning
+This section covers the fine tuning of your plots. Everything in here is not necessary, but "nice to have" if you want to squeeze everything out of your work.
+
+### Make TeX render your Text
+There is an option that lets matplotlib render your text by TeX, but it may cost you some effort. So why should you do it? It is just for the optics, the text in your figures will excactly resemble the text in your document. You can give it a shot if it works.
+
+There is a general explanation on a [matplotlib site](http://matplotlib.org/users/usetex.html), but you can also  follow our short instruction. So, what do you need to make it work?
+
+- Quite obvious a working LaTeX installation. If you use LaTeX, this should already be fine, and if you don't use LaTeX, you don't need your plots to look like LaTeX
+- Ghostscript. This is not available through our software installation, but you can get a self-running version from ![portable apps](http://portableapps.com/apps/utilities/ghostscript_portable)
+- Matplotlib must be able to know where to find Ghostscript, therefore add the Link to your path
+    1. Click the windows start button
+    2. Click the picture above your name in the right part of your window
+    3. The control center will open with the user profiles opened ("Benutzerkonten" if you are using a system with German localization). Of course, you can get there with an alternative route
+    4. In the window that just opend, there is the option to change your environmental variables ("Eigene Umgebungsvariablen ändern") on the left side - click it!
+    5. There may already be a Variable on the top called PATH, if not: Create it by clicking new, otherwise chose it and push edit
+    6. Name the variable "PATH" (if not already done so, the name is __not__ case sensitive), As value enter the complete path to the Ghostscript executable gswin64.exe 
+    7. If not already in there, you must point matplotlib also to your mikTex Installation Folder, that should be located at a location similar to C:\Users\your_username\AppData\Roaming\MiKTeX\2.9\miktex\bin\x64\. The two paths are seperated by semicolon
+    8. Never ask why Microsoft thought that would be a smart way how to add environmental variables.
+    9. Update your layout dictionaries to use tex.
+        - ```your_design_dict['text.usetex'] = False```
+        - ```your_design_dict['text.latex.unicode'] = True```
+        - ```your_design_dict['text.latex.preamble'] = [r'\usepackage{fourier}', r'\usepackage{amsmath}', r'\usepackage[squaren]{SIunits}']```
+        - If you used several dictionaries as suggested, update them as well
+
+Now everything should theoretically work well. Because every text will be layouted using LaTeX, every text must be LaTeX compatible. And to avoide python to use so-called escape characters, you should declare every string as a raw-string by a preceeding 'r' and than follow normal LaTeX syntax. To create a Text saying Tset with the 'set' as subscript, you need to write
+`r'T$_\text{set}$`. Note that we used the command `\text` to set the word 'set' upright, because it is normal text. And we used '$', because a subscript can only be set in formulas.
