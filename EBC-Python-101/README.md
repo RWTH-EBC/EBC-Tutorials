@@ -80,6 +80,7 @@ This is the part, where we would like to wish you good bye for some time. Go awa
 - A [youtube playlist](https://www.youtube.com/playlist?list=PLkHsKoi6eZnwpn7P5G8gEBebAY8Jbky4N) with a fundamental programming course in Python from coursera (its about twice as long as Batman v. Superman but at least twice as fun!)
 - If you are really ambitious, you may want to take the really good (but also really time consuming) Python course on [edx](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-8).
 - We'd also suggest that you take a short look at pandas, this is a package that can really help you to get work done. There is a [10 minutes to pandas](http://pandas.pydata.org/pandas-docs/stable/10min.htmlhttp://pandas.pydata.org/pandas-docs/stable/10min.html) guide, we are sure this won't be the 10 most wasted minutes in your life (remember the "cute cat" videos you watched last week? Or the last lecture you attended?).
+- For specific questions on programming, [stackoverflow](http://stackoverflow.com/) is normally the place to go.
 
 How deep you dive into learning to code is probably up to your interest and specific needs. We think that the ability to code efficiently is a key requirement (but we are also the guys that fancy [octocat](https://octodex.github.com/), so your mileage may vary). But before you continue, you should have at least an idea about these concepts (and if all of the concepts below are already clear to you: You may directly proceed):
 
@@ -178,7 +179,7 @@ There is a general explanation on a [matplotlib site](http://matplotlib.org/user
     5. There may already be a Variable on the top called PATH, if not: Create it by clicking new, otherwise chose it and push edit
     6. Name the variable "PATH" (if not already done so, the name is __not__ case sensitive), As value enter the complete path to the Ghostscript executable gswin64.exe 
     7. If not already in there, you must point matplotlib also to your mikTex Installation Folder, that should be located at a location similar to C:\Users\your_username\AppData\Roaming\MiKTeX\2.9\miktex\bin\x64\. The two paths are seperated by semicolon
-    8. Never ask why Microsoft thought that would be a smart way how to add environmental variables.
+    8. Never ask why Microsoft thought that would be a good layout or way to add environmental variables.
     9. Update your layout dictionaries to use tex.
         - ```your_design_dict['text.usetex'] = False```
         - ```your_design_dict['text.latex.unicode'] = True```
@@ -187,3 +188,6 @@ There is a general explanation on a [matplotlib site](http://matplotlib.org/user
 
 Now everything should theoretically work well. Because every text will be layouted using LaTeX, every text must be LaTeX compatible. And to avoide python to use so-called escape characters, you should declare every string as a raw-string by a preceeding 'r' and than follow normal LaTeX syntax. To create a Text saying Tset with the 'set' as subscript, you need to write
 `r'T$_\text{set}$`. Note that we used the command `\text` to set the word 'set' upright, because it is normal text. And we used '$', because a subscript can only be set in formulas.
+
+###Take away
+It is possible to let TeX Render your text, that looks awesome. But it can also cause trouble. Your decision to use it or not, an alternative would be [mathtext](http://matplotlib.org/users/mathtext.html#mathtext-tutorial).
