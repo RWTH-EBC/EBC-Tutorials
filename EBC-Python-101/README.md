@@ -148,23 +148,23 @@ To store plotting defaults, matplotlib uses the (well hidden) rcParams and refer
 
 For an exemplary usage of different plot layouts have a look at the section *Configuring the plot layout* in the Jupyter Notebook *Plotting* in this repository.
 
-### Take away
+#### Take away
 Setup a dictionary for your layout, plot your figures directly in the size you need them and use just three different sizes for plotting if you want to use them in a document.
 
-## Ensuring reusability
+### Ensuring reusability
 Keep your plotting functions simple, never plot more than **one** thing per plot! If you have datasets from two measurements, you could of course load them into Python and then plot them into one graph using a function that takes care of both datasets. The better method would be, to call the function twice with different parameters: Starting with the first dataset then the second. Because if you happen to get a third measurement, you could just call that function a third time. Even more: If one of the measurements is a reference value and you would like to create two plots: Each plot with the reference and one dataset, this can be easily achieved with that function. ![Create a figure from three subsequent function calls](https://michaeladolph.github.io/plotting_code_reusability.png).
 
 To make a function work this way, your function needs at least two parameters: The data you want to plot and an axes handle, e.g. the place where you want your data to appear. With this method you can separate the creation of the figure and the layout of the figure. This is a flexibility you will surely appreciate.
 
 See the section *Ensure the reusability of plots* section in the *Plotting* Notebook for examples.
 
-### Take away
+#### Take away
 A function plots only one dataset at once into the axes. Separate the layout of the figure from the content creation.
 
-## Fine Tuning
+### Fine Tuning
 This section covers the fine tuning of your plots. Everything in here is not necessary, but "nice to have" if you want to squeeze everything out of your work.
 
-### Make TeX render your Text
+#### Make TeX render your Text
 There is an option that lets matplotlib render your text by TeX, but it may cost you some effort. So why should you do it? It is just for the optics, the text in your figures will excactly resemble the text in your document. You can give it a shot if it works.
 
 There is a general explanation on a [matplotlib site](http://matplotlib.org/users/usetex.html), but you can also  follow our short instruction. So, what do you need to make it work?
@@ -189,5 +189,19 @@ There is a general explanation on a [matplotlib site](http://matplotlib.org/user
 Now everything should theoretically work well. Because every text will be layouted using LaTeX, every text must be LaTeX compatible. And to avoide python to use so-called escape characters, you should declare every string as a raw-string by a preceeding 'r' and than follow normal LaTeX syntax. To create a Text saying Tset with the 'set' as subscript, you need to write
 `r'T$_\text{set}$`. Note that we used the command `\text` to set the word 'set' upright, because it is normal text. And we used '$', because a subscript can only be set in formulas.
 
-###Take away
+#####Take away
 It is possible to let TeX Render your text, that looks awesome. But it can also cause trouble. Your decision to use it or not, an alternative would be [mathtext](http://matplotlib.org/users/mathtext.html#mathtext-tutorial).
+
+## Object Orientation
+Object orientation is not the simplest possible programming method and it may take some time to be able to completely understand and endorse it. But if you have a slight idea about object orientation, it can save you some time. And for those of you who use Modelica: That one is also object oriented, so maybe one could expect some synergies.
+
+The thing I like most about objects is, that they wrap information neatly together, you may add some additional information, you can define methods that help you handle your data, and from the outside: All instances look the same and behave the same.
+
+Whatever you do in your work, you'll often have things that are basically the same, but with different data. That may be 10 different runs of an experiment, each with some changes in the hardware, or 1000 simulations with different parameters. You will try to compare them and figure out, which effects the changes have. So one base object would be at least an object to keep your experiment data and another object to keep those objects for comparison.
+
+The difference between a class and the instance of a class is often described as the difference between a recipe and the cake. The recipe is the theoretically description how to bake cake, and the cake is - the cake. And often you can re-use parts of a recipe (throw everything in a bowle, mix it, put it in the oven), change some things (ingredients, time in the oven) and create a completely new cake. The realization of a recipe is the cake, same is true for a class, the realization is the instance. And as you can create several cakes from one recipe, you can also create several instances from one class.
+
+The Jupyter Notebook ObjectOrientation in this folder gives some more ideas why object orientation can be helpful.
+
+### Take away
+Using object orientation simplifies your work by keeping your data structured. 
