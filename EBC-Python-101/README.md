@@ -27,7 +27,7 @@ Python is a programming language. Basically, a programming language is a set of 
 
 So obviously, you need some more stuff to get a programming language to do work. First of all, PCs don't understand text, they understand zeros and ones. So everything you have written, must be interpreted so you need an **Interpreter** (Later on, when we tell you how to install python, we truly tell you how to install the Python Interpreter). After the installation is done, you could fire up Notepad and write your code. Although ~~all~~ most of us would not recommend this.
 
- The next thing you would like to use is an Integrated Development Environment (IDE), the MatLab GUI is an example of an IDE. An IDE offers you syntax highlighting, code completion and it can point out errors in your code. Furthermore it normally comes with a green play button to run your program code. And it features a debugger (yes, there is a way more efficient way on squashing bug than using print statements). The most used IDEs at our institute are PyCharme and Spyder. Eclipse and Visual Studio are rarely used (and they are a bit more complicated to configure). You probably ask your advisor which IDE he uses and settle on the same.
+ The next thing you would like to use is an Integrated Development Environment (IDE), the MatLab GUI is an example of an IDE. An IDE offers you syntax highlighting, code completion and it can point out errors in your code. Furthermore it normally comes with a green play button to run your program code. And it features a [debugger](#Debugging) (yes, there is a way more efficient way on squashing bug than using print statements). The most used IDEs at our institute are PyCharme and Spyder. Eclipse and Visual Studio are rarely used (and they are a bit more complicated to configure). You probably ask your advisor which IDE he uses and settle on the same.
 
 - [ ] Abbildung Zusammenhang IDE / Sprache / Interpreter
 
@@ -131,7 +131,7 @@ A general [description](http://matplotlib.org/api/index.html) about available me
  To access our own examples stored in a Jupyter Notebook, please open the WinPython Command Prompt from your python distribution and then enter `jupyter notebook Git_path\EBC-Python-101\plotting.ipynb`. 'Git_path' is the path to your local working copy of the EBC_Tutorial repository. It may take several seconds, but the notebook should than open in your browser.
  
 ### Plotting: General remarks
-We strongly recommend that you create plots at the size that you need them. If you include them into LaTeX, LaTeX does a great job in scaling them (especially if you use `\includegraphics[width=\textwidth{filename}`), but scaling will distort the size of your text and increase or decrease the size of your markers. If your original plots were of different size, there will be differences between the font size and the line size. You are better off to create two or three possible sizes and create every figure at one of those sizes. And if you need the same plots for a presentation: Do not scale them either. Re-plot them, with a more viewer friendly design (Using a good structured plot, it is really fast to re-create it)
+We strongly recommend that you create plots at the size that you need them. If you include them into LaTeX, LaTeX does a great job in scaling them (especially if you use `\includegraphics[width=\textwidth{filename}`), but scaling will distort the size of your text and increase or decrease the size of your markers. If your original plots were of different size, there will be differences between the font size and the line size. You are better off to create two or three possible sizes and create every figure at one of those sizes. And if you need the same plots for a presentation: Do not scale them either. Re-plot them, with a more viewer friendly design and make sure that tools like PowerPoint may not like pdfs, so try to use different file formats for different applications (Using a good structured plot, it is really fast to re-create it)
 
 The same comment is also valid for colors and markers: Use the same color and marker sequence to create similar looking plots.
 
@@ -205,3 +205,30 @@ The Jupyter Notebook ObjectOrientation in this folder gives some more ideas why 
 
 ### Take away
 Using object orientation simplifies your work by keeping your data structured. 
+
+## Debugging
+Like mentioned above, there is a more efficient way to debug your programs then using print statements. Therefore, Python has a build-in debugger, which is ready to use and waits for your use. Some IDEs come with a GUI support for the Python Debugger called pdb. However, we'll now start from the Stone Age and learn how to use the debugger without the green, blue, red or whatever colour it is debugger play button. So what does the Python Debugger do and how can we use this? Basically the Debugger stops your Python program at a certain point, the so called breakepoint, interactively. That means that your program is stopping there, but you can still interact with it. Interact in this case means, that you can define new variables, show existing variables, inspect and analyse objects and so on.
+
+How to use:
+``` python
+import pdb #this imports the debugger module
+
+pdb.set_trace() #this sets the actual breakpoint
+```
+Because you don't want to import the debugger in every file at top, we recommend using the pdb and breakpoint setting in a oneliner:
+``` python
+import pdb; pdb.set_trace() # import and breakpoint setting
+```
+Simple use this oneliner at a point in your code where you expect things going wrong. After this import the Python Interpreter jumps into the interactive Python Debugger. To demonstrate the use and capability of the debugger in comparison to print statements.... nahh you can do this on your own, so just a quick demonstration on how to use it.
+
+Include gif of python debugger here
+
+Handy commands:
+```c```: continue debuggin until you hit (another) breakpoint 
+```s```: step through the code (into the next function)
+```n```: go to the next line of code
+```l```: list source code for the current file (default: 11 lines including the being executed)
+
+
+### Take away
+There are more efficient ways to debug your program code the print statements, one is the use of the Python integreated debugger pdb.
