@@ -233,7 +233,8 @@ And of course, branch `issue1_text` has not been changed on the server repo. The
 
 ![33_master](https://cloud.githubusercontent.com/assets/5516900/16191065/b9cc9cfe-36e2-11e6-87ea-d8f3d675996a.gif)
 
-Now our local working copy is back on the master, enabling us to pull the server's master:
+Now our local working copy is back on the master, enabling us to pull the server's master.
+Do not get confused by git's answer: `your branch is up-to-date with 'origin/master'.`. Your local repository is not aware of the changes you just did on the server repo, so this is a comparison between your working copy (you just checked out) and the local master. Like for many other actions, it's highly recommended to start a `it pull` only with a clean working copy. This means that you should not have any uncommitted local changes before you pull.
 
 ![34_pull](https://cloud.githubusercontent.com/assets/5516900/16191363/23c718e0-36e4-11e6-8747-95524656eaf3.png)
 
