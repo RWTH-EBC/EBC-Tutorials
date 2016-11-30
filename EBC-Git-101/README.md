@@ -185,7 +185,7 @@ Next, we add some text to the example file:
 
 ![24text](https://cloud.githubusercontent.com/assets/5516900/16157052/45e5dbac-34b7-11e6-82bb-0a2dda983de4.gif)
 
-Again, we have to stage the changes before committing. In order to net let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. But please be careful with this an do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
+Again, we have to stage the changes before committing. In order to not let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. But please be careful with this an do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
 
 ![25stage](https://cloud.githubusercontent.com/assets/5516900/16157114/7d9bae5a-34b7-11e6-8eb5-d36a386fff12.gif)
 
