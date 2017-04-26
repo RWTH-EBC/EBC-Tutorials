@@ -10,7 +10,7 @@ So what will you find in this tutorial? You'll mainly find three things. At firs
 
 This will ensure that you can start working with Python without running into some nasty and unnecessary obstacles, keeping you away from getting work done.
 
-In the third part we'll introduce some concepts that may help you to become better at programming, fit into EBCs style of programming (something we are still developing) and give you some ideas for a best practice that we expect to save you some time. We are not without faults, so if you find better or more efficient solutions: Feel free to suggest them. In the best case you contribute to our EBC Libraries via Git (it is a version control system. You can not destroy anything, so have no fear). The concepts are backed up by examples in Jupyter Notebooks. We don't expect everybody to understand all the examples, especially not at the beginning. But if you are planning your code and move forward in your project, we hope that some of these concepts resurface in your brain and you come back here to have a look. Everything in here has, for sure, already been written, probably in a better way. But here we have everything in one place, this is the true advantage of this tutorial.
+In the third part we'll introduce some concepts that may help you to become better at programming, fit into EBC's style of programming (something we are still developing) and give you some ideas for a best practice that we expect to save you some time. We are not without faults, so if you find better or more efficient solutions: Feel free to suggest them. In the best case you contribute to our EBC Libraries via Git (it is a version control system. You can not destroy anything, so have no fear). The concepts are backed up by examples in Jupyter Notebooks. We don't expect everybody to understand all the examples, especially not at the beginning. But if you are planning your code and move forward in your project, we hope that some of these concepts resurface in your brain and you come back here to have a look. Everything in here has, for sure, already been written, probably in a better way. But here we have everything in one place, this is the true advantage of this tutorial.
 
 In a nutshell we will
 
@@ -27,7 +27,7 @@ Python is a programming language. Basically, a programming language is a set of 
 
 So obviously, you need some more stuff to get a programming language to do work. First of all, PCs don't understand text, they understand zeros and ones. So everything you have written, must be interpreted so you need an **Interpreter** (Later on, when we tell you how to install python, we truly tell you how to install the Python Interpreter). After the installation is done, you could fire up Notepad and write your code. Although ~~all~~ most of us would not recommend this.
 
- The next thing you would like to use is an Integrated Development Environment (IDE), the MatLab GUI is an example of an IDE. An IDE offers you syntax highlighting, code completion and it can point out errors in your code. Furthermore it normally comes with a green play button to run your program code. And it features a [debugger](#Debugging) (yes, there is a way more efficient way on squashing bug than using print statements). The most used IDEs at our institute are PyCharme and Spyder. Eclipse and Visual Studio are rarely used (and they are a bit more complicated to configure). You probably ask your advisor which IDE he uses and settle on the same.
+ The next thing you would like to use is an Integrated Development Environment (IDE), the MatLab GUI is an example of an IDE. An IDE offers you syntax highlighting, code completion and it can point out errors in your code. Furthermore it normally comes with a green play button to run your program code. And it features a [debugger](#Debugging) (yes, there is a way more efficient way on squashing bug than using print statements). The most used IDEs at our institute are PyCharme and Spyder. Eclipse and Visual Studio are rarely used (and they are a bit more complicated to configure). You probably ask your advisor which IDE he or she uses and settle on the same.
 
 - [ ] Abbildung Zusammenhang IDE / Sprache / Interpreter
 
@@ -59,9 +59,9 @@ You'll have to use import statements because parts of Pythons library are not lo
 # How do I install Python?
 We strongly recommend to follow these instructions step by step.
 
-1. Create a folder on D:, name it something like 'my_name_my_python_installation' (and yes, you should **never** save something on 'D:/' because it is not backed up. Never except now...)
+1. Create a folder on D:, name it something like 'my_name_my_python_installation' (and yes, you should **never** save something on 'D:/' because it is not backed up. Never except now...).
 
-2. Download the current WinPython distribution from [WinPython Download Site](http://winpython.github.io/#releases). Click on Download and be a lemming, run with the herd: Download the must downloaded one. To avoid confusion: When we say 'Download it from...' we mean exactly this. We do not mean: Install it through the 'Softwareverteilung'. And to add some confusion: If you are expected to work with Gurobi (If you do not know, you are probably not expected to...), ask your advisor which version to download. Gurobi and Python can sometimes be a bit difficult
+2. Download the current WinPython distribution from [WinPython Download Site](http://winpython.github.io/#releases). Click on Download and be a lemming, run with the herd: Download the most downloaded one. To avoid confusion: When we say 'Download it from...' we mean exactly this. We do not mean: Install it through the 'Softwarecenter'. And to add some confusion: If you are expected to work with Gurobi (If you do not know, you are probably not expected to...), ask your advisor which version to download. Gurobi and Python can sometimes be a bit difficult.
 
 3. Save this in your folder created in step 1.
 
@@ -96,15 +96,15 @@ for i in xrange(3):
 ```
 
 # Advanced concepts
-We don't know if the concepts we suggests are really that advanced, but we believe that they may be helpful. Besides introducing those concepts, we tried to back them up with some examples, presented in Jupyter notebooks
+We don't know if the concepts we suggest are really that advanced, but we believe that they may be helpful. Besides introducing those concepts, we tried to back them up with some examples, presented in Jupyter notebooks
 
 ## What is a Jupyter Notebook
-A Jupyter Notebook is a Textfile, similar to this one, but besides layouted text, it allows you to include program code that can be executed. You can start a Jupyter Notebook by entering `jupyter notebook <path_to_the_notebook>` into the WinPython Command Prompt of your Python installation. It will take some time and than open in your browser. The Jupyter Notebooks reside in the same folder of the git Repository as this file. Before you start it, make sure you got the latest version by pulling from the repository.
+A Jupyter Notebook is a Textfile, similar to this one, but besides layouted text, it allows you to include program code that can be executed. You can start a Jupyter Notebook by entering `jupyter notebook <path_to_the_notebook>` into the WinPython Command Prompt of your Python installation. It will take some time and then open it in your browser. The Jupyter Notebooks reside in the same folder of the git Repository as this file. Before you start it, make sure you got the latest version by pulling from the repository.
 
 ## Plan before you code
 Yes, you probably have heard that before, and yes, each of us also started coding before thinking. Most time it is a bad decision, because it costs you time, you run into errors you would have avoided otherwise and maintaining the code is difficult.
 
-So before you code, you should have a goal, for example: I want to plot the measured temperature data of two measurements. So than, what are your steps:
+So before you code, you should have a goal, for example: I want to plot the measured temperature data of two measurements. So, what are your steps:
 
 - Reading the data from the measurement file into python
 - handle the data (even if temperatures where measured, you may want to check for measurement errors, missing data etc.)
@@ -116,7 +116,7 @@ So you have at least three functions: Read the data, clean the data, create the 
 - Think about the input: What type of data is coming into your functions, may several data types be possible? Are there optional parameters to change the behavior of the function?
 - Think about the output: What type of data does your data return? Is this always the same data type (it should be, because subsequent functions may expect a special data type)
 
-If some of your functions are very similar, you may consider to write a smaller function, that is called by the other functions (if there is a bug in your code, you have to fix it only in one place, not in 42). And after you wrote the documentation (please write it as docstring and adhere to the docstring standards !LINK FEHLT), write the pseudo-code. That is a verbal expression of what you expect the code to do. This helps you to structure your work further, anticipate problems and works as documentation afterwards.
+If some of your functions are very similar, you may consider to write a smaller function, that is called by the other functions (if there is a bug in your code, you have to fix it only in one place, not in 42). And after you wrote the documentation (please write it as docstring and adhere to the [docstring standards](https://www.python.org/dev/peps/pep-0257)), write the pseudo-code. That is a verbal expression of what you expect the code to do. This helps you to structure your work further, anticipate problems and works as documentation afterwards.
 
 Yes, this all sounds boring. But it may save you some time. Time you could use to get your adrenaline kick elsewhere. And honestly: Otherwise you will be debugging the code more often. That is way more boring than creating code.
 
@@ -128,16 +128,16 @@ Structuring plots can save a lot of time, and they represent the results of your
 
 A general [description](http://matplotlib.org/api/index.html) about available methods can be found on the [matplotlib homepage](http://matplotlib.org/api/index.html), they also have a [gallery](http://matplotlib.org/gallery.html) with source code to get some ideas how to create plots.
 
- To access our own examples stored in a Jupyter Notebook, please open the WinPython Command Prompt from your python distribution and then enter `jupyter notebook Git_path\EBC-Python-101\plotting.ipynb`. 'Git_path' is the path to your local working copy of the EBC_Tutorial repository. It may take several seconds, but the notebook should than open in your browser.
+ To access our own examples stored in a Jupyter Notebook, please open the WinPython Command Prompt from your python distribution and then enter `jupyter notebook Git_path\EBC-Python-101\plotting.ipynb`. 'Git_path' is the path to your local working copy of the EBC_Tutorial repository. It may take several seconds, but the notebook should then open in your browser.
  
 ### Plotting: General remarks
 We strongly recommend that you create plots at the size that you need them. If you include them into LaTeX, LaTeX does a great job in scaling them (especially if you use `\includegraphics[width=\textwidth{filename}`), but scaling will distort the size of your text and increase or decrease the size of your markers. If your original plots were of different size, there will be differences between the font size and the line size. You are better off to create two or three possible sizes and create every figure at one of those sizes. And if you need the same plots for a presentation: Do not scale them either. Re-plot them, with a more viewer friendly design and make sure that tools like PowerPoint may not like pdfs, so try to use different file formats for different applications (Using a good structured plot, it is really fast to re-create it)
 
 The same comment is also valid for colors and markers: Use the same color and marker sequence to create similar looking plots.
 
-Furthermore we would encourage you to create a metafile for each plot. This textfile should contain information which data you used to create the plot and which file and version to create the plot. 
+Furthermore, we would encourage you to create a metafile for each plot. This textfile should contain information which data you used to create the plot and which file and version to create the plot. 
 
-There is a subpackage `ebcplots` in our Git-Repository. This package provides you with some convenience functions (some are already superseded by pylab functions), but the `optimize_and_save`-function is still very useful. This method also supports the writing of metadata about a file and contains design dictionaries for different usage scenarios (We get back to design dictionaries in the next section)
+There is a subpackage `ebcplots` in our Git-Repository [EBC_Python_Library](https://git.rwth-aachen.de/EBC/EBC_Python_Library). This package provides you with some convenience functions (some are already superseded by pylab functions), but the `optimize_and_save`-function is still very useful. This method also supports the writing of metadata about a file and contains design dictionaries for different usage scenarios. (We get back to design dictionaries in the next section.)
 
 ### Matplotlib: General introduction
 You can import matplotlib with `import matplotlib`, but normally you would use `import pylab as plt`, which wraps some matplotlib functions conveniently. This is a bit confusing and sometimes you can not access methods via pylab, that exist in matplotlib. This is a rare event but keep in mind that you can access **all** matplotlib methods via `pylab.matplotlib.[...]`
@@ -152,7 +152,7 @@ For an exemplary usage of different plot layouts have a look at the section *Con
 Setup a dictionary for your layout, plot your figures directly in the size you need them and use just three different sizes for plotting if you want to use them in a document.
 
 ### Ensuring reusability
-Keep your plotting functions simple, never plot more than **one** thing per plot! If you have datasets from two measurements, you could of course load them into Python and then plot them into one graph using a function that takes care of both datasets. The better method would be, to call the function twice with different parameters: Starting with the first dataset then the second. Because if you happen to get a third measurement, you could just call that function a third time. Even more: If one of the measurements is a reference value and you would like to create two plots: Each plot with the reference and one dataset, this can be easily achieved with that function. ![Create a figure from three subsequent function calls](https://michaeladolph.github.io/plotting_code_reusability.png).
+Keep your plotting functions simple, never plot more than **one** thing per plot! If you have datasets from two measurements, you could of course load them into Python and then plot them into one graph using a function that takes care of both datasets. The better method would be, to call the function twice with different parameters: Starting with the first dataset then the second. Because if you happen to get a third measurement, you could just call that function a third time. Even more: If one of the measurements is a reference value and you would like to create two plots: Each plot with the reference and one dataset, this can be easily achieved with that function. ![Create a figure from three subsequent function calls](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/plotting_code_reusability.pdf)
 
 To make a function work this way, your function needs at least two parameters: The data you want to plot and an axes handle, e.g. the place where you want your data to appear. With this method you can separate the creation of the figure and the layout of the figure. This is a flexibility you will surely appreciate.
 
@@ -170,14 +170,14 @@ There is an option that lets matplotlib render your text by TeX, but it may cost
 There is a general explanation on a [matplotlib site](http://matplotlib.org/users/usetex.html), but you can also  follow our short instruction. So, what do you need to make it work?
 
 - Quite obvious a working LaTeX installation. If you use LaTeX, this should already be fine, and if you don't use LaTeX, you don't need your plots to look like LaTeX
-- Ghostscript. This is not available through our software installation, but you can get a self-running version from ![portable apps](http://portableapps.com/apps/utilities/ghostscript_portable)
+- Ghostscript. This is not available through our software installation, but you can get a self-running version from [portable apps](http://portableapps.com/apps/utilities/ghostscript_portable)
 - Matplotlib must be able to know where to find Ghostscript, therefore add the Link to your path
     1. Click the windows start button
     2. Click the picture above your name in the right part of your window
     3. The control center will open with the user profiles opened ("Benutzerkonten" if you are using a system with German localization). Of course, you can get there with an alternative route
     4. In the window that just opend, there is the option to change your environmental variables ("Eigene Umgebungsvariablen ändern") on the left side - click it!
     5. There may already be a Variable on the top called PATH, if not: Create it by clicking new, otherwise chose it and push edit
-    6. Name the variable "PATH" (if not already done so, the name is __not__ case sensitive), As value enter the complete path to the Ghostscript executable gswin64.exe 
+    6. Name the variable "PATH" (if not already done so, the name is __not__ case sensitive). As value enter the complete path to the Ghostscript executable gswin64.exe 
     7. If not already in there, you must point matplotlib also to your mikTex Installation Folder, that should be located at a location similar to C:\Users\your_username\AppData\Roaming\MiKTeX\2.9\miktex\bin\x64\. The two paths are seperated by semicolon
     8. Never ask why Microsoft thought that would be a good layout or way to add environmental variables.
     9. Update your layout dictionaries to use tex.
@@ -186,10 +186,10 @@ There is a general explanation on a [matplotlib site](http://matplotlib.org/user
         - ```your_design_dict['text.latex.preamble'] = [r'\usepackage{fourier}', r'\usepackage{amsmath}', r'\usepackage[squaren]{SIunits}']```
         - If you used several dictionaries as suggested, update them as well
 
-Now everything should theoretically work well. Because every text will be layouted using LaTeX, every text must be LaTeX compatible. And to avoide python to use so-called escape characters, you should declare every string as a raw-string by a preceeding 'r' and than follow normal LaTeX syntax. To create a Text saying Tset with the 'set' as subscript, you need to write
-`r'T$_\text{set}$`. Note that we used the command `\text` to set the word 'set' upright, because it is normal text. And we used '$', because a subscript can only be set in formulas.
+Now everything should theoretically work well. Because every text will be layouted using LaTeX, every text must be LaTeX compatible. And to avoide python to use so-called escape characters, you should declare every string as a raw-string by a preceding 'r' and then follow normal LaTeX syntax. To create a Text saying Tset with the 'set' as subscript, you need to write
+`r'$T_\text{set}$'`. Note that we used the command `\text` to set the word 'set' upright, because it is normal text. And we used '$', because a subscript can only be set in formulas.
 
-#####Take away
+#### Take away
 It is possible to let TeX Render your text, that looks awesome. But it can also cause trouble. Your decision to use it or not, an alternative would be [mathtext](http://matplotlib.org/users/mathtext.html#mathtext-tutorial).
 
 ## Object Orientation
@@ -224,10 +224,10 @@ Simple use this oneliner at a point in your code where you expect things going w
 Include gif of python debugger here
 
 Handy commands:
-```c```: continue debuggin until you hit (another) breakpoint 
-```s```: step through the code (into the next function)
-```n```: go to the next line of code
-```l```: list source code for the current file (default: 11 lines including the being executed)
+`c`: continue debugging until you hit (another) breakpoint 
+`s`: step through the code (into the next function)
+`n`: go to the next line of code
+`l`: list source code for the current file (default: 11 lines including the being executed)
 
 
 ### Take away
