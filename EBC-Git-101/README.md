@@ -226,6 +226,8 @@ the Network Graph by clicking "Repository" and then navigating to "Graph"*:
 
 ![30merge](https://cloud.githubusercontent.com/assets/5516900/16190455/a53905be-36df-11e6-85f8-574d69cb2017.png)
 
+*By now, GitLab will suggest to directly delete the branch on the server repository after merging the branch. You can safely do so. If you also want to delete the branch from your local repository, we'll do that in a second.*
+
 ### Pull changes from the server to the local repo
 
 So now we have successfully merged the two branches on our server repo on GitLab. But we have to keep in mind, that this does not directly affect our local repo. The current state in our concept view can be shown like this:
@@ -236,7 +238,7 @@ In order to get the changes from the server repo to our local repo, we have to a
 
 ![32_status](https://cloud.githubusercontent.com/assets/5516900/16190923/ea7755e8-36e1-11e6-8fee-3059e60f5ed0.gif)
 
-And of course, branch `issue1_text` has not been changed on the server repo. The changes affected the server's `master` branch, into which we merged branch `issue1_text`. What we actually want now is to *pull* the latest changes from the server's `master` branch into our local `master` branch. To do that, we thus switch back our local working copy to the master branch. We can do this by calling `git checkout master`:
+This local branch is not affected by any changes on the server, even if you deleted the branch `issue1_text` on the server repo. On the server's `master` branch, we merged the changes from branch `issue1_text`. What we actually want now is to *pull* the latest changes from the server's `master` branch into our local `master` branch. To do that, we thus switch back our local working copy to the master branch. We can do this by calling `git checkout master`:
 
 ![33_master](https://cloud.githubusercontent.com/assets/5516900/16191065/b9cc9cfe-36e2-11e6-87ea-d8f3d675996a.gif)
 
@@ -248,6 +250,8 @@ Do not get confused by git's answer: `your branch is up-to-date with 'origin/mas
 Just like with the `git push` command, we use the name of the `remote` (by default, that is `origin`) and the name of the branch we want to *pull* (in our example: `master`) to construct the *pull command* to be `git pull origin master`. We can think of this command as if it were "Please `git`, `pull` the `master` branch from the remote at `origin` and merge it with the current state of my working copy". In action, this looks like this:
 
 ![35 pull](https://cloud.githubusercontent.com/assets/5516900/16191589/4c7e92bc-36e5-11e6-9443-1ce0347b4555.gif)
+
+If you want to delete your local branch now, just type `git branch -d issue1_text`.
 
 Great! Now our local repo is back in synch with the server repo and we successfully worked through a first Git example showing us the basic concepts!
 
