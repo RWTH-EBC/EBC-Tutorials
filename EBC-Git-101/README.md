@@ -139,9 +139,9 @@ Before we actually commit the file to the repo, let's take a second to reflect o
 * A good commit message
 * Keeping your commits small, comprehensible and well-structured.
 
-You have to write the commit message for you commit manually. Please write this message in the most useful way for your collaborators and your future self you can come up with. Also, it helps a great deal if you structure your commits in small units. Making many changes to your code today? Make a commit for each task separately rather than one large commit before leaving work and it will be much easier to retrack the history for you and others.
+You have to write the commit message for your commit manually. Please write this message in the most useful way for your collaborators and your future self you can come up with. Also, it helps a great deal if you structure your commits in small units. Making many changes to your code today? Make a commit for each task separately rather than one large commit before leaving work and it will be much easier to retrack the history for you and others.
 
-Agreed? Ok, then let's do our first commit. To do this, we have at least to options. First, let's do the faster one. Committing in general is done by using `git commit`. We can directly add the commit message with the `-m modifier`. For example, we can now type `git commit -m "<My commit message>"` (e.g. `git commit -m "Add an empty example text file"`). Like so:
+Agreed? Ok, then let's do our first commit. To do this, we have at least two options. First, let's do the faster one. Committing in general is done by using `git commit`. We can directly add the commit message with the `-m modifier`. For example, we can now type `git commit -m "<My commit message>"` (e.g. `git commit -m "Add an empty example text file"`). Like so:
 
 ![17_commit](https://cloud.githubusercontent.com/assets/5516900/16155747/24e915fa-34b1-11e6-998b-ec5e118499e5.gif)
 
@@ -185,7 +185,7 @@ Next, we add some text to the example file:
 
 ![24text](https://cloud.githubusercontent.com/assets/5516900/16157052/45e5dbac-34b7-11e6-82bb-0a2dda983de4.gif)
 
-Again, we have to stage the changes before committing. In order to not let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. But please be careful with this an do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
+Again, we have to stage the changes before committing. In order to not let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. But please be careful with this and do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
 
 ![25stage](https://cloud.githubusercontent.com/assets/5516900/16157114/7d9bae5a-34b7-11e6-8eb5-d36a386fff12.gif)
 
