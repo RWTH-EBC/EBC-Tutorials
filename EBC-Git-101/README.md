@@ -69,7 +69,10 @@ Now you are almost ready to use Git for version control. For this tutorial we wi
 
 # A simple Git example
 
-For this example, we will use the RWTH GitLab Server. But if you have no access to that server, any other Git Server is pretty similar.
+For this example, we will use the RWTH GitLab Server. The appearance of GitLab
+has changed a bit since we created this tutorial, but we hope you will find your
+way around nonetheless. If you have no access to that server, any other Git
+Server is pretty similar.
 
 ## Creating a new project on the server
 
@@ -215,7 +218,11 @@ The *request* we have been referring to is called a *Pull Request* on GitHub and
 
 As shown above, we click to create a *New Merge Request*. In the next page, we select our *source branch* and the *target branch* we want to merge into. In our case, as mentioned above, we want to *merge* branch `issue1_text` into the `master` branch. Then we give a quick description of what this merge request addressed, including a reference to the issue we have created before to document our intented developments. Finally, we assign one of our colleagues (in this case we assigned Peter) to check our code, give feedback and accept or decline the request.
 
-In this case, Peter accepted the request directly. We can see the merging of our two branches (and their "timelines") visualized by clicking on *Commits* in GitLab's left-aligned menu and choosing the *Network* view in the top menu:
+In this case, Peter accepted the request directly. <del>We can see the merging
+of our two branches (and their "timelines") visualized by clicking on *Commits*
+in GitLab's left-aligned menu and choosing the *Network* view in the top menu
+</del> *Here GitLab has changed its organization of the pages: You can now find
+the Network Graph by clicking "Repository" and then navigating to "Graph"*:
 
 ![30merge](https://cloud.githubusercontent.com/assets/5516900/16190455/a53905be-36df-11e6-85f8-574d69cb2017.png)
 
