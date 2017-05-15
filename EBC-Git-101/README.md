@@ -69,7 +69,10 @@ Now you are almost ready to use Git for version control. For this tutorial we wi
 
 # A simple Git example
 
-For this example, we will use the RWTH GitLab Server. But if you have no access to that server, any other Git Server is pretty similar.
+For this example, we will use the RWTH GitLab Server. The appearance of GitLab
+has changed a bit since we created this tutorial, but we hope you will find your
+way around nonetheless. If you have no access to that server, any other Git
+Server is pretty similar.
 
 ## Creating a new project on the server
 
@@ -139,9 +142,9 @@ Before we actually commit the file to the repo, let's take a second to reflect o
 * A good commit message
 * Keeping your commits small, comprehensible and well-structured.
 
-You have to write the commit message for you commit manually. Please write this message in the most useful way for your collaborators and your future self you can come up with. Also, it helps a great deal if you structure your commits in small units. Making many changes to your code today? Make a commit for each task separately rather than one large commit before leaving work and it will be much easier to retrack the history for you and others.
+You have to write the commit message for your commit manually. Please write this message in the most useful way for your collaborators and your future self you can come up with. Also, it helps a great deal if you structure your commits in small units. Making many changes to your code today? Make a commit for each task separately rather than one large commit before leaving work and it will be much easier to retrack the history for you and others.
 
-Agreed? Ok, then let's do our first commit. To do this, we have at least to options. First, let's do the faster one. Committing in general is done by using `git commit`. We can directly add the commit message with the `-m modifier`. For example, we can now type `git commit -m "<My commit message>"` (e.g. `git commit -m "Add an empty example text file"`). Like so:
+Agreed? Ok, then let's do our first commit. To do this, we have at least two options. First, let's do the faster one. Committing in general is done by using `git commit`. We can directly add the commit message with the `-m modifier`. For example, we can now type `git commit -m "<My commit message>"` (e.g. `git commit -m "Add an empty example text file"`). Like so:
 
 ![17_commit](https://cloud.githubusercontent.com/assets/5516900/16155747/24e915fa-34b1-11e6-998b-ec5e118499e5.gif)
 
@@ -185,11 +188,11 @@ Next, we add some text to the example file:
 
 ![24text](https://cloud.githubusercontent.com/assets/5516900/16157052/45e5dbac-34b7-11e6-82bb-0a2dda983de4.gif)
 
-Again, we have to stage the changes before committing. In order to not let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. But please be careful with this an do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
+Again, we have to stage the changes before committing. In order to not let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. But please be careful with this and do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
 
 ![25stage](https://cloud.githubusercontent.com/assets/5516900/16157114/7d9bae5a-34b7-11e6-8eb5-d36a386fff12.gif)
 
-And now, we will use the second way of writing our commit message. If we only run `git commit` without the `-m` modifier, a text editor will open. We can write after pressing e.g. `i` for `insert` mode, exit insert mode by pressing `ESC` and save the changes by typing `:wq` (maybe meaning `write` and `quit`). Have look:
+And now, we will use the second way of writing our commit message. If we only run `git commit` without the `-m` modifier, a text editor will open. We can write after pressing e.g. `i` for `insert` mode, exit insert mode by pressing `ESC` and save the changes by typing `:wq` (maybe meaning `write` and `quit`). Have a look:
 
 ![26commit](https://cloud.githubusercontent.com/assets/5516900/16157412/bc5c6b38-34b8-11e6-9409-b845c5d04ddd.gif)
 
@@ -215,9 +218,15 @@ The *request* we have been referring to is called a *Pull Request* on GitHub and
 
 As shown above, we click to create a *New Merge Request*. In the next page, we select our *source branch* and the *target branch* we want to merge into. In our case, as mentioned above, we want to *merge* branch `issue1_text` into the `master` branch. Then we give a quick description of what this merge request addressed, including a reference to the issue we have created before to document our intented developments. Finally, we assign one of our colleagues (in this case we assigned Peter) to check our code, give feedback and accept or decline the request.
 
-In this case, Peter accepted the request directly. We can see the merging of our two branches (and their "timelines") visualized by clicking on *Commits* in GitLab's left-aligned menu and choosing the *Network* view in the top menu:
+In this case, Peter accepted the request directly. <del>We can see the merging
+of our two branches (and their "timelines") visualized by clicking on *Commits*
+in GitLab's left-aligned menu and choosing the *Network* view in the top menu
+</del> *Here GitLab has changed its organization of the pages: You can now find
+the Network Graph by clicking "Repository" and then navigating to "Graph"*:
 
 ![30merge](https://cloud.githubusercontent.com/assets/5516900/16190455/a53905be-36df-11e6-85f8-574d69cb2017.png)
+
+*By now, GitLab will suggest to directly delete the branch on the server repository after merging the branch. You can safely do so. If you also want to delete the branch from your local repository, we'll do that in a second.*
 
 ### Pull changes from the server to the local repo
 
@@ -229,7 +238,7 @@ In order to get the changes from the server repo to our local repo, we have to a
 
 ![32_status](https://cloud.githubusercontent.com/assets/5516900/16190923/ea7755e8-36e1-11e6-8fee-3059e60f5ed0.gif)
 
-And of course, branch `issue1_text` has not been changed on the server repo. The changes affected the server's `master` branch, into which we merged branch `issue1_text`. What we actually want now is to *pull* the latest changes from the server's `master` branch into our local `master` branch. To do that, we thus switch back our local working copy to the master branch. We can do this by calling `git checkout master`:
+This local branch is not affected by any changes on the server, even if you deleted the branch `issue1_text` on the server repo. On the server's `master` branch, we merged the changes from branch `issue1_text`. What we actually want now is to *pull* the latest changes from the server's `master` branch into our local `master` branch. To do that, we thus switch back our local working copy to the master branch. We can do this by calling `git checkout master`:
 
 ![33_master](https://cloud.githubusercontent.com/assets/5516900/16191065/b9cc9cfe-36e2-11e6-87ea-d8f3d675996a.gif)
 
@@ -241,6 +250,8 @@ Do not get confused by git's answer: `your branch is up-to-date with 'origin/mas
 Just like with the `git push` command, we use the name of the `remote` (by default, that is `origin`) and the name of the branch we want to *pull* (in our example: `master`) to construct the *pull command* to be `git pull origin master`. We can think of this command as if it were "Please `git`, `pull` the `master` branch from the remote at `origin` and merge it with the current state of my working copy". In action, this looks like this:
 
 ![35 pull](https://cloud.githubusercontent.com/assets/5516900/16191589/4c7e92bc-36e5-11e6-9443-1ce0347b4555.gif)
+
+If you want to delete your local branch now, just type `git branch -d issue1_text`.
 
 Great! Now our local repo is back in synch with the server repo and we successfully worked through a first Git example showing us the basic concepts!
 
