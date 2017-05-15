@@ -192,7 +192,7 @@ Again, we have to stage the changes before committing. In order to not let this 
 
 ![25stage](https://cloud.githubusercontent.com/assets/5516900/16157114/7d9bae5a-34b7-11e6-8eb5-d36a386fff12.gif)
 
-And now, we will use the second way of writing our commit message. If we only run `git commit` without the `-m` modifier, a text editor will open. We can write after pressing e.g. `i` for `insert` mode, exit insert mode by pressing `ESC` and save the changes by typing `:wq` (maybe meaning `write` and `quit`). Have look:
+And now, we will use the second way of writing our commit message. If we only run `git commit` without the `-m` modifier, a text editor will open. We can write after pressing e.g. `i` for `insert` mode, exit insert mode by pressing `ESC` and save the changes by typing `:wq` (maybe meaning `write` and `quit`). Have a look:
 
 ![26commit](https://cloud.githubusercontent.com/assets/5516900/16157412/bc5c6b38-34b8-11e6-9409-b845c5d04ddd.gif)
 
