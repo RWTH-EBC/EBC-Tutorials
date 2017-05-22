@@ -231,4 +231,4 @@ Handy commands:
 
 
 ### Take away
-There are more efficient ways to debug your program code the print statements, one is the use of the Python integreated debugger pdb.
+There are more efficient ways to debug your program code then print statements, one is the use of the Python integreated debugger pdb.
