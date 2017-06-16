@@ -7,10 +7,13 @@ You can find all example files of the basic tutorial in .../example_files folder
 Aim: Write a mathematical function, which (exclusively) squares integer numbers.
 Thus, we are going to generate an Python file named example_1.py and write a function
 
-'''
-#  I am a function (defined by 'def')
-def square_int_number(number):
-    squared_nb = number ** 2  # Square input number
-    return squared_nb
-'''
+	#  I am a function (defined by 'def')
+	def square_int_number(number):
+		squared_nb = number ** 2  # Square input number
+		return squared_nb
+
+functions are defined via keyword "def". 
+By default, functions hold brackets (optionally with input parameters), e.g.
+
+	def name_of_function(input_1, input_2, input_3)
 
