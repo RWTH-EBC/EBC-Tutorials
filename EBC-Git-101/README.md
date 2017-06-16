@@ -104,6 +104,7 @@ For this example, we will use the RWTH GitLab Server. The appearance of GitLab
 has changed a bit since we created this tutorial, but we hope you will find your
 way around nonetheless. If you have no access to that server, any other Git
 Server is pretty similar.
+
 [Go back :arrow_up:](#table-of-contents)
 ## Creating a new project on the server
 
@@ -138,7 +139,6 @@ With `git clone https://...` we created a local repository that is linked to the
 [Go back :arrow_up:](#table-of-contents)
 ## Commiting a text file to the repo
 
-[Go back :arrow_up:](#table-of-contents)
 ### Creating example1.txt
 
 Now we can start to demonstrate a few Git features and workflows. First we'll add an empty text file to the working copy (The green symbol on the newly created text file is added by Tortoise Git, a GUI that we will talk about in a short while. Please ignore the symbol for now):
@@ -147,7 +147,6 @@ Now we can start to demonstrate a few Git features and workflows. First we'll ad
 
 Remember that this change until now only affects the working copy. The repo has noticed the change, but has not yet done anything to save or manage our new file within its history.
 
-[Go back :arrow_up:](#table-of-contents)
 ### Checking the current status of working copy and repo
 
 We can use `git status` to get some information about the current state of our working copy and the repo:
@@ -156,7 +155,6 @@ We can use `git status` to get some information about the current state of our w
 
 As a response, git tells us that we are on branch `master`, that there are untracked files (`example1.txt`) and that nothing is currently added to commit, meaning that the stage is currently empty.
 
-[Go back :arrow_up:](#table-of-contents)
 ### Adding the text file to the stage
 
 Before we can commit the file into the repo, first we will thus have to add it to the stage. On a concept level, we are trying to do this:
@@ -167,7 +165,6 @@ To add the file to the stage, we use the command `git add example1.txt`. After c
 
 ![16_add](https://cloud.githubusercontent.com/assets/5516900/16154950/6fe3978c-34ad-11e6-9608-079e05d05fea.gif)
 
-[Go back :arrow_up:](#table-of-contents)
 ### Committing the file
 
 Now, finally, we are ready to commit the file to our local repo. Again, this is what we are trying to do:
@@ -251,7 +248,6 @@ This is useful to show others following the issue that there is ongoing work her
 
 Let's assume we are satisfied with our work in branch `issue1_text` and want to make this development available to all users by taking the changes from the branch into the `master`. To combine the developments of two branches and continue with one single common timeline in one single branch is called to *merge* one branch into another branch. In our case, we want to *merge* branch `issue1_text` into the `master` branch. In a good Git workflow we often do not do this directly, but first issue a formal *request* for what we want to do. In projects in which 2 or more people collaborate, this is a good way to have some quality control. The developer of the new features or bug fixes usually issues a request, so that a second person can check the code, make comments, and finally accepts or declines the request. More info on e.g. the workflow of **AixLib** can be found here: [https://github.com/RWTH-EBC/AixLib/wiki/Contribute-to-AixLib](https://github.com/RWTH-EBC/AixLib/wiki/Contribute-to-AixLib).
 
-[Go back :arrow_up:](#table-of-contents)
 ### Merge Requests / Pull Requests
 
 The *request* we have been referring to is called a *Pull Request* on GitHub and *Merge Request* at GitLab. Apart from the name difference, the procedure is quite the same. The requests can be created on the projects webpage. For **AixLib** on GitHub, you can have a look at the pull requests at [https://github.com/RWTH-EBC/AixLib/pulls](https://github.com/RWTH-EBC/AixLib/pulls). For our example, creating a merge request can look something like this:
@@ -270,7 +266,6 @@ the Network Graph by clicking "Repository" and then navigating to "Graph"*:
 
 *By now, GitLab will suggest to directly delete the branch on the server repository after merging the branch. You can safely do so. If you also want to delete the branch from your local repository, we'll do that in a second.*
 
-[Go back :arrow_up:](#table-of-contents)
 ### Pull changes from the server to the local repo
 
 So now we have successfully merged the two branches on our server repo on GitLab. But we have to keep in mind, that this does not directly affect our local repo. The current state in our concept view can be shown like this:
@@ -314,3 +309,5 @@ If you want to have a look at other tutorials, we can recommend these links:
 And finally, we promised you an alternative to the command line interface. Here is the link to a video tutorial to Tortoise GIT:
 
 * [Video tutorial for using Git with Tortoise Git](https://www.youtube.com/watch?v=fNPLuJTTto0 )
+
+[Go back :arrow_up:](#table-of-contents)
