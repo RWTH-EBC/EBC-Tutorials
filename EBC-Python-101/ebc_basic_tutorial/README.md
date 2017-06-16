@@ -298,3 +298,80 @@ To calculate the distance between two points, we are going to add:
 	#  Calculate distance between point 1 and 2
 	dist = point_1.calc_distance_to_other_point(point_2)
 	print('Distance between point 1 and 2 is:', round(dist, 2))
+
+#  Inheritance - How to reuse and extend base classes in Python
+
+We are going to add two new classes, Building and Energysystem, in example_4.py.
+Both are going to inherit from class Point.
+
+	import example_2 as exp2
+
+
+	class Building(exp2.Point):
+		"""
+		Building class. Inheritance of class Point.
+		"""
+		def __init__(self, x, y, th_energy_demand,
+					 building_type='residential'):
+			"""
+			Constructor of building object.
+
+			Parameters
+			----------
+			x : float
+				x-coordinate in m
+			y : float
+				y-coordinate in m
+			th_energy_demand : float
+				thermal energy demand of building in kWh
+			building_type : str, optional
+				Building type (default: 'residential')
+			"""
+
+			#  Initialize point object (with call to parent
+			#  class Building)
+			super(Building, self).__init__(x, y)
+
+			#  Add attributes to building
+			self.th_energy_demand = th_energy_demand
+			self._building_type = building_type
+			#  A single '_' defines a private variable. As a user
+			#  you should not modify this variable, even if you are
+			#  able to do so.
+
+
+	class Energysystem(exp2.Point):
+		"""
+		Energysystem class. Inheritance of class Point
+		"""
+		def __init__(self, x, y, nominal_th_power,
+					 th_system_type='boiler'):
+			"""
+			Constructor of energysystem object.
+
+			Parameters
+			----------
+			x : float
+				x-coordinate in m
+			y : float
+				y-coordinate in m
+			nominal_th_power : float
+				Nominal thermal power in W
+			th_system_type : str, optional
+				Thermal energy system type (default: 'boiler')
+			"""
+
+			#  Initialize point object (with call to parent
+			#  class  Energysystem)
+			super(Energysystem, self).__init__(x, y)
+
+			#  Add attributes to energysystem
+			self.nominal_th_power = nominal_th_power
+			self._th_system_type = th_system_type
+			#  Another private variable/attribute
+
+After initializing the child class, the parent class Point is initialzed with super() and 
+"handed over" to the child class. This means, that the Building and the Energysystem class 
+hold all attributes and all methods of class Point.
+
+An example how to use this classes can be found at ../example_4.py
