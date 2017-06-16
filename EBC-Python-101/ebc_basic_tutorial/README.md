@@ -101,6 +101,9 @@ Here comes the full code:
 		#  Print statement
 		print('Squared number is:', result_number)
 
+In general: Try to break your code down in small, explicit functions instead of using long lines of code. 
+It increases re-usability as well as code overview.	
+		
 #  Docstrings - How to add documentation into your Python code
 
 Now, we are going to add a _"docstring"_ to our function:
@@ -142,4 +145,51 @@ Now let us add an more elaborated docstring to our function:
 		assert isinstance(number, int), 'Input is not of type integer!'
 		squared_nb = number ** 2  # Square input number
 		return squared_nb
+
+#  pytests and unittests - How to test your Python code
+
+You are probabily going to spend most of your programming time with debugging, less with coding the first version. 
+Testing, especially automated testing, can save you a lot of debugging time. Different Python packages for testing exists, e.g.:
+- unittest (Python in-built)
+- pytest
+
+Via unittest, pytest and co. you can test your functions and methods, if they perform the way to expect them to perform. 
+This is mainly done by defining different inputs for each function and check the output with an assert statement. 
+You can find an example pytest file under ../test_example_1.py
+
+	class Test_Squaring(object):
+		"""
+		I am a test class for example_1.py based on pytest
+		"""
+
+		def test_positve_int(self):
+			"""
+			Testing method for positive integer inputs
+			"""
+			assert square_int_number(2) == 4
+
+		def test_zero(self):
+			"""
+			Testing method for input zero
+			"""
+			assert square_int_number(0) == 0
+
+		def test_negative_int(self):
+			"""
+			Testing method for negative integer inputs
+			"""
+			assert square_int_number(-2) == 4
+
+You can call the test_example_1.py with execute_pytest_example.py.
+Important: The names of the modules, which hold pytest cases, should start with test_ so that pytest is able to find the test cases.
+
+You should get the following console output:
+	collected 3 items
+
+	test_example_1.py ...
+	
+Every dot represents one successful executed test case.
+
+#  I am an object - Object-oriented programming in Python
+
 
