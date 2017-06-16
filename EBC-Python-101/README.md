@@ -3,28 +3,20 @@
 1. [Introduction](#introduction)
 1. [A short introduction](#a-short-introduction)
     1. [What is Python, and what is it not](#what-is-python-and-what-is-it-not)
-        1. [Take away](#take-away)
     1. [What are packages and modules?](#what-are-packages-and-modules)
-        1. [Take away](#take-away-1)
 1. [How do I install Python?](#how-do-i-install-python)
 1. [Time to say goodbye](#time-to-say-goodbye)
 1. [Advanced concepts](#advanced-concepts)
     1. [What is a Jupyter Notebook](#what-is-a-jupyter-notebook)
     1. [Plan before you code](#plan-before-you-code)
-        1. [Take away](#take-away-2)
     1. [Creating plots](#creating-plots)
         1. [Plotting: General remarks](#plotting-general-remarks)
         1. [Matplotlib: General introduction](#matplotlib-general-introduction)
-            1. [Take away](#take-away-3)
         1. [Ensuring reusability](#ensuring-reusability)
-            1. [Take away](#take-away-4)
         1. [Fine Tuning](#fine-tuning)
             1. [Make TeX render your Text](#make-tex-render-your-text)
-            1. [Take away](#take-away-5)
     1. [Object Orientation](#object-orientation)
-        1. [Take away](#take-away-6)
     1. [Debugging](#debugging)
-        1. [Take away](#take-away-7)
 
 ﻿﻿**This is currently under construction**
 
@@ -70,7 +62,6 @@ An IDE can **not** run any code without an interpreter. Although PyCharme and Sp
 ### Take away
 Python is the description, how to write code, the interpreter translates your code to the PC, an IDE helps with code development. Python is **not** a piece of software, it is no Graphical User Interface (GUI) and, Peter Remmen asked to mention this: It is also not Teaser.
 
-[Go back :arrow_up:](#table-of-contents)
 ## What are packages and modules?
 Python functions are ordered in a library, each element of the library is called a package and may contain several modules. Each of the modules may contain different methods or classes. If you would like to compare it to your file system on the computer, the package is a directory, each module a file and the methods and classes are the text in your files. Each Python distribution comes with a big library, but after startup, only a part of the library is loaded and available. If you need more parts of the library, you will have to import them, so most time your code will start with several import statements and look like this
 
@@ -89,7 +80,7 @@ But how does Python "find" its library? Most packages came with your distributio
 ### Take away
 You'll have to use import statements because parts of Pythons library are not loaded on startup. If you need to install new software, use pip.
 
-[Go back :arrow_up:](#table-of-contents)
+
 # How do I install Python?
 
 
@@ -166,7 +157,6 @@ Yes, this all sounds boring. But it may save you some time. Time you could use t
 ### Take away
 Think what you want to achieve, structure this into functions, make up your mind about parameters and return values. Write the documentation. Write pseudo code. Now you may proceed to start coding.
 
-[Go back :arrow_up:](#table-of-contents)
 ## Creating plots
 Structuring plots can save a lot of time, and they represent the results of your work. You may want to get these plots right. We start with some general explanations, how matplotlib works and go on with some concepts that improve the reusability of your code.
 
@@ -197,7 +187,6 @@ For an exemplary usage of different plot layouts have a look at the section *Con
 #### Take away
 Setup a dictionary for your layout, plot your figures directly in the size you need them and use just three different sizes for plotting if you want to use them in a document.
 
-[Go back :arrow_up:](#table-of-contents)
 ### Ensuring reusability
 Keep your plotting functions simple, never plot more than **one** thing per plot! If you have datasets from two measurements, you could of course load them into Python and then plot them into one graph using a function that takes care of both datasets. The better method would be, to call the function twice with different parameters: Starting with the first dataset then the second. Because if you happen to get a third measurement, you could just call that function a third time. Even more: If one of the measurements is a reference value and you would like to create two plots: Each plot with the reference and one dataset, this can be easily achieved with that function. ![Create a figure from three subsequent function calls](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/plotting_code_reusability.pdf)
 
@@ -209,7 +198,6 @@ See the section *Ensure the reusability of plots* section in the *Plotting* Note
 #### Take away
 A function plots only one dataset at once into the axes. Separate the layout of the figure from the content creation.
 
-[Go back :arrow_up:](#table-of-contents)
 ### Fine Tuning
 This section covers the fine tuning of your plots. Everything in here is not necessary, but "nice to have" if you want to squeeze everything out of your work.
 [Go back :arrow_up:](#table-of-contents)
@@ -242,7 +230,6 @@ Now everything should theoretically work well. Because every text will be layout
 #### Take away
 It is possible to let TeX Render your text, that looks awesome. But it can also cause trouble. Your decision to use it or not, an alternative would be [mathtext](http://matplotlib.org/users/mathtext.html#mathtext-tutorial).
 
-[Go back :arrow_up:](#table-of-contents)
 ## Object Orientation
 Object orientation is not the simplest possible programming method and it may take some time to be able to completely understand and endorse it. But if you have a slight idea about object orientation, it can save you some time. And for those of you who use Modelica: That one is also object oriented, so maybe one could expect some synergies.
 
@@ -258,7 +245,6 @@ The Jupyter Notebook ObjectOrientation in this folder gives some more ideas why 
 ### Take away
 Using object orientation simplifies your work by keeping your data structured. 
 
-[Go back :arrow_up:](#table-of-contents)
 ## Debugging
 Like mentioned above, there is a more efficient way to debug your programs then using print statements. Therefore, Python has a build-in debugger, which is ready to use and waits for your use. Some IDEs come with a GUI support for the Python Debugger called pdb. However, we'll now start from the Stone Age and learn how to use the debugger without the green, blue, red or whatever colour it is debugger play button. So what does the Python Debugger do and how can we use this? Basically the Debugger stops your Python program at a certain point, the so called breakepoint, interactively. That means that your program is stopping there, but you can still interact with it. Interact in this case means, that you can define new variables, show existing variables, inspect and analyse objects and so on.
 
@@ -282,6 +268,7 @@ Handy commands:
 `n`: go to the next line of code
 `l`: list source code for the current file (default: 11 lines including the being executed)
 
-[Go back :arrow_up:](#table-of-contents)
 ### Take away
 There are more efficient ways to debug your program code then print statements, one is the use of the Python integreated debugger pdb.
+
+[Go back :arrow_up:](#table-of-contents)
