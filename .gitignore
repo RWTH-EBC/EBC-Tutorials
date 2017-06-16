@@ -1,0 +1,35 @@
+# Ignore the following files in GIT #
+######################################
+
+# Python compiled files #
+#########################
+*.pyc
+*.orig
+
+#Eclipse Settings #
+#####################
+/.settings
+.project
+.pydevproject
+
+#Spyder Settings #
+#####################
+.spyderproject
+
+#PyCharm Settings #
+#####################
+.idea
+
+#Unit tests #
+#####################
+.cache/
+__pycache__/
+.coverage
+
+#pip install #
+#####################
+*.egg-info/
+*.egg/
+*.eggs
+dist
+*.pypirc
