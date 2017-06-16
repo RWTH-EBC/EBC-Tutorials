@@ -1,4 +1,4 @@
-import EBC_Tutorial.example_2 as exp2
+import example_2 as exp2
 
 
 class Building(exp2.Point):

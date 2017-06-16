@@ -1,4 +1,4 @@
-import EBC_Tutorial.example_3 as exp3
+import example_3 as exp3
 
 
 def example_of_building_and_esys():
