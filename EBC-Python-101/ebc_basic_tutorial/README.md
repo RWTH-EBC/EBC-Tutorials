@@ -12,8 +12,42 @@ Thus, we are going to generate an Python file named example_1.py and write a fun
 		squared_nb = number ** 2  # Square input number
 		return squared_nb
 
-functions are defined via keyword "def". 
+functions are defined via keyword *"def"*. 
 By default, functions hold brackets (optionally with input parameters), e.g.
 
 	def name_of_function(input_1, input_2, input_3)
+
+The Python interpreter (see Python.exe) is able to understand which parts of the code belong 
+to the function by using *tabs* to move the text. This combines good readability and code logic. 
+The result is returned with the *"return"* statement. 
+Now, we are going to add a function call at the bottom.
+
+	#  I am a function (defined by 'def')
+	def square_int_number(number):
+		squared_nb = number ** 2  # Square input number
+		return squared_nb
+
+	#  Execute function
+	input_number = 2  # Input parameter
+	#  Function call
+	result_number = square_int_number(input_number)
+	#  Print statement
+	print('Squared number is:', result_number)
+
+Code execution results in the print statement "Squared number is: 4".
+The function call seems to deliver correct results. 
+However, the function would accept floats, although we only wanted to process intergers.
+To prevent squaring of floats, we are going to at an *assert* statement.
+
+	def square_int_number(number):
+		#  Assert function. Checks if input parameter is of type integer
+		assert isinstance(number, int), 'Input is not of type integer!'
+		squared_nb = number ** 2  # Square input number
+		return squared_nb
+
+isinstance checks, if the input "number" is of type integer. If we have an integer as input,
+isinstance returns True and the code processing is going to be continued. If we get a non-integer,
+isinstance returns False, which will lead to the raise of an AssertionError. 
+It can be elementary to stop code execution as early as possible, if wrong behavior occurs. 
+Assert statements can help to do this. It might save you a lot of time in code debugging, later on.
 
