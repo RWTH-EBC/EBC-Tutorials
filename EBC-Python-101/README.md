@@ -69,6 +69,7 @@ An IDE can **not** run any code without an interpreter. Although PyCharme and Sp
 [Go back :arrow_up:](#table-of-contents)
 ### Take away
 Python is the description, how to write code, the interpreter translates your code to the PC, an IDE helps with code development. Python is **not** a piece of software, it is no Graphical User Interface (GUI) and, Peter Remmen asked to mention this: It is also not Teaser.
+
 [Go back :arrow_up:](#table-of-contents)
 ## What are packages and modules?
 Python functions are ordered in a library, each element of the library is called a package and may contain several modules. Each of the modules may contain different methods or classes. If you would like to compare it to your file system on the computer, the package is a directory, each module a file and the methods and classes are the text in your files. Each Python distribution comes with a big library, but after startup, only a part of the library is loaded and available. If you need more parts of the library, you will have to import them, so most time your code will start with several import statements and look like this
@@ -83,6 +84,7 @@ import pylab as plt
 If you are writing code, you have to refer to a method with its package name before (or its alias, defined after the `as` statement), so if you would like to access the datetime object in the datetime library, you would have to write `dt.datetime` in your code. The advantage of this behavior is that this preserves the so called namespace. So you can have the variable `foo` in two packages, for example the packages `bar` and `baz`, because for python `bar.foo` is something completely different than `baz.foo`.
 
 But how does Python "find" its library? Most packages came with your distribution and are stored in a place were python will find them. If you want to install additional packages, you should use pip to ensure that they are stored correctly [There is a user guide for it](https://pip.pypa.io/en/stable/user_guide/). Usage of pip is really easy but you have to make sure, you use the right version of pip, because there may be other python distributions on your system (we'll elaborate on how to use it later on).
+
 [Go back :arrow_up:](#table-of-contents)
 ### Take away
 You'll have to use import statements because parts of Pythons library are not loaded on startup. If you need to install new software, use pip.
@@ -106,6 +108,7 @@ We strongly recommend to follow these instructions step by step.
 - [ ] Link zu einer Erklärung, was die unterschiedlichen Pip Installationsvarianten tun (-e, wheel...)
 - [ ] Hier muss dann auch noch der Hinweis hin, dass sie immer ihre Kommandozeile verwenden sollen.
 - [ ] Das Cycler Paket muss installiert werden (benötigt fürs plotten, sonst folgend ständig deprecated Warnungen)
+
 [Go back :arrow_up:](#table-of-contents)
 # Time to say goodbye
 
@@ -134,9 +137,11 @@ for i in xrange(3):
 
 
 We don't know if the concepts we suggest are really that advanced, but we believe that they may be helpful. Besides introducing those concepts, we tried to back them up with some examples, presented in Jupyter notebooks
+
 [Go back :arrow_up:](#table-of-contents)
 ## What is a Jupyter Notebook
 A Jupyter Notebook is a Textfile, similar to this one, but besides layouted text, it allows you to include program code that can be executed. You can start a Jupyter Notebook by entering `jupyter notebook <path_to_the_notebook>` into the WinPython Command Prompt of your Python installation. It will take some time and then open it in your browser. The Jupyter Notebooks reside in the same folder of the git Repository as this file. Before you start it, make sure you got the latest version by pulling from the repository.
+
 [Go back :arrow_up:](#table-of-contents)
 ## Plan before you code
 Yes, you probably have heard that before, and yes, each of us also started coding before thinking. Most time it is a bad decision, because it costs you time, you run into errors you would have avoided otherwise and maintaining the code is difficult.
@@ -156,9 +161,11 @@ So you have at least three functions: Read the data, clean the data, create the 
 If some of your functions are very similar, you may consider to write a smaller function, that is called by the other functions (if there is a bug in your code, you have to fix it only in one place, not in 42). And after you wrote the documentation (please write it as docstring and adhere to the [docstring standards](https://www.python.org/dev/peps/pep-0257)), write the pseudo-code. That is a verbal expression of what you expect the code to do. This helps you to structure your work further, anticipate problems and works as documentation afterwards.
 
 Yes, this all sounds boring. But it may save you some time. Time you could use to get your adrenaline kick elsewhere. And honestly: Otherwise you will be debugging the code more often. That is way more boring than creating code.
+
 [Go back :arrow_up:](#table-of-contents)
 ### Take away
 Think what you want to achieve, structure this into functions, make up your mind about parameters and return values. Write the documentation. Write pseudo code. Now you may proceed to start coding.
+
 [Go back :arrow_up:](#table-of-contents)
 ## Creating plots
 Structuring plots can save a lot of time, and they represent the results of your work. You may want to get these plots right. We start with some general explanations, how matplotlib works and go on with some concepts that improve the reusability of your code.
@@ -166,6 +173,7 @@ Structuring plots can save a lot of time, and they represent the results of your
 A general [description](http://matplotlib.org/api/index.html) about available methods can be found on the [matplotlib homepage](http://matplotlib.org/api/index.html), they also have a [gallery](http://matplotlib.org/gallery.html) with source code to get some ideas how to create plots.
 
  To access our own examples stored in a Jupyter Notebook, please open the WinPython Command Prompt from your python distribution and then enter `jupyter notebook Git_path\EBC-Python-101\plotting.ipynb`. 'Git_path' is the path to your local working copy of the EBC_Tutorial repository. It may take several seconds, but the notebook should then open in your browser.
+ 
 [Go back :arrow_up:](#table-of-contents)
 ### Plotting: General remarks
 We strongly recommend that you create plots at the size that you need them. If you include them into LaTeX, LaTeX does a great job in scaling them (especially if you use `\includegraphics[width=\textwidth{filename}`), but scaling will distort the size of your text and increase or decrease the size of your markers. If your original plots were of different size, there will be differences between the font size and the line size. You are better off to create two or three possible sizes and create every figure at one of those sizes. And if you need the same plots for a presentation: Do not scale them either. Re-plot them, with a more viewer friendly design and make sure that tools like PowerPoint may not like pdfs, so try to use different file formats for different applications (Using a good structured plot, it is really fast to re-create it)
@@ -184,9 +192,11 @@ Matplotlib uses a hierarchical system to create your plot, this means that a fig
 To store plotting defaults, matplotlib uses the (well hidden) rcParams and refers by default to the file `matplotlibrc` in its home folder (if you followed the instructions above, this should be `Path_to_your_installation\python-[version].amd[bit]\Lib\site-packages\matplotlib\mpl-data`). You can alter this file to ensure a general change in layout, but we would recommend to define several layout dictionaries and alter the rcParams for the current session with pylab.rcParams.update(design_dict). 
 
 For an exemplary usage of different plot layouts have a look at the section *Configuring the plot layout* in the Jupyter Notebook *Plotting* in this repository.
+
 [Go back :arrow_up:](#table-of-contents)
 #### Take away
 Setup a dictionary for your layout, plot your figures directly in the size you need them and use just three different sizes for plotting if you want to use them in a document.
+
 [Go back :arrow_up:](#table-of-contents)
 ### Ensuring reusability
 Keep your plotting functions simple, never plot more than **one** thing per plot! If you have datasets from two measurements, you could of course load them into Python and then plot them into one graph using a function that takes care of both datasets. The better method would be, to call the function twice with different parameters: Starting with the first dataset then the second. Because if you happen to get a third measurement, you could just call that function a third time. Even more: If one of the measurements is a reference value and you would like to create two plots: Each plot with the reference and one dataset, this can be easily achieved with that function. ![Create a figure from three subsequent function calls](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/plotting_code_reusability.pdf)
@@ -194,9 +204,11 @@ Keep your plotting functions simple, never plot more than **one** thing per plot
 To make a function work this way, your function needs at least two parameters: The data you want to plot and an axes handle, e.g. the place where you want your data to appear. With this method you can separate the creation of the figure and the layout of the figure. This is a flexibility you will surely appreciate.
 
 See the section *Ensure the reusability of plots* section in the *Plotting* Notebook for examples.
+
 [Go back :arrow_up:](#table-of-contents)
 #### Take away
 A function plots only one dataset at once into the axes. Separate the layout of the figure from the content creation.
+
 [Go back :arrow_up:](#table-of-contents)
 ### Fine Tuning
 This section covers the fine tuning of your plots. Everything in here is not necessary, but "nice to have" if you want to squeeze everything out of your work.
@@ -225,9 +237,11 @@ There is a general explanation on a [matplotlib site](http://matplotlib.org/user
 
 Now everything should theoretically work well. Because every text will be layouted using LaTeX, every text must be LaTeX compatible. And to avoide python to use so-called escape characters, you should declare every string as a raw-string by a preceding 'r' and then follow normal LaTeX syntax. To create a Text saying Tset with the 'set' as subscript, you need to write
 `r'$T_\text{set}$'`. Note that we used the command `\text` to set the word 'set' upright, because it is normal text. And we used '$', because a subscript can only be set in formulas.
+
 [Go back :arrow_up:](#table-of-contents)
 #### Take away
 It is possible to let TeX Render your text, that looks awesome. But it can also cause trouble. Your decision to use it or not, an alternative would be [mathtext](http://matplotlib.org/users/mathtext.html#mathtext-tutorial).
+
 [Go back :arrow_up:](#table-of-contents)
 ## Object Orientation
 Object orientation is not the simplest possible programming method and it may take some time to be able to completely understand and endorse it. But if you have a slight idea about object orientation, it can save you some time. And for those of you who use Modelica: That one is also object oriented, so maybe one could expect some synergies.
@@ -239,9 +253,11 @@ Whatever you do in your work, you'll often have things that are basically the sa
 The difference between a class and the instance of a class is often described as the difference between a recipe and the cake. The recipe is the theoretically description how to bake cake, and the cake is - the cake. And often you can re-use parts of a recipe (throw everything in a bowle, mix it, put it in the oven), change some things (ingredients, time in the oven) and create a completely new cake. The realization of a recipe is the cake, same is true for a class, the realization is the instance. And as you can create several cakes from one recipe, you can also create several instances from one class.
 
 The Jupyter Notebook ObjectOrientation in this folder gives some more ideas why object orientation can be helpful.
+
 [Go back :arrow_up:](#table-of-contents)
 ### Take away
 Using object orientation simplifies your work by keeping your data structured. 
+
 [Go back :arrow_up:](#table-of-contents)
 ## Debugging
 Like mentioned above, there is a more efficient way to debug your programs then using print statements. Therefore, Python has a build-in debugger, which is ready to use and waits for your use. Some IDEs come with a GUI support for the Python Debugger called pdb. However, we'll now start from the Stone Age and learn how to use the debugger without the green, blue, red or whatever colour it is debugger play button. So what does the Python Debugger do and how can we use this? Basically the Debugger stops your Python program at a certain point, the so called breakepoint, interactively. That means that your program is stopping there, but you can still interact with it. Interact in this case means, that you can define new variables, show existing variables, inspect and analyse objects and so on.
