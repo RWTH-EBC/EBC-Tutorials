@@ -5,6 +5,9 @@
     1. [What is Python, and what is it not](#what-is-python-and-what-is-it-not)
     1. [What are packages and modules?](#what-are-packages-and-modules)
 1. [How do I install Python?](#how-do-i-install-python)
+    1. [Working with Anaconda's environments](#working-with-anacondas-environments)
+    1. [Struggeling with finding desired python.exe](#struggeling-with-finding-desired-pythonexe)
+    1. [Installing via pip](#installing-via-pip)
 1. [Time to say goodbye](#time-to-say-goodbye)
 1. [Advanced concepts](#advanced-concepts)
     1. [What is a Jupyter Notebook](#what-is-a-jupyter-notebook)
@@ -136,7 +139,8 @@ to activate the desired environment.
 
 ## Struggeling with finding desired python.exe
 
-The following relates to Windows machines:
+In this section you probably won't understand everything directly, but later on you are to have knowledge 
+about this topic. The following relates to Windows machines:
 
 In case you use the standard `python` command in your machine's standard console, Windows picks the python.exe 
 it'll find in your `PATH` environment variable of Windows.
