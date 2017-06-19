@@ -91,21 +91,88 @@ We strongly recommend to follow these instructions step by step.
 For instance, the folder could be named with your ERC tag, e.g. D:\abc-xyz\Python\...
 
 2. Download a current Python distribution, such as Anaconda or WinPython.
-For anaconda use this link:
+- For Anaconda use this link:
 [Anaconda](https://www.continuum.io/downloads)
-. For WinPython go to:
+- For WinPython go to:
 [WinPython Download Site](http://winpython.github.io/#releases).
+
 Click on Download and be a lemming, run with the herd: Download the most downloaded one.
 To avoid confusion: When we say 'Download it from...' we mean exactly this.
 We do not mean: Install it through the 'Softwarecenter'.
+
 WinPython only works on Windows machines. However, Anaconda is platform independent.
+
 Attention: For those of you, who need to work with Gurobi, gurobipy etc.:
 Please check, which is the most recent gurobipy version. If you installed
 Anaconda 3.6, but gurobipy is only available in 3.5, you need to create a
-virtual Python 3.5. environment with conda.
+virtual Python 3.5. environment with conda (see below).
 
 3. Use the installer to install the Python distribution into the path you created
 in step 1.
+
+[Go back :arrow_up:](#table-of-contents)
+
+## Working with Anaconda's environments
+
+When using python often version conflicts occur. This primarily affects v2.X vs. 3.X. By the way, for Anaconda there exist <Path-to-your-Anaconda-folder>\Scripts\2to3.exe (at least speaking for Windows).
+Anyway, it might be beneficious to have multiple python environments. After creating and activating one of these 
+environments you force your current console to use this particular python version.
+
+Here are two examples how to create environments (use any python=<version> you want):
+
+    conda create --name py27 python=2.7 anaconda
+    conda create --name py34 python=3.4 anaconda
+
+Hereby, "py27" and "py34" are just exemplaric names for your enverionment (<env-name>). Afterwards you will 
+find an almost full new installation of Anaconda in the folder <Path-to-your-Anaconda-folder>\envs\<env-name>
+
+Then you can use
+
+    conda create --name py27 python=2.7 anaconda
+    
+to activate the desired environment.
+
+[Go back :arrow_up:](#table-of-contents)
+
+## Struggeling with finding desired python.exe
+
+The following relates to Windows machines:
+
+In case you use the standard `python` command in your machine's standard console, Windows picks the python.exe 
+it'll find in your `PATH` environment variable of Windows.
+Check your current `PATH`variable by entering `echo %PATH%` in your console (or command prompt or cmd or ...). 
+You receive all folders that are in Windows' `PATH` environment variable. Maybe you find one, two or even more 
+python installation folders in this `PATH` variable. Yes, the separation character is a semicolon and there is no 
+line break, which makes it a bit difficult to read. But eventually help yourself with a text editor.
+Anyhow, the command `python` will find the python.exe in the first folder of youer `PATH` variable, containing a python.exe.
+
+In order to define temporarily the python folder you want to use for the current console session, 
+create a \*.bat file with kind of the following content:
+
+    D:
+    set PATH=D:\<Path-to-your-Anaconda-folder>;D:\<Path-to-your-Anaconda-folder>\Scripts;%PATH%
+    cmd
+
+- The `D:` changes your hard drive, since we asked you to install the python distribution on drive D:\
+- In the second step you define your `PATH`variable (no space around the equation sign!). In this example 
+you add two paths and the old `PATH` variable (`%PATH%`). This is valid as long as you have your console opened. 
+After that the `PATH` variable is again `%PATH%`.
+The folder Scripts contains some important easy-to-use commands like `pip` (see below), `start spyder` or `activate` 
+(see above).
+- Do not point to your folder <Path-to-your-Anaconda-folder>\envs\<env-name> with this \*.bat file
+
+Sticking to this procedure you can be certain to always use YOUR python installation and not the one 
+of any other student who might have used your computer in between.
+So, if you want to access a environment you created, first execute the \*.bat file and then type in e.g. 
+`activate py27`.
+Now you can work as normal in your python 2.7 environment. Install packages via pip, start the IDE spyder 
+with a python 2.7 kernel and so on.
+
+If you decided to use WinPython, just exchange the two paths above with `D:\<Path-to-your-WinPython-folder>`.
+
+[Go back :arrow_up:](#table-of-contents)
+
+## Installing via pip
 
 If you want/need to install additional Python packages, you can do this via pip (Python Package Index).
 If the Python path points at your installation (e.g. D:\abc-xyz\Python\...), you should
@@ -138,7 +205,7 @@ or
     
 The -e is important! It defines a link to <path_to_your_local_python_package>
 It will NOT going to install this package into the site-packages folder of your Python distribution.
-If you want to import this package, Python willl use the egglink to identify its path.
+If you want to import this package, Python will use the egglink to identify its path.
 If you make changes within the package, they have direct effect on the package and its import/usage.
 
 
