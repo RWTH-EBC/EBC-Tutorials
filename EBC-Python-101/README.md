@@ -89,7 +89,13 @@ We strongly recommend to follow these instructions step by step.
 
 1. Create a folder on D:, name it something like 'my_name_my_python_installation' (and yes, you should **never** save something on 'D:/' because it is not backed up. Never except now...).
 
-2. Download the current WinPython distribution from [WinPython Download Site](http://winpython.github.io/#releases). Click on Download and be a lemming, run with the herd: Download the most downloaded one. To avoid confusion: When we say 'Download it from...' we mean exactly this. We do not mean: Install it through the 'Softwarecenter'. And to add some confusion: If you are expected to work with Gurobi (If you do not know, you are probably not expected to...), ask your advisor which version to download. Gurobi and Python can sometimes be a bit difficult.
+2. Download a current Python distribution, such as Anaconda or WinPython
+[Anaconda](https://www.continuum.io/downloads)
+[WinPython Download Site](http://winpython.github.io/#releases).
+Click on Download and be a lemming, run with the herd: Download the most downloaded one.
+To avoid confusion: When we say 'Download it from...' we mean exactly this.
+We do not mean: Install it through the 'Softwarecenter'.
+WinPython only works on Windows machines. However, Anaconda is plattform independent.
 
 3. Save this in your folder created in step 1.
 
