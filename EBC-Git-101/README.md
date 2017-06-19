@@ -1,9 +1,34 @@
+# Table of Contents
+1. [Introduction](#introduction)
+1. [Motivation: Why version control?](#motivation-why-version-control)
+1. [Understanding the concept](#understanding-the-concept)
+    1. [The repository](#the-repository)
+    1. [The big picture](#the-big-picture)
+1. [Different servers](#different-servers)
+1. [Installing Git](#installing-git)
+1. [A simple Git example](#a-simple-git-example)
+    1. [Creating a new project on the server](#creating-a-new-project-on-the-server)
+    1. [Cloning the repo to our local machine](#cloning-the-repo-to-our-local-machine)
+    1. [Commiting a text file to the repo](#commiting-a-text-file-to-the-repo)
+        1. [Creating example1.txt](#creating-example1txt)
+        1. [Checking the current status of working copy and repo](#checking-the-current-status-of-working-copy-and-repo)
+        1. [Adding the text file to the stage](#adding-the-text-file-to-the-stage)
+        1. [Committing the file](#committing-the-file)
+    1. [Pushing our changes from the local repo to the server](#pushing-our-changes-from-the-local-repo-to-the-server)
+    1. [Working with the issue tracker](#working-with-the-issue-tracker)
+    1. [Creating a new branch and commiting changes](#creating-a-new-branch-and-commiting-changes)
+    1. [Merging a branch back into the master](#merging-a-branch-back-into-the-master)
+        1. [Merge Requests / Pull Requests](#merge-requests--pull-requests)
+        1. [Pull changes from the server to the local repo](#pull-changes-from-the-server-to-the-local-repo)
+1. [What next?](#what-next)
+
 # Introduction
 
 This tutorial aims at helping you to get started with version control using Git from an EBC-perspective. If you have suggestions on how to improve this tutorial, please make sure to bring this to our attention using the [issue tracker](https://github.com/RWTH-EBC/EBC-Tutorials/issues). Don't be shy about this, if something does not become clear in this tutorial, it is likely not your fault, but a usability bug of this tutorial, so the issue tracker is a good place to talk about it.
 
 The intended audience of this tutorial are students with no prior experience in version control systems, but we hope that it is also helpful for every interested reader.
 
+[Go back :arrow_up:](#table-of-contents)
 # Motivation: Why version control?
 
 There are many good reasons for using version control and we couldn't agree more with Michael Tiller's [What Engineers Need to Know About Version Control](http://blog.xogeny.com/blog/version-control/). We encourage you to take a minute and read that blog post. (Also, we like the image he uses to illustrate the dangers of not using version control.) In case you feel like [tl;dr](https://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn't_read) (which you shouldn't) here is quick summary of the main arguments for using version control:
@@ -14,10 +39,12 @@ There are many good reasons for using version control and we couldn't agree more
 
 We hope these reasons are motivation enough to read on and learn how version control can help us to improve our workflows.
 
+[Go back :arrow_up:](#table-of-contents)
 # Understanding the concept
 
 Unfortunately, before getting our hands on an example that demonstrates how to use Git for our version control we need to understand the concept of Git's version control system and introduce a few terms in order to make sure we speak the same language when talking about Git.
 
+[Go back :arrow_up:](#table-of-contents)
 ## The repository
 
 If your computer is running a Windows system, you are used to files being displayed in the explorer. For a local copy of **AixLib**, this may look something like this:
@@ -34,6 +61,7 @@ What a version control system like Git does is that it allows us to save, organi
 
 Instead of just making changes (intentional or accidental) on the one version of the files that the explorer view offers us and hoping for the best, a version-controlled *repo* enables (and encourages) us to save such snapshots, giving us a timeline of changes that we can inspect and go back in, if we want to undo some changes. In addition, we can organize many of such timelines in parallel, allowing us to work in parallel with our colleagues or try out things with the confidence of knowing that we can always go back to a stable version saved in another snapshot. In Git, each of these parallel "timelines" is called a *branch*. A "snapshot" is called a *commit*. By default, there is one *master* branch. In projects like *AixLib*, we try to always have a stable version of our code on the *master*. Thus, all development and experiments are done in parallel branches (e.g. `New feature 1` and `Wild test 17b` in the figure above). We can have a practically unlimited number of such branches in parallel, create new ones and delete others. In any case, we can always switch between branches, start new ones off our currently selected *commit* and *merge* our developments from one branch back into another (indicated by a green dot in the figure above). We will see how this works in a short time.
 
+[Go back :arrow_up:](#table-of-contents)
 ## The big picture
 
 You can use Git for version control on your local machine to better manage your files helping with the **History** issue mentioned above, but in order to also address the **Danger** of losing your work locally and to work in **Collaboration** with others, we will need to exchange data with a server. Let's use a similar visualization as introduced above to illustrate this concept:
@@ -49,6 +77,7 @@ In addition to the repositories on your local computer and on the server, the fi
 
 Unfortunately, it will get just one step more complicated before we can start working with Git: We cannot directly commit from our working copy into the local repo. First, we have to *stage* all files we want to include in our commit. We are aware that this may seem unneccessary in the beginning, but you will get used to it and see that it makes sense in order to bundle different changes into different commits to make your history clearer and easier to understand and retrack.
 
+[Go back :arrow_up:](#table-of-contents)
 # Different servers
 
 There are several options where the server repository may be hosted. Obviously, there is *GitHub* ([https://github.com/](https://github.com/)). GitHub is probably the most popular service for hosting Git repos. All open-source projects are hosted on GitHub for free, closed-source projects have to be paid. We use GitHub for all our open-source projects like [AixLib](https://github.com/RWTH-EBC/AixLib) and [TEASER](https://github.com/RWTH-EBC/TEASER) (and there's always more to come!).
@@ -57,6 +86,7 @@ In addition, RWTH Aachen University runs its own Git Server called RWTH GitLab a
 
 Another very important aspect about these Git servers is that they offer a web-view of your repository, integrating an issue tracker, pull requests, network-graphs and much more with your files.
 
+[Go back :arrow_up:](#table-of-contents)
 # Installing Git
 
 If you are using your own device, you can simply download and install Git from [https://git-scm.com/](https://git-scm.com/).
@@ -67,12 +97,15 @@ Now you are almost ready to use Git for version control. For this tutorial we wi
 
 ![06_path](https://cloud.githubusercontent.com/assets/5516900/16152765/9cde5a92-34a3-11e6-8ff0-53feafd4bf23.gif)
 
-If you want to use a graphical user interface (GUI), you can use TortoiseGit [https://tortoisegit.org/](https://tortoisegit.org/). At a EBC computer, you can use the Software-Center to install the program.
-
+[Go back :arrow_up:](#table-of-contents)
 # A simple Git example
 
-For this example, we will use the RWTH GitLab Server. But if you have no access to that server, any other Git Server is pretty similar.
+For this example, we will use the RWTH GitLab Server. The appearance of GitLab
+has changed a bit since we created this tutorial, but we hope you will find your
+way around nonetheless. If you have no access to that server, any other Git
+Server is pretty similar.
 
+[Go back :arrow_up:](#table-of-contents)
 ## Creating a new project on the server
 
 After logging in to RWTH GitLab at [https://git.rwth-aachen.de/](https://git.rwth-aachen.de/) we can start a new project by clicking on the green button:
@@ -87,20 +120,11 @@ At this moment, the repo is empty and exists only on the server. Using the visua
 
 ![09_start](https://cloud.githubusercontent.com/assets/5516900/16153880/9410830e-34a8-11e6-93fa-558667fc5ae1.png)
 
-## User interface
-
-### Command prompt
-
-To get the command prompt with the correct Git folder, you have to go to your Git folder and hold `shift` and `right-click` and click on `Eingabeaufforderung hier öffnen`.
-
-### Preparing TortoiseGit
-
-If you use TortoiseGit and don't want to enter the username and password for each command, you have to prepare TortoiseGit. You have to follow this way: `right-click`&#8594;`TortoiseGit`&#8594;`Settings`. There, you have to go to `Git`&#8594;`Credential` and choose `wincred - current Windows user` as `Credential helper`.
-
+[Go back :arrow_up:](#table-of-contents)
 ## Cloning the repo to our local machine
 
 Now we want to start working with this repository. In a limited way, some Git platforms will allow us to modify files
-on their web interface, but usually we will want to have the repo locally and work there. Thus, we *clone* the repo to our local machine. To do that, we use the command `git clone <server address of our new repo>` in the command prompt or in TortoiseGIT `right-click`&#8594;`Git Clone...` and `input of server address` (right-click on the image and chose "show image" for a larger version):
+on their web interface, but usually we will want to have the repo locally and work there. Thus, we *clone* the repo to our local machine. To do that, we use the command `git clone <server address of our new repo>` in the command prompt (right-click on the image and chose "show image" for a larger version):
 
 ![11_clone](https://cloud.githubusercontent.com/assets/5516900/16154153/e0477fb0-34a9-11e6-8280-e3e211c024fe.gif)
 
@@ -112,6 +136,7 @@ With `git clone https://...` we created a local repository that is linked to the
 
 ![12_files](https://cloud.githubusercontent.com/assets/5516900/16154403/f3d9c438-34aa-11e6-8fea-d85c2d0e5f3a.png)
 
+[Go back :arrow_up:](#table-of-contents)
 ## Commiting a text file to the repo
 
 ### Creating example1.txt
@@ -124,7 +149,7 @@ Remember that this change until now only affects the working copy. The repo has 
 
 ### Checking the current status of working copy and repo
 
-We can use `git status` or `right-click`&#8594;`TortoiseGit`&#8594;`Check for modifications` to get some information about the current state of our working copy and the repo:
+We can use `git status` to get some information about the current state of our working copy and the repo:
 
 ![15_status](https://cloud.githubusercontent.com/assets/5516900/16154859/fd048118-34ac-11e6-996e-6bbdf32c416f.gif)
 
@@ -136,7 +161,7 @@ Before we can commit the file into the repo, first we will thus have to add it t
 
 ![14_add](https://cloud.githubusercontent.com/assets/5516900/16154906/3c7c4dda-34ad-11e6-817e-5e68d3e09927.png)
 
-To add the file to the stage, we use the command `git add example1.txt` or in TortoiseGIT `right-click`&#8594;`TortoiseGit`&#8594;`Add...`. After checking again with `git status`, we see that the file is now staged for commit.
+To add the file to the stage, we use the command `git add example1.txt`. After checking again with `git status`, we see that the file is now staged for commit.
 
 ![16_add](https://cloud.githubusercontent.com/assets/5516900/16154950/6fe3978c-34ad-11e6-9608-079e05d05fea.gif)
 
@@ -151,17 +176,16 @@ Before we actually commit the file to the repo, let's take a second to reflect o
 * A good commit message
 * Keeping your commits small, comprehensible and well-structured.
 
-You have to write the commit message for you commit manually. Please write this message in the most useful way for your collaborators and your future self you can come up with. Also, it helps a great deal if you structure your commits in small units. Making many changes to your code today? Make a commit for each task separately rather than one large commit before leaving work and it will be much easier to retrack the history for you and others.
+You have to write the commit message for your commit manually. Please write this message in the most useful way for your collaborators and your future self you can come up with. Also, it helps a great deal if you structure your commits in small units. Making many changes to your code today? Make a commit for each task separately rather than one large commit before leaving work and it will be much easier to retrack the history for you and others.
 
-Agreed? Ok, then let's do our first commit. To do this, we have at least to options. First, let's do the faster one. Committing in general is done by using `git commit`. We can directly add the commit message with the `-m modifier`. For example, we can now type `git commit -m "<My commit message>"` (e.g. `git commit -m "Add an empty example text file"`). Like so:
+Agreed? Ok, then let's do our first commit. To do this, we have at least two options. First, let's do the faster one. Committing in general is done by using `git commit`. We can directly add the commit message with the `-m modifier`. For example, we can now type `git commit -m "<My commit message>"` (e.g. `git commit -m "Add an empty example text file"`). Like so:
 
 ![17_commit](https://cloud.githubusercontent.com/assets/5516900/16155747/24e915fa-34b1-11e6-998b-ec5e118499e5.gif)
 
-In TortoiseGit, we can commit with the following command: `right-click`&#8594;`Git Commit->"master"...` and `enter commit message`.
-
+[Go back :arrow_up:](#table-of-contents)
 ## Pushing our changes from the local repo to the server
 
-So far, we have made a first commit to our local repo. If you have also done these steps on your own, you can see that your repo on the server is still empty. In order to get the two repos back in synch, we will send our local changes to the server repo. In Git-lingo, this is called to *push* the local changes to the server. The corresponding git command is `git push`. But in order to tell our local Git repo, which server and branch to push to, we have to add two more keywords to `git push`. The first can be interpreted as the "address" where to send our package of data. Such a connection is called a *remote*. When cloning from a server, Git automatically sets a remote with the name `origin` to the server. You can add many more remotes and juggle your data with multiple server repos, but we will not cover that here. Instead, we are satisfied to push to the server's `master` branch by using `git push origin master` for the moment or in TortoiseGit `right-click`&#8594;`Git Push...` and choose `master` as `Ref`. Here is our concept view of this step:
+So far, we have made a first commit to our local repo. If you have also done these steps on your own, you can see that your repo on the server is still empty. In order to get the two repos back in synch, we will send our local changes to the server repo. In Git-lingo, this is called to *push* the local changes to the server. The corresponding git command is `git push`. But in order to tell our local Git repo, which server and branch to push to, we have to add two more keywords to `git push`. The first can be interpreted as the "address" where to send our package of data. Such a connection is called a *remote*. When cloning from a server, Git automatically sets a remote with the name `origin` to the server. You can add many more remotes and juggle your data with multiple server repos, but we will not cover that here. Instead, we are satisfied to push to the server's `master` branch by using `git push origin master` for the moment. Here is our concept view of this step:
 
 ![18_push](https://cloud.githubusercontent.com/assets/5516900/16155996/4e624c5c-34b2-11e6-91be-cb631d4c5e38.png)
 
@@ -175,6 +199,7 @@ Checking back with the server, we see that we were indeed successful:
 
 ![20_server](https://cloud.githubusercontent.com/assets/5516900/16156117/e5cf0120-34b2-11e6-938e-abc43e9014cc.png)
 
+[Go back :arrow_up:](#table-of-contents)
 ## Working with the issue tracker
 
 We already mentioned, that in addition to the repo itself, servers like GitHub and RWTH GitLab offer us additional services. One of the most important such services is the issue tracker. This allows us to define workflows that are better to manage and facilitating collaboration as well as quality control. Often, workflows are defined in a project's Wiki. It is not a bad idea to take a minute and have a look at the workflow definitions of [AixLib](https://github.com/RWTH-EBC/AixLib/wiki/Contribute-to-AixLib), [the Annex 60 library](https://github.com/iea-annex60/modelica-annex60/wiki/Workflow-for-code-changes), [BuildingSystems](https://github.com/UdK-VPT/BuildingSystems/wiki/How-To-Bug), or [IDEAS](https://github.com/open-ideas/IDEAS/wiki/Style-Guide-and-GitHub-Good-Practice).
@@ -183,13 +208,14 @@ A general idea for working on existing projects (let's assume our example projec
 
 ![21_issue](https://cloud.githubusercontent.com/assets/5516900/16156476/bec66eae-34b4-11e6-99fd-8d3c054ea52b.gif)
 
+[Go back :arrow_up:](#table-of-contents)
 ## Creating a new branch and commiting changes
 
 For the next steps, we will assume our example project to be a bit larger than it is. Let's imagine, this is a large open-source project used by people who rely on a stable version in the `master` branch for their work. We have now informed them with our issue #1 that we intend to make changes to the repo. In order to have the stable `master` running while we work hard on issue #1, we will split the development's timeline by creating a new parallel branch. In our case, we will call the new branch `issue1_text`. This is what we will try to do:
 
 ![22branch](https://cloud.githubusercontent.com/assets/5516900/16156701/c0e4da9e-34b5-11e6-9c0b-401932399125.png)
 
-We will create and switch our working copy to a new branch by typing `git checkout -b issue1_text` or in TortoiseGit `right-click`&#8594;`TortoiseGit`&#8594;`Switch/Checkout`:
+We will create and switch our working copy to a new branch by typing `git checkout -b issue1_text`:
 
 ![23branch](https://cloud.githubusercontent.com/assets/5516900/16156856/60421656-34b6-11e6-87db-afd9c6348e17.gif)
 
@@ -199,11 +225,11 @@ Next, we add some text to the example file:
 
 ![24text](https://cloud.githubusercontent.com/assets/5516900/16157052/45e5dbac-34b7-11e6-82bb-0a2dda983de4.gif)
 
-Again, we have to stage the changes before committing. In order to net let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. In TortoiseGit, you have to check `Select/deselect all` at `right-click`&#8594;`TortoiseGit`&#8594;`Add...`. But please be careful with this an do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
+Again, we have to stage the changes before committing. In order to not let this become boring, we use a new command for that `git add .`. This adds all changed files to the stage. But note that it does not stage deleted files. To really add all changes, use `git add --all`. But please be careful with this and do not commit changes you did not do intentionally. This is e.g. important with Modelica files if you work in Dymola. Dymola tends to add white space changes to files you did not explicitly work on. Those changes should not be committed.
 
 ![25stage](https://cloud.githubusercontent.com/assets/5516900/16157114/7d9bae5a-34b7-11e6-8eb5-d36a386fff12.gif)
 
-And now, we will use the second way of writing our commit message. If we only run `git commit` without the `-m` modifier, a text editor will open. We can write after pressing e.g. `i` for `insert` mode, exit insert mode by pressing `ESC` and save the changes by typing `:wq` (maybe meaning `write` and `quit`). Have look:
+And now, we will use the second way of writing our commit message. If we only run `git commit` without the `-m` modifier, a text editor will open. We can write after pressing e.g. `i` for `insert` mode, exit insert mode by pressing `ESC` and save the changes by typing `:wq` (maybe meaning `write` and `quit`). Have a look:
 
 ![26commit](https://cloud.githubusercontent.com/assets/5516900/16157412/bc5c6b38-34b8-11e6-9409-b845c5d04ddd.gif)
 
@@ -217,6 +243,7 @@ Our issue tracker mentions the commit as:
 
 This is useful to show others following the issue that there is ongoing work here.
 
+[Go back :arrow_up:](#table-of-contents)
 ## Merging a branch back into the master
 
 Let's assume we are satisfied with our work in branch `issue1_text` and want to make this development available to all users by taking the changes from the branch into the `master`. To combine the developments of two branches and continue with one single common timeline in one single branch is called to *merge* one branch into another branch. In our case, we want to *merge* branch `issue1_text` into the `master` branch. In a good Git workflow we often do not do this directly, but first issue a formal *request* for what we want to do. In projects in which 2 or more people collaborate, this is a good way to have some quality control. The developer of the new features or bug fixes usually issues a request, so that a second person can check the code, make comments, and finally accepts or declines the request. More info on e.g. the workflow of **AixLib** can be found here: [https://github.com/RWTH-EBC/AixLib/wiki/Contribute-to-AixLib](https://github.com/RWTH-EBC/AixLib/wiki/Contribute-to-AixLib).
@@ -229,9 +256,15 @@ The *request* we have been referring to is called a *Pull Request* on GitHub and
 
 As shown above, we click to create a *New Merge Request*. In the next page, we select our *source branch* and the *target branch* we want to merge into. In our case, as mentioned above, we want to *merge* branch `issue1_text` into the `master` branch. Then we give a quick description of what this merge request addressed, including a reference to the issue we have created before to document our intented developments. Finally, we assign one of our colleagues (in this case we assigned Peter) to check our code, give feedback and accept or decline the request.
 
-In this case, Peter accepted the request directly. We can see the merging of our two branches (and their "timelines") visualized by clicking on *Commits* in GitLab's left-aligned menu and choosing the *Network* view in the top menu:
+In this case, Peter accepted the request directly. <del>We can see the merging
+of our two branches (and their "timelines") visualized by clicking on *Commits*
+in GitLab's left-aligned menu and choosing the *Network* view in the top menu
+</del> *Here GitLab has changed its organization of the pages: You can now find
+the Network Graph by clicking "Repository" and then navigating to "Graph"*:
 
 ![30merge](https://cloud.githubusercontent.com/assets/5516900/16190455/a53905be-36df-11e6-85f8-574d69cb2017.png)
+
+*By now, GitLab will suggest to directly delete the branch on the server repository after merging the branch. You can safely do so. If you also want to delete the branch from your local repository, we'll do that in a second.*
 
 ### Pull changes from the server to the local repo
 
@@ -243,20 +276,24 @@ In order to get the changes from the server repo to our local repo, we have to a
 
 ![32_status](https://cloud.githubusercontent.com/assets/5516900/16190923/ea7755e8-36e1-11e6-8fee-3059e60f5ed0.gif)
 
-And of course, branch `issue1_text` has not been changed on the server repo. The changes affected the server's `master` branch, into which we merged branch `issue1_text`. What we actually want now is to *pull* the latest changes from the server's `master` branch into our local `master` branch. To do that, we thus switch back our local working copy to the master branch. We can do this by calling `git checkout master` or in TortoiseGit `right-click`&#8594;`TortoiseGit`&#8594;`Switch/Checkout` and choose `master` as Branch:
+This local branch is not affected by any changes on the server, even if you deleted the branch `issue1_text` on the server repo. On the server's `master` branch, we merged the changes from branch `issue1_text`. What we actually want now is to *pull* the latest changes from the server's `master` branch into our local `master` branch. To do that, we thus switch back our local working copy to the master branch. We can do this by calling `git checkout master`:
 
 ![33_master](https://cloud.githubusercontent.com/assets/5516900/16191065/b9cc9cfe-36e2-11e6-87ea-d8f3d675996a.gif)
 
-Now our local working copy is back on the master, enabling us to pull the server's master:
+Now our local working copy is back on the master, enabling us to pull the server's master.
+Do not get confused by git's answer: `your branch is up-to-date with 'origin/master'.`. Your local repository is not aware of the changes you just did on the server repo, so this is a comparison between your working copy (you just checked out) and the local master. To update your repo to the latest information on the server, use `git fetch origin`. If you follow this with a `git status` request, git should report with a new message informing you that your local copy is behind the server's version.
 
 ![34_pull](https://cloud.githubusercontent.com/assets/5516900/16191363/23c718e0-36e4-11e6-8747-95524656eaf3.png)
 
-Just like with the `git push` command, we use the name of the `remote` (by default, that is `origin`) and the name of the branch we want to *pull* (in our example: `master`) to construct the *pull command* to be `git pull origin master`. We can think of this command as if it were "Please `git`, `pull` the `master` branch from the remote at `origin` and merge it with the current state of my working copy". In TortoiseGit satisfy `right-click`&#8594;`Pull..` and selection of `origin` as `Remote`. In action, this looks like this:
+Just like with the `git push` command, we use the name of the `remote` (by default, that is `origin`) and the name of the branch we want to *pull* (in our example: `master`) to construct the *pull command* to be `git pull origin master`. We can think of this command as if it were "Please `git`, `pull` the `master` branch from the remote at `origin` and merge it with the current state of my working copy". In action, this looks like this:
 
 ![35 pull](https://cloud.githubusercontent.com/assets/5516900/16191589/4c7e92bc-36e5-11e6-9443-1ce0347b4555.gif)
 
+If you want to delete your local branch now, just type `git branch -d issue1_text`.
+
 Great! Now our local repo is back in synch with the server repo and we successfully worked through a first Git example showing us the basic concepts!
 
+[Go back :arrow_up:](#table-of-contents)
 # What next?
 
 We hope this tutorial gave you an idea about how Git works. In any case, **please help us to improve this tutorial and make a suggestion for improvement by creating an issue on our [issue tracker](https://github.com/RWTH-EBC/EBC-Tutorials/issues)**! We are convinced that you noticed at least one thing about the tutorial that we can improve on.
@@ -267,9 +304,10 @@ If you want to have a look at other tutorials, we can recommend these links:
 * [Set Up Git - (GitHub help page)](https://help.github.com/articles/set-up-git/)
 * [Git tutorial by Roger Dudler](http://rogerdudler.github.io/git-guide/)
 * [Git cheat sheet (useful commands)](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
-* [Daily Use Guide TortoiseGit] (https://tortoisegit.org/docs/tortoisegit/tgit-dug.html)
 * [Git tutorial by atlassian ](https://www.atlassian.com/git)
 
 And finally, we promised you an alternative to the command line interface. Here is the link to a video tutorial to Tortoise GIT:
 
 * [Video tutorial for using Git with Tortoise Git](https://www.youtube.com/watch?v=fNPLuJTTto0 )
+
+[Go back :arrow_up:](#table-of-contents)
