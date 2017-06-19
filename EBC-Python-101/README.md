@@ -88,22 +88,64 @@ You'll have to use import statements because parts of Pythons library are not lo
 We strongly recommend to follow these instructions step by step.
 
 1. Create a folder on D:, name it something like 'my_name_my_python_installation' (and yes, you should **never** save something on 'D:/' because it is not backed up. Never except now...).
+For instance, the folder could be named with your ERC tag, e.g. D:\abc-xyz\Python\...
 
-2. Download a current Python distribution, such as Anaconda or WinPython
+2. Download a current Python distribution, such as Anaconda or WinPython.
+For anaconda use this link:
 [Anaconda](https://www.continuum.io/downloads)
+. For WinPython go to:
 [WinPython Download Site](http://winpython.github.io/#releases).
 Click on Download and be a lemming, run with the herd: Download the most downloaded one.
 To avoid confusion: When we say 'Download it from...' we mean exactly this.
 We do not mean: Install it through the 'Softwarecenter'.
-WinPython only works on Windows machines. However, Anaconda is plattform independent.
+WinPython only works on Windows machines. However, Anaconda is platform independent.
+Attention: For those of you, who need to work with Gurobi, gurobipy etc.:
+Please check, which is the most recent gurobipy version. If you installed
+Anaconda 3.6, but gurobipy is only available in 3.5, you need to create a
+virtual Python 3.5. environment with conda.
 
-3. Save this in your folder created in step 1.
+3. Use the installer to install the Python distribution into the path you created
+in step 1.
+
+If you want/need to install additional Python packages, you can do this via pip (Python Package Index).
+If the Python path points at your installation (e.g. D:\abc-xyz\Python\...), you should
+be able to directly call via cmd window or terminal. 
+
+    pip install <package_name>
+    
+If the Python path points at another Python distribution, you need to explicitly call your
+Python interpreter. You can check the Python path in various ways:
+- Open a cmd window and enter "path". Check if any path points at another Python distribution.
+- Open a cmd window and enter "python --version". Check if the version number is the one
+of your installation.
+- Take a look at your user pathes and look for any path pointing at another Python distribution
+
+In case your system path points at another Python distribution and you do not have admin rights
+(well, that might be the case for you), you can do a package installation via:
+
+    "D:\your_path_to_Python\Python.exe" -m pip install <package_name>
+    
+pip install does a "static" installation into the site-packages of your Python distribution.
+This is interesting for package releases, which should only be used and not be further developed (by you).
+If you want/need to install a package, which is still under active development (such as EBC internal packges),
+you might want to make a "dynamic" installation via egg-link. 
+
+    pip install -e <path_to_your_local_python_package>
+    
+or
+
+    "D:\your_path_to_Python\Python.exe" -m pip install -e <path_to_your_local_python_package>
+    
+The -e is important! It defines a link to <path_to_your_local_python_package>
+It will NOT going to install this package into the site-packages folder of your Python distribution.
+If you want to import this package, Python willl use the egglink to identify its path.
+If you make changes within the package, they have direct effect on the package and its import/usage.
+
 
 - [ ] Welche EBC eigenen Libraries sollen eingebunden werden, Vorschläge bitte hinzufügen
 - EBC Python Library
 - AixPy
 - [ ] Methodik, wie diese (sich in Entwicklung befindlichen) Pakete installieren lassen
-- [ ] Link zu einer Erklärung, was die unterschiedlichen Pip Installationsvarianten tun (-e, wheel...)
 - [ ] Hier muss dann auch noch der Hinweis hin, dass sie immer ihre Kommandozeile verwenden sollen.
 - [ ] Das Cycler Paket muss installiert werden (benötigt fürs plotten, sonst folgend ständig deprecated Warnungen)
 
