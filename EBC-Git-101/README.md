@@ -267,6 +267,7 @@ If you want to have a look at other tutorials, we can recommend these links:
 * [Set Up Git - (GitHub help page)](https://help.github.com/articles/set-up-git/)
 * [Git tutorial by Roger Dudler](http://rogerdudler.github.io/git-guide/)
 * [Git cheat sheet (useful commands)](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
+* [Daily Use Guide TortoiseGit] (https://tortoisegit.org/docs/tortoisegit/tgit-dug.html)
 * [Git tutorial by atlassian ](https://www.atlassian.com/git)
 
 And finally, we promised you an alternative to the command line interface. Here is the link to a video tutorial to Tortoise GIT:
