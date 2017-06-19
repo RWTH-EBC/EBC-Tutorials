@@ -136,19 +136,19 @@ You can find all example files of the basic tutorial in .../basic_coding_tutoria
 ##  Let's get startet: How to write a function in Python
 
 Aim: Write a mathematical function, which (exclusively) squares integer numbers.
-Thus, we are going to generate an Python file named example_1.py and write a function
+Thus, we are going to generate a Python file named example_1.py and write a function.
 
 	#  I am a function (defined by 'def')
 	def square_int_number(number):
 		squared_nb = number ** 2  # Square input number
 		return squared_nb
 
-functions are defined via keyword _"def"_. 
+Functions are defined via keyword _"def"_. 
 By default, functions hold brackets (optionally with input parameters), e.g.
 
 	def name_of_function(input_1, input_2, input_3)
 
-The Python interpreter (see Python.exe) is able to understand which parts of the code belong 
+The Python interpreter is able to understand which parts of the code belong 
 to the function by using _tabs_ to move the text. This combines good readability and code logic. 
 The result is returned with the _"return"_ statement. 
 Now, we are going to add a function call at the bottom.
@@ -167,8 +167,8 @@ Now, we are going to add a function call at the bottom.
 
 Code execution results in the print statement "Squared number is: 4".
 The function call seems to deliver correct results. 
-However, the function would accept floats, although we only wanted to process intergers.
-To prevent squaring of floats, we are going to at an _assert_ statement.
+However, the function would accept floats, although we only wanted to process integers.
+To prevent squaring of floats, we are going to add an _assert_ statement.
 
 	def square_int_number(number):
 		#  Assert function. Checks if input parameter is of type integer
@@ -176,15 +176,15 @@ To prevent squaring of floats, we are going to at an _assert_ statement.
 		squared_nb = number ** 2  # Square input number
 		return squared_nb
 
-isinstance checks, if the input "number" is of type integer. If we have an integer as input,
-isinstance returns True and the code processing is going to be continued. If we get a non-integer,
-isinstance returns False, which will lead to the raise of an AssertionError. 
+_isinstance_ checks, if the input "number" is of type integer. If we have an integer as input,
+_isinstance_ returns True and the code processing is going to be continued. If we get a non-integer,
+_isinstance_ returns False, which will lead to the raise of an AssertionError. 
 It can be elementary to stop code execution as early as possible, if wrong behavior occurs. 
 Assert statements can help to do this. It might save you a lot of time in code debugging, later on.
 
 Currently, we got a function call of 
 	square_int_number()
-on the highest indentation level (let's say, maximum left side ;-). 
+on the highest indentation level (let's say, maximum left side ;-)). 
 This could cause us some trouble, if we would like to re-use the module example_1.py and its function(s)
 in another module. We could use an 
 	import 
@@ -246,7 +246,7 @@ Now, we are going to add a _"docstring"_ to our function:
 		I am a docstring
 		"""
 
-The text within the the """ """ is readible, e.g. by documentation functions of IDEs Spyder and PyCharm.
+The text within the the """ """ is readible, e.g. by documentation functions of IDEs like Spyder and PyCharm.
 
 Helpful entries are:
 - Description of function (how does it work?)
@@ -255,7 +255,7 @@ Helpful entries are:
 - Annotations, References, Examples...
 
 The Numpy docstring style is a good reference for usage:
-[https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt)
+[https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt). Additionally, graphical interpreters for docstrings that come along with some IDEs highlight parts of the docstring as long as you stick to these conventions (e.g. a space before and after the colon).
 
 Now let us add an more elaborated docstring to our function:
 
@@ -288,7 +288,7 @@ Testing, especially automated testing, can save you a lot of debugging time. Dif
 
 Via unittest, pytest and co. you can test your functions and methods, if they perform the way to expect them to perform. 
 This is mainly done by defining different inputs for each function and check the output with an assert statement. 
-You can find an example pytest file under ../test_example_1.py
+You can find an example pytest file under .../test_example_1.py
 
 	class Test_Squaring(object):
 		"""
@@ -404,7 +404,7 @@ Now, we are going to add some code to generate point objects and call the get_po
 		x_coord = point_1.x
 		print('x-coordinate of point 1 is:', x_coord)
 
-Now, we are going to add another method to calculate the distance between two points
+Now, we are going to add another method to calculate the distance between two points:
 
 	def calc_distance_to_other_point(self, other_point):
 		"""
@@ -505,7 +505,7 @@ After initializing the child class, the parent class Point is initialzed with su
 "handed over" to the child class. This means, that the Building and the Energysystem class 
 hold all attributes and all methods of class Point.
 
-An example how to use this classes can be found at ../example_4.py
+An example how to use this classes can be found at .../example_4.py.
 
 
 
