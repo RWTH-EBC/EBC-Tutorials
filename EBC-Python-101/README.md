@@ -6,7 +6,7 @@
     1. [What are packages and modules?](#what-are-packages-and-modules)
 1. [How do I install Python?](#how-do-i-install-python)
 1. [Time to say goodbye](#time-to-say-goodbye)
-1. [Basic coding tutorial][#basic-coding-tutorial]
+1. [Basic coding tutorial](#basic-coding-tutorial)
 1. [Advanced concepts](#advanced-concepts)
     1. [What is a Jupyter Notebook](#what-is-a-jupyter-notebook)
     1. [Plan before you code](#plan-before-you-code)
