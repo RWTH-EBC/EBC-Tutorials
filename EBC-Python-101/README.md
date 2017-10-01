@@ -115,7 +115,7 @@ Every IDE has somewhere in its options something called "configure interpreter"
  your python folder (see Installation Guide further down). 
  The IDE will than do all the heavy lifting on its own.
 
-![Python IDE Code Interpreter and Machine](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/python_structure.png)
+![Python IDE Code Interpreter and Machine](https://github.com/RWTH-EBC/EBC-Tutorials/blob/issue26/EBC-Python-101/img/python_structure.png)
 
 - [ ] Add Link to a file that shows how to change the interpreter for the 
 relevant IDEs
