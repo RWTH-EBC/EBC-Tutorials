@@ -104,8 +104,6 @@ After the installation is done, you could fire up Notepad and write your code.
    You probably ask your advisor which IDE he or she uses and settle 
    on the same.
 
-- [ ] Abbildung Zusammenhang IDE / Sprache / Interpreter
-
 An IDE can **not** run any code without an interpreter. 
 Although PyCharm and Spyder are __Python only__ IDEs, Eclipse for 
 example is not (and even Spyder and PyCharm will have to handle different 
@@ -116,6 +114,8 @@ Every IDE has somewhere in its options something called "configure interpreter"
  (or something similar) and you just have to point it the python.exe in 
  your python folder (see Installation Guide further down). 
  The IDE will than do all the heavy lifting on its own.
+
+![Python IDE Code Interpreter and Machine](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/python_structure.png)
 
 - [ ] Add Link to a file that shows how to change the interpreter for the 
 relevant IDEs
