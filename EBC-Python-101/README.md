@@ -26,41 +26,99 @@
 
 # Introduction
 
-This is a Tutorial to use Python at our institute. This is **not** a tutorial to teach you the basics of programming or python. There are a lot better tutorials online (we included some links), we'd refer you to use those.
-So what will you find in this tutorial? You'll mainly find three things. At first we'll give a brief introduction into some aspects of programming. We want to make sure that we talk about the same things using the correct wording. If you are already familiar with these concepts: Great, if not, it may avoid some misunderstandings. The second one is an instruction how to get your python installation running. With following these instructions you'll make sure that
+This is a Tutorial to use Python at our institute. 
+This is **not** a tutorial to teach you the basics of programming or Python. 
+There are a lot better tutorials online (we included some links), 
+we'd refer you to use those.
+So what will you find in this tutorial? You'll mainly find three things. 
+At first we'll give a brief introduction into some aspects of programming. 
+We want to make sure that we talk about the same things using the correct 
+wording. If you are already familiar with these concepts: 
+Great, if not, it may avoid some misunderstandings. 
+The second one is an instruction how to get your python installation running. 
+With following these instructions you'll make sure that
 * all necessary packages are up to date
 * you can access EBC libraries
 * you don't use a version somebody may have toyed around with
 
-This will ensure that you can start working with Python without running into some nasty and unnecessary obstacles, keeping you away from getting work done.
+This will ensure that you can start working with Python without running 
+into some nasty and unnecessary obstacles, keeping you away from getting work 
+done.
 
-In the third part we'll introduce some concepts that may help you to become better at programming, fit into EBC's style of programming (something we are still developing) and give you some ideas for a best practice that we expect to save you some time. We are not without faults, so if you find better or more efficient solutions: Feel free to suggest them. In the best case you contribute to our EBC Libraries via Git (it is a version control system. You can not destroy anything, so have no fear). The concepts are backed up by examples in Jupyter Notebooks. We don't expect everybody to understand all the examples, especially not at the beginning. But if you are planning your code and move forward in your project, we hope that some of these concepts resurface in your brain and you come back here to have a look. Everything in here has, for sure, already been written, probably in a better way. But here we have everything in one place, this is the true advantage of this tutorial.
+In the third part we'll introduce some concepts that may help you to become 
+better at programming, fit into EBC's style of programming 
+(something we are still developing) and give you some ideas for a best 
+practice that we expect to save you some time. 
+We are not without faults, so if you find better or more efficient solutions: 
+Feel free to suggest them. In the best case you contribute to our EBC 
+Libraries via Git (it is a version control system. 
+You can not destroy anything, so have no fear). 
+The concepts are backed up by examples in Jupyter Notebooks. 
+We don't expect everybody to understand all the examples, 
+especially not at the beginning. 
+But if you are planning your code and move forward in your project, 
+we hope that some of these concepts resurface in your brain and you come 
+back here to have a look. Everything in here has, for sure, already been 
+written, probably in a better way. But here we have everything in one place, 
+this is the true advantage of this tutorial.
 
 In a nutshell we will
 
 * make us use all the same wording
 * get you started with the environment
 * point you to some "learn to code" tutorials
-* show you some concepts that may help you improving your coding efficiency (We made already a lot of mistakes for you, you do not have to re-do those)
+* show you some concepts that may help you improving your coding efficiency 
+(We made already a lot of mistakes for you, you do not have to re-do those)
 
-In the end, we want you to be able to use EBC's own Python libraries and even advance them. You should also recognize the advantages of object orientation and be able to use it.
+In the end, we want you to be able to use EBC's own Python libraries and 
+even advance them. You should also recognize the advantages of object 
+orientation and be able to use it.
 
 [Go back :arrow_up:](#table-of-contents)
 
 # A short introduction
 
 ## What is Python, and what is it not
-Python is a programming language. Basically, a programming language is a set of instructions to tell the PC to do something. Every programming language has it's own grammar. And they are only theoretical constructs. You can not write software just with the language definition of python.
+Python is a programming language. Basically, a programming language is a set 
+of instructions to tell the PC to do something. Every programming language 
+has it's own grammar. And they are only theoretical constructs. 
+You can not write software just with the language definition of python.
 
-So obviously, you need some more stuff to get a programming language to do work. First of all, PCs don't understand text, they understand zeros and ones. So everything you have written, must be interpreted so you need an **Interpreter** (Later on, when we tell you how to install python, we truly tell you how to install the Python Interpreter). After the installation is done, you could fire up Notepad and write your code. Although ~~all~~ most of us would not recommend this.
+So obviously, you need some more stuff to get a programming language to do 
+work. First of all, PCs don't understand text, they understand zeros and ones. 
+So everything you have written, must be interpreted so you need 
+an **Interpreter** (Later on, when we tell you how to install python, 
+we truly tell you how to install the Python Interpreter). 
+After the installation is done, you could fire up Notepad and write your code.
+ Although ~~all~~ most of us would not recommend this.
 
- The next thing you would like to use is an Integrated Development Environment (IDE), the MatLab GUI is an example of an IDE. An IDE offers you syntax highlighting, code completion and it can point out errors in your code. Furthermore it normally comes with a green play button to run your program code. And it features a [debugger](#Debugging) (yes, there is a way more efficient way on squashing bug than using print statements). The most used IDEs at our institute are PyCharme and Spyder. Eclipse and Visual Studio are rarely used (and they are a bit more complicated to configure). You probably ask your advisor which IDE he or she uses and settle on the same.
+ The next thing you would like to use is an Integrated Development 
+ Environment (IDE), the MatLab GUI is an example of an IDE. 
+ An IDE offers you syntax highlighting, code completion and it can point 
+ out errors in your code. Furthermore it normally comes with a green play
+  button to run your program code. And it features a [debugger](#Debugging) 
+  (yes, there is a way more efficient way on squashing bug than using print 
+  statements). The most used IDEs at our institute are PyCharm and Spyder.
+   Eclipse and Visual Studio are rarely used (and they are a bit more 
+   complicated to configure). 
+   You probably ask your advisor which IDE he or she uses and settle 
+   on the same.
 
 - [ ] Abbildung Zusammenhang IDE / Sprache / Interpreter
 
-An IDE can **not** run any code without an interpreter. Although PyCharme and Spyder are __Python only__ IDEs, Eclipse for example is not (and even Spyder and PyCharme will have to handle different language versions of Python). Depending on your installation, the IDE may be pre-configured to default to an Interpreter, but if your IDE is doing nothing, it is probably because it does not know how to do it. The good thing is: Every IDE has somewhere in its options something called "configure interpreter" (or something similar) and you just have to point it the python.exe in your python folder (see Installation Guide further down). The IDE will than do all the heavy lifting on its own.
+An IDE can **not** run any code without an interpreter. 
+Although PyCharm and Spyder are __Python only__ IDEs, Eclipse for 
+example is not (and even Spyder and PyCharm will have to handle different 
+language versions of Python). Depending on your installation, the IDE may be 
+pre-configured to default to an Interpreter, but if your IDE is doing nothing, 
+it is probably because it does not know how to do it. The good thing is: 
+Every IDE has somewhere in its options something called "configure interpreter"
+ (or something similar) and you just have to point it the python.exe in 
+ your python folder (see Installation Guide further down). 
+ The IDE will than do all the heavy lifting on its own.
 
-- [ ] Add Link to a file that shows how to change the interpreter for the relevant IDEs
+- [ ] Add Link to a file that shows how to change the interpreter for the 
+relevant IDEs
 
 ### Take away
 Python is the description, how to write code, the interpreter translates your code to the PC, an IDE helps with code development. Python is **not** a piece of software, it is no Graphical User Interface (GUI) and, Peter Remmen asked to mention this: It is also not Teaser.
@@ -70,7 +128,7 @@ Python is the description, how to write code, the interpreter translates your co
 ## What are packages and modules?
 Python functions are ordered in a library, each element of the library is called a package and may contain several modules. Each of the modules may contain different methods or classes. If you would like to compare it to your file system on the computer, the package is a directory, each module a file and the methods and classes are the text in your files. Each Python distribution comes with a big library, but after startup, only a part of the library is loaded and available. If you need more parts of the library, you will have to import them, so most time your code will start with several import statements and look like this
 
-``` python
+```python
 import datetime as dt
 import os.path
 import pandas as pd
@@ -257,43 +315,51 @@ You can find all example files of the basic tutorial in .../basic_coding_tutoria
 Aim: Write a mathematical function, which (exclusively) squares integer numbers.
 Thus, we are going to generate a Python file named example_1.py and write a function.
 
-	#  I am a function (defined by 'def')
-	def square_int_number(number):
-		squared_nb = number ** 2  # Square input number
-		return squared_nb
+```python
+#  I am a function (defined by 'def')
+def square_int_number(number):
+    squared_nb = number ** 2  # Square input number
+    return squared_nb
+```
 
 Functions are defined via keyword _"def"_. 
 By default, functions hold brackets (optionally with input parameters), e.g.
 
-	def name_of_function(input_1, input_2, input_3)
+```python 
+def name_of_function(input_1, input_2, input_3)
+```
 
 The Python interpreter is able to understand which parts of the code belong 
 to the function by using _tabs_ to move the text. This combines good readability and code logic. 
 The result is returned with the _"return"_ statement. 
 Now, we are going to add a function call at the bottom.
 
-	#  I am a function (defined by 'def')
-	def square_int_number(number):
-		squared_nb = number ** 2  # Square input number
-		return squared_nb
+```python 
+#  I am a function (defined by 'def')
+def square_int_number(number):
+    squared_nb = number ** 2  # Square input number
+    return squared_nb
 
-	#  Execute function
-	input_number = 2  # Input parameter
-	#  Function call
-	result_number = square_int_number(input_number)
-	#  Print statement
-	print('Squared number is:', result_number)
+#  Execute function
+input_number = 2  # Input parameter
+#  Function call
+result_number = square_int_number(input_number)
+#  Print statement
+print('Squared number is:', result_number)
+```
 
 Code execution results in the print statement "Squared number is: 4".
 The function call seems to deliver correct results. 
 However, the function would accept floats, although we only wanted to process integers.
 To prevent squaring of floats, we are going to add an _assert_ statement.
 
-	def square_int_number(number):
-		#  Assert function. Checks if input parameter is of type integer
-		assert isinstance(number, int), 'Input is not of type integer!'
-		squared_nb = number ** 2  # Square input number
-		return squared_nb
+```python 
+def square_int_number(number):
+    #  Assert function. Checks if input parameter is of type integer
+    assert isinstance(number, int), 'Input is not of type integer!'
+    squared_nb = number ** 2  # Square input number
+    return squared_nb
+```
 
 _isinstance_ checks, if the input "number" is of type integer. If we have an integer as input,
 _isinstance_ returns True and the code processing is going to be continued. If we get a non-integer,
@@ -317,20 +383,24 @@ execute every Python statement, which is called. This results into automatically
 	print('Squared number is:', result_number)
 during import. To exclude function execution we can add a 
 
-	if __name__ == '__main__': 
+```python 
+if __name__ == '__main__': 
+``` 
 	
 to the bottom. If the module example_1.py is called, its name equals main. 
 Thus, the if statement is True and all code lines within the if statement are executed. 
 However, is example_1.py is imported from another module, example_1.py is not main, any more. 
 Thus, the if statement is False.
 
-	if __name__ == '__main__':
-		#  Execute function
-		input_number = 2  # Input parameter
-		#  Function call
-		result_number = square_int_number(input_number)
-		#  Print statement
-		print('Squared number is:', result_number)
+```python 
+if __name__ == '__main__':
+    #  Execute function
+    input_number = 2  # Input parameter
+    #  Function call
+    result_number = square_int_number(input_number)
+    #  Print statement
+    print('Squared number is:', result_number)
+``` 
 
 Now, the function 
 	square_int_number(input_number)
@@ -338,20 +408,22 @@ is only called if example_1.py is directly executed.
 
 Here comes the full code:
 
-	#  I am a function (defined by 'def')
-	def square_int_number(number):
-		#  Assert function. Checks if input parameter is of type integer
-		assert isinstance(number, int), 'Input is not of type integer!'
-		squared_nb = number ** 2  # Square input number
-		return squared_nb
+```python 
+#  I am a function (defined by 'def')
+def square_int_number(number):
+    #  Assert function. Checks if input parameter is of type integer
+    assert isinstance(number, int), 'Input is not of type integer!'
+    squared_nb = number ** 2  # Square input number
+    return squared_nb
 
-	if __name__ == '__main__':
-		#  Execute function
-		input_number = 2  # Input parameter
-		#  Function call
-		result_number = square_int_number(input_number)
-		#  Print statement
-		print('Squared number is:', result_number)
+if __name__ == '__main__':
+    #  Execute function
+    input_number = 2  # Input parameter
+    #  Function call
+    result_number = square_int_number(input_number)
+    #  Print statement
+    print('Squared number is:', result_number)
+``` 
 
 In general: Try to break your code down in small, explicit functions instead of using long lines of code. 
 It increases re-usability as well as code overview.	
@@ -360,10 +432,12 @@ It increases re-usability as well as code overview.
 
 Now, we are going to add a _"docstring"_ to our function:
 
-	def square_int_number(number):
-		"""
-		I am a docstring
-		"""
+```python 
+def square_int_number(number):
+    """
+    I am a docstring
+    """
+``` 
 
 The text within the the """ """ is readible, e.g. by documentation functions of IDEs like Spyder and PyCharm.
 
@@ -378,25 +452,27 @@ The Numpy docstring style is a good reference for usage:
 
 Now let us add an more elaborated docstring to our function:
 
-	#  I am a function (defined by 'def')
-	def square_int_number(number):
-		"""
-		Returns squared value of input number.
+```python 
+#  I am a function (defined by 'def')
+def square_int_number(number):
+    """
+    Returns squared value of input number.
 
-		Parameter
-		---------
-		number : int
-			Integer input value
+    Parameter
+    ---------
+    number : int
+        Integer input value
 
-		Returns
-		-------
-		squared_nb : int
-			Squared integer output value
-		"""
-		#  Assert function. Checks if input parameter is of type integer
-		assert isinstance(number, int), 'Input is not of type integer!'
-		squared_nb = number ** 2  # Square input number
-		return squared_nb
+    Returns
+    -------
+    squared_nb : int
+        Squared integer output value
+    """
+    #  Assert function. Checks if input parameter is of type integer
+    assert isinstance(number, int), 'Input is not of type integer!'
+    squared_nb = number ** 2  # Square input number
+    return squared_nb
+``` 
 
 #  pytests and unittests - How to test your Python code
 
@@ -409,28 +485,30 @@ Via unittest, pytest and co. you can test your functions and methods, if they pe
 This is mainly done by defining different inputs for each function and check the output with an assert statement. 
 You can find an example pytest file under .../test_example_1.py
 
-	class Test_Squaring(object):
-		"""
-		I am a test class for example_1.py based on pytest
-		"""
+```python 
+class Test_Squaring(object):
+    """
+    I am a test class for example_1.py based on pytest
+    """
 
-		def test_positve_int(self):
-			"""
-			Testing method for positive integer inputs
-			"""
-			assert square_int_number(2) == 4
+    def test_positve_int(self):
+        """
+        Testing method for positive integer inputs
+        """
+        assert square_int_number(2) == 4
 
-		def test_zero(self):
-			"""
-			Testing method for input zero
-			"""
-			assert square_int_number(0) == 0
+    def test_zero(self):
+        """
+        Testing method for input zero
+        """
+        assert square_int_number(0) == 0
 
-		def test_negative_int(self):
-			"""
-			Testing method for negative integer inputs
-			"""
-			assert square_int_number(-2) == 4
+    def test_negative_int(self):
+        """
+        Testing method for negative integer inputs
+        """
+        assert square_int_number(-2) == 4
+``` 
 
 You can call the test_example_1.py with execute_pytest_example.py.
 Important: The names of the modules, which hold pytest cases, should start with test_ so that pytest is able to find the test cases.
@@ -447,113 +525,130 @@ Every dot represents one successful executed test case.
 __Objects__ can be suitable to model complex systems. Objects consist of __attributes__ and __methods__. 
 We are going to define an own "Point" object:
 
-	class Point(object):
-		"""
-		Point class
-		"""
+```python 
+class Point(object):
+    """
+    Point class
+    """
 
-		#  Initialize Point object with x and y input parameters
-		def __init__(self, x, y):
-			"""
-			Constructor of point object
+    #  Initialize Point object with x and y input parameters
+    def __init__(self, x, y):
+        """
+        Constructor of point object
 
-			Parameter
-			---------
-			x : float
-				x-coordinate in m
-			y : float
-				y-coordinate in m
-			"""
+        Parameter
+        ---------
+        x : float
+            x-coordinate in m
+        y : float
+            y-coordinate in m
+        """
 
-			#  Hand over x and y as attributes to point object (self)
-			self.x = x
-			self.y = y
+        #  Hand over x and y as attributes to point object (self)
+        self.x = x
+        self.y = y
 
-		def get_position_tuple(self):
-			"""
-			Returns position tuple of point object
+    def get_position_tuple(self):
+        """
+        Returns position tuple of point object
 
-			Returns
-			-------
-			pos : tuple (of floats)
-				Position tuple, format (x, y)
-				x : float
-					 x-coordinate in m
-				y : float
-					y-coordinate in m
-			"""
-			pos = (self.x, self.y)
-			return pos
+        Returns
+        -------
+        pos : tuple (of floats)
+            Position tuple, format (x, y)
+            x : float
+                 x-coordinate in m
+            y : float
+                y-coordinate in m
+        """
+        pos = (self.x, self.y)
+        return pos
+``` 
 
 Every object instance of class Point is initialized with 
 
-	__init__()
+```python 
+__init__()
+``` 
 
 x and y coordinates are necessary as input, e.g.
 
-	i_am_a_point = Point(x=1, y=2)
+```python 
+i_am_a_point = Point(x=1, y=2)
+``` 
 
 __self__ is just the way to explicitly hand over the generated object instance to its own methods and access its own attributes, e.g. via:
 
-	self.attribute  # Access attribute of object instance
+```python 
+self.attribute  # Access attribute of object instance
+``` 
 	
 Moreover, the Point class holds the method
 
-	get_position_tuple()
+```python 
+get_position_tuple()
+``` 
 	
 to return the position tuple. 
 
 Now, we are going to add some code to generate point objects and call the get_position_tuple() methods:
 
-	if __name__ == '__main__':
+```python 
+if __name__ == '__main__':
 
-		#  Generate two point objects
-		point_1 = Point(0, 0)
-		point_2 = Point(5, 10)
+    #  Generate two point objects
+    point_1 = Point(0, 0)
+    point_2 = Point(5, 10)
 
-		#  Execute method get_position_tuple() of both point objects
-		pos_1 = point_1.get_position_tuple()
-		pos_2 = point_2.get_position_tuple()
+    #  Execute method get_position_tuple() of both point objects
+    pos_1 = point_1.get_position_tuple()
+    pos_2 = point_2.get_position_tuple()
 
-		#  Print results (position tuples)
-		print('Position tuple of point 1:', pos_1)
-		print('Position tuple of point 2:', pos_2)
+    #  Print results (position tuples)
+    print('Position tuple of point 1:', pos_1)
+    print('Position tuple of point 2:', pos_2)
 
-		#  Get x-coordinate of point 1
-		x_coord = point_1.x
-		print('x-coordinate of point 1 is:', x_coord)
+    #  Get x-coordinate of point 1
+    x_coord = point_1.x
+    print('x-coordinate of point 1 is:', x_coord)
+``` 
 
 Now, we are going to add another method to calculate the distance between two points:
 
-	def calc_distance_to_other_point(self, other_point):
-		"""
-		Calculates distance to other point.
+```python 
+def calc_distance_to_other_point(self, other_point):
+    """
+    Calculates distance to other point.
 
-		Parameters
-		----------
-		other_point : Point object
-			Point object (of EBC Python Tutorial)
+    Parameters
+    ----------
+    other_point : Point object
+        Point object (of EBC Python Tutorial)
 
-		Returns
-		-------
-		distance : float
-			Distance between two point objects
-		"""
-		distance = ((self.y - other_point.y) ** 2 + 
-					(self.x - other_point.x) ** 2) ** (1/2)
-		return distance
+    Returns
+    -------
+    distance : float
+        Distance between two point objects
+    """
+    distance = ((self.y - other_point.y) ** 2 + 
+                (self.x - other_point.x) ** 2) ** (1/2)
+    return distance
+``` 
 
 To calculate the distance between two points, we are going to add:
 
-	#  Calculate distance between point 1 and 2
-	dist = point_1.calc_distance_to_other_point(point_2)
-	print('Distance between point 1 and 2 is:', round(dist, 2))
+```python 
+#  Calculate distance between point 1 and 2
+dist = point_1.calc_distance_to_other_point(point_2)
+print('Distance between point 1 and 2 is:', round(dist, 2))
+``` 
 
 #  Inheritance - How to reuse and extend base classes in Python
 
 We are going to add two new classes, Building and Energysystem, in example_4.py.
 Both are going to inherit from class Point.
 
+```python 
 	import example_2 as exp2
 
 
@@ -619,6 +714,7 @@ Both are going to inherit from class Point.
 			self.nominal_th_power = nominal_th_power
 			self._th_system_type = th_system_type
 			#  Another private variable/attribute
+``` 
 
 After initializing the child class, the parent class Point is initialzed with super() and 
 "handed over" to the child class. This means, that the Building and the Energysystem class 
