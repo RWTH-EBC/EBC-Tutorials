@@ -162,15 +162,20 @@ Click on Download and be a lemming, run with the herd: Download the most downloa
 To avoid confusion: When we say 'Download it from...' we mean exactly this.
 We do not mean: Install it through the 'Softwarecenter'.
 
-WinPython only works on Windows machines. However, Anaconda is platform independent.
+WinPython only works on Windows machines. However, Anaconda is platform 
+independent.
 
 Attention: For those of you, who need to work with Gurobi, gurobipy etc.:
-Please check, which is the most recent gurobipy version. If you installed
-Anaconda 3.6, but gurobipy is only available in 3.5, you need to create a
-virtual Python 3.5. environment with conda (see below).
+Please check the dependencies of the Gurobi version you are using. 
+Gurobi 7.5 is currently the most recent version at our institute (October 2017).
+Gurobi 7.5 has in interface to Python 2.7 and Python 3.6. 
+For those of you, who want/need to use open-source solvers (such as CBC or 
+GLPK solver): Consider using pyomo (Python package) as interface. 
+Pyomo is able to deal with different open-source solvers as well as 
+commercial solvers (such as Gurobi or CPLEX).
 
-3. Use the installer to install the Python distribution into the path you created
-in step 1.
+3. Use the installer to install the Python distribution into the path you 
+created in step 1.
 
 [Go back :arrow_up:](#table-of-contents)
 
