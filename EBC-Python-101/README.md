@@ -117,8 +117,12 @@ Every IDE has somewhere in its options something called "configure interpreter"
  your python folder (see Installation Guide further down). 
  The IDE will than do all the heavy lifting on its own.
 
-- [ ] Add Link to a file that shows how to change the interpreter for the 
-relevant IDEs
+
+The following figures shows an example how to change the Python interpreter
+in PyCharm. Open PyCharm settings and select Project/Project Interpreter. 
+You are able to define different interpreters for different projects.
+
+![Select Python interpreter in Pycharm](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/select_interpreter_pycharm.png)
 
 ### Take away
 Python is the description, how to write code, the interpreter translates your code to the PC, an IDE helps with code development. Python is **not** a piece of software, it is no Graphical User Interface (GUI) and, Peter Remmen asked to mention this: It is also not Teaser.
