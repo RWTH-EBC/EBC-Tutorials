@@ -117,9 +117,6 @@ Every IDE has somewhere in its options something called "configure interpreter"
 
 ![Python IDE Code Interpreter and Machine](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/python_structure.png)
 
-- [ ] Add Link to a file that shows how to change the interpreter for the 
-relevant IDEs
-
 ### Take away
 Python is the description, how to write code, the interpreter translates your code to the PC, an IDE helps with code development. Python is **not** a piece of software, it is no Graphical User Interface (GUI) and, Peter Remmen asked to mention this: It is also not Teaser.
 
