@@ -104,8 +104,6 @@ After the installation is done, you could fire up Notepad and write your code.
    You probably ask your advisor which IDE he or she uses and settle 
    on the same.
 
-- [ ] Abbildung Zusammenhang IDE / Sprache / Interpreter
-
 An IDE can **not** run any code without an interpreter. 
 Although PyCharm and Spyder are __Python only__ IDEs, Eclipse for 
 example is not (and even Spyder and PyCharm will have to handle different 
@@ -117,6 +115,7 @@ Every IDE has somewhere in its options something called "configure interpreter"
  your python folder (see Installation Guide further down). 
  The IDE will than do all the heavy lifting on its own.
 
+![Python IDE Code Interpreter and Machine](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/python_structure.png)
 
 The following figures shows an example how to change the Python interpreter
 in PyCharm. Open PyCharm settings and select Project/Project Interpreter. 
@@ -166,15 +165,20 @@ Click on Download and be a lemming, run with the herd: Download the most downloa
 To avoid confusion: When we say 'Download it from...' we mean exactly this.
 We do not mean: Install it through the 'Softwarecenter'.
 
-WinPython only works on Windows machines. However, Anaconda is platform independent.
+WinPython only works on Windows machines. However, Anaconda is platform 
+independent.
 
 Attention: For those of you, who need to work with Gurobi, gurobipy etc.:
-Please check, which is the most recent gurobipy version. If you installed
-Anaconda 3.6, but gurobipy is only available in 3.5, you need to create a
-virtual Python 3.5. environment with conda (see below).
+Please check the dependencies of the Gurobi version you are using. 
+Gurobi 7.5 is currently the most recent version at our institute (October 2017).
+Gurobi 7.5 has in interface to Python 2.7 and Python 3.6. 
+For those of you, who want/need to use open-source solvers (such as CBC or 
+GLPK solver): Consider using pyomo (Python package) as interface. 
+Pyomo is able to deal with different open-source solvers as well as 
+commercial solvers (such as Gurobi or CPLEX).
 
-3. Use the installer to install the Python distribution into the path you created
-in step 1.
+3. Use the installer to install the Python distribution into the path you 
+created in step 1.
 
 [Go back :arrow_up:](#table-of-contents)
 
