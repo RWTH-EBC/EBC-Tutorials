@@ -883,3 +883,15 @@ Handy commands:
 There are more efficient ways to debug your program code then print statements, one is the use of the Python integreated debugger pdb.
 
 [Go back :arrow_up:](#table-of-contents)
+
+### Zen of Python
+
+Want to know about the Zen of Python?
+
+```python
+import this
+```
+
+:-)
+
+[Go back :arrow_up:](#table-of-contents)
