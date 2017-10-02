@@ -93,7 +93,7 @@ If you are using your own device, you can simply download and install Git from [
 
 If you are using an EBC computer, please install Git using the Software-Center on your Desktop. It is listed as `Software Freedom Conservancy - git`.
 
-Now you are almost ready to use Git for version control. For this tutorial we will use the command line. Yes, we know that some people will prefer a GUI and we will show you how to get started with a GUI at the end of this tutorial, but to understand the concepts and fall back on when the GUI is behaving strangely, we encourage you to bear with us and the command line. In order to make your machine understand Git, you have to add your Git installation (e.g. at `C:\Program Files (x86)\Git\bin;)` to the `PATH` environmental variable ("Umgebungsvariable" on a German system):
+Now you are almost ready to use Git for version control. For this tutorial we will use the command line. Yes, we know that some people will prefer a GUI and we will show you how to get started with a GUI at the end of this tutorial, but to understand the concepts and fall back on when the GUI is behaving strangely, we encourage you to bear with us and the command line. In order to make your machine understand Git, you have to add your Git installation (e.g. at `C:\Program Files\Git\bin;)` to the `PATH` environmental variable ("Umgebungsvariable" on a German system):
 
 ![06_path](https://cloud.githubusercontent.com/assets/5516900/16152765/9cde5a92-34a3-11e6-8ff0-53feafd4bf23.gif)
 
