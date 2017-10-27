@@ -121,6 +121,12 @@ To be able to generate an SSH key, add the following variables to your system
 
 `HOME = %USERPROFILE%`
 
+(This is important because ssh later looks in %HOME%, not in %USERPROFILE%. So don't think it's redundant.)
+
+You can also set it via `cmd` e.g. by joining two pathes in front of the current `PATH` variable:
+
+`set PATH="C:\Program Files\Git\bin";"C:\Program Files\Git\cmd";%PATH%`
+
 Pathes might be different (check the pathes of your GIT installation and 
 ssh.exe location).
 
