@@ -6,7 +6,7 @@
     1. [The big picture](#the-big-picture)
 1. [Different servers](#different-servers)
 1. [Installing Git](#installing-git)
-    1.[Excurses](#excurses)
+    1. [Excursus](#excursus)
         1. [How-to generate SSH key](#how-to-generate-ssh-key)
 1. [A simple Git example](#a-simple-git-example)
     1. [Creating a new project on the server](#creating-a-new-project-on-the-server)
