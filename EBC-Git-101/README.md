@@ -6,6 +6,8 @@
     1. [The big picture](#the-big-picture)
 1. [Different servers](#different-servers)
 1. [Installing Git](#installing-git)
+    1.[Excurses](#excurses)
+        1. [How-to generate SSH key](#how-to-generate-ssh-key)
 1. [A simple Git example](#a-simple-git-example)
     1. [Creating a new project on the server](#creating-a-new-project-on-the-server)
     1. [Cloning the repo to our local machine](#cloning-the-repo-to-our-local-machine)
@@ -99,7 +101,10 @@ Now you are almost ready to use Git for version control. For this tutorial we wi
 
 
 [Go back :arrow_up:](#table-of-contents)
-### Excursus: How-to generate SSH key
+## Excursus 
+
+[Go back :arrow_up:](#table-of-contents)
+### How-to generate SSH key
 
 It might be reasonable to connect to a Git-Server via Secure Shell (SSH) instead
 of using https (e.g. due to security reasons or because of the large repo size,
