@@ -6,6 +6,8 @@
     1. [The big picture](#the-big-picture)
 1. [Different servers](#different-servers)
 1. [Installing Git](#installing-git)
+    1. [Excursus](#excursus)
+        1. [How-to generate SSH key](#how-to-generate-ssh-key)
 1. [A simple Git example](#a-simple-git-example)
     1. [Creating a new project on the server](#creating-a-new-project-on-the-server)
     1. [Cloning the repo to our local machine](#cloning-the-repo-to-our-local-machine)
@@ -97,6 +99,66 @@ Now you are almost ready to use Git for version control. For this tutorial we wi
 
 ![06_path](https://cloud.githubusercontent.com/assets/5516900/16152765/9cde5a92-34a3-11e6-8ff0-53feafd4bf23.gif)
 
+
+[Go back :arrow_up:](#table-of-contents)
+## Excursus 
+
+[Go back :arrow_up:](#table-of-contents)
+### How-to generate SSH key
+
+It might be reasonable to connect to a Git-Server via Secure Shell (SSH) instead
+of using https (e.g. due to security reasons or because of the large repo size,
+which might cause you trouble when trying to clone a repo). 
+To use SSH connections, you need a SSH keypair (private key for your local
+ maschine/acount; public key for the Git-Server):
+ 
+To be able to generate an SSH key, add the following variables to your system
+(if not existent) or append the variable values with this pathes:
+
+`Path = C:\Program Files\Git\bin;C:\Program Files\Git\cmd`
+
+`GIT_SSH = C:\Program Files\Git\usr\bin\ssh.exe`
+
+`HOME = %USERPROFILE%`
+
+(This is important because ssh later looks in %HOME%, not in %USERPROFILE%. So don't think it's redundant.)
+
+You can also set it via `cmd` e.g. by joining two pathes in front of the current `PATH` variable:
+
+`set PATH="C:\Program Files\Git\bin";"C:\Program Files\Git\cmd";%PATH%`
+
+Pathes might be different (check the pathes of your GIT installation and 
+ssh.exe location).
+
+Now you should be able to generate an SSH keypair:
+
+- Open a cmd window
+- Change your directory to your home directory with `cd %HOME%` 
+(your home profile at E.ON ERC should be named like C:\Users\abc_xyz.EONERC,
+depending on your ERC tag).
+- Generate .ssh folder with `mkdir .ssh` 
+- Generate SSH keypair with `ssh-keygen -t rsa -C "$your_email"`
+- Save the SSH keypair to your user acount (.ssh folder)
+- Add a passphrase to your SSH key (password to use your private key)!
+- Now the keypair (id_rsa and id_rsa.pub) should existin within your .ssh 
+folder
+- Now you have to add your public SSH key to each Git-Server, you would like 
+to use (e.g. add the SSH public key to your Github account)
+- Copy public SSH key with `type %userprofile%\.ssh\id_rsa.pub | clip` 
+(you will not be able to see any reaction in your cmd window. That's fine.)
+- Go to your Git-Account (e.g. login into Github)
+- Go to settings and search for SSH key settings
+- Add a new SSH key (paste ssh public key info into ssh info box/field/whatever...)
+- Save your SSH key
+- Done
+
+Further information can be found at:
+
+http://docs.gitlab.com/ce/gitlab-basics/create-your-ssh-keys.html
+
+http://docs.gitlab.com/ce/ssh/README.html
+
+
 [Go back :arrow_up:](#table-of-contents)
 # A simple Git example
 
@@ -123,16 +185,23 @@ At this moment, the repo is empty and exists only on the server. Using the visua
 [Go back :arrow_up:](#table-of-contents)
 ## Cloning the repo to our local machine
 
-Now we want to start working with this repository. In a limited way, some Git platforms will allow us to modify files
-on their web interface, but usually we will want to have the repo locally and work there. Thus, we *clone* the repo to our local machine. To do that, we use the command `git clone <server address of our new repo>` in the command prompt (right-click on the image and chose "show image" for a larger version):
+Now we want to start working with this repository. 
+In a limited way, some Git platforms will allow us to modify files
+on their web interface, but usually we will want to have the repo locally 
+and work there. Thus, we *clone* the repo to our local machine.
+ To do that, we use the command `git clone <server address of our new repo>` 
+ in the command prompt (right-click on the image and chose "show image" 
+ for a larger version):
 
 ![11_clone](https://cloud.githubusercontent.com/assets/5516900/16154153/e0477fb0-34a9-11e6-8280-e3e211c024fe.gif)
 
-We do get a warning that we seem to have cloned an empty repository, but as this is what we expected, we will not worry about that. Instead, let's go back to the concept view to see what happened:
+We do get a warning that we seem to have cloned an empty repository, 
+but as this is what we expected, we will not worry about that. 
+Instead, let's go back to the concept view to see what happened:
 
 ![10_clone](https://cloud.githubusercontent.com/assets/5516900/16154278/632f4250-34aa-11e6-85ae-62b3765f3121.png)
 
-With `git clone https://...` we created a local repository that is linked to the server repo by the address we gave with the command. Now, the repo exists twice, on the server, and on our local machine. Also, the working copy that we can see in the Windows file system shows us the empty repo. we see a directory that is empty except for the `.git` folder, that indicates that this directory is in fact a git repo:
+With `git clone https://...` (or with SSH-key access `git clone git@...`)we created a local repository that is linked to the server repo by the address we gave with the command. Now, the repo exists twice, on the server, and on our local machine. Also, the working copy that we can see in the Windows file system shows us the empty repo. we see a directory that is empty except for the `.git` folder, that indicates that this directory is in fact a git repo:
 
 ![12_files](https://cloud.githubusercontent.com/assets/5516900/16154403/f3d9c438-34aa-11e6-8fea-d85c2d0e5f3a.png)
 
