@@ -94,13 +94,15 @@ For instance, we can try to minimize a previously added variable, which we calle
 my_model.setObjective(var, gp.GRB.MINIMIZE)
 ```
 
-If we try to maximize an expression, we can either minimize it's negative value or use `gp.GRB.MAXIMIZE`.
-
 The **sixth** step adds constraints to our model.
 
 In a **seventh* step, we can optionally specify certain solver parameters.
 
 **Next**, we solve our model and hope to receive an optimal solution.
+
+``` python
+my_model.optimize()
+```
 
 If we succeed and our model is feasible and bounded, we can then retrieve our optimal solution in a **ninth** step.
 
@@ -158,14 +160,91 @@ All of these variables have a lower bound of -20 and an upper bound of 100.
 If you have specific bounds for each temperature, you can provide them by using a second list that holds these values.
 The internal names of these temperatures are unique and unambiguous.
 They are temp_0, temp_1, ... temp_99.
+Please note that names do not have whitespaces.
+You can use underscores to separate certain parts of the naming.
 
 [Go back :arrow_up:](#table-of-contents)
 
+###Objective functions
+
+Previously, we explained how minimization works.
+If we try to maximize an `expression`, we can either minimize it's negative value or use `gp.GRB.MAXIMIZE`.
+
+``` python
+model.setObjective(expression, gp.GRB.MAXIMIZE)
+```
+
+This expression can be any mathematical expression.
+For example, we can either define a new decision variable (e.g. `dvar`) that shall be optimized, or we can use a mathematical term (e.g. `var_1 + var_2`).
 
 [Go back :arrow_up:](#table-of-contents)
+
+##Adding constraints
+
+Adding constraints is typically the most important part of the model and usually takes up the largest space of your code.
+We strongly advise you to use an easy to read notation.
+Albeit this contradicts all previous remarks regarding coding style, please **do not** desperately stick to the 80 characters rule if it impedes readability.
+Readability is one of the most important aspects of your code since it allows you to easily maintain your model and helps others to understand your model.
+Therefore, if an equation uses 85 characters, you should typically not try to shorten your variable names or introduce linebreaks that impede readability.
+
+Having said this, adding constraints is typically just as straightforward as adding new variables to your model.
+
+You can **add an individual constraint**, e.g. the computation of investment costs of a certain device just by writing:
+``` python
+model.addConstr(inv == sum(x[dev] * c_inv[dev] for dev in ("chp", "hp", "boi")),
+                "Investment_costs")
+```
+
+In this constraint, a variable `inv` is equal to `x["chp"] * c_inv["chp"] + x["hp"] * c_inv["hp"] + x["boi"] * c_inv["boi"]` (whatever these variables might mean). 
+Furthermore, our constraint has a name *Investment_costs*.
+
+Older versions of gurobipy were sometimes strict regarding ordering.
+Nowadays, the ordering is not relevant.
+You can either write the decision variables on the left hand side or the right hand side or on both sides.
+Furthermore, you can mix up multiplications, meaning that `x["chp"] * c_inv["chp"]` will yield the same result as `c_inv["chp"] * x["chp"]`.
+
+In our constraint, you see `==` to enforce that the left hand side is equal to the right hand side.
+If you intend to model relations, you can do so by writing `<=` or `>=`.
+
+Gurobi allows for using summations.
+You see an example of this summation in our constraint.
+Additionally, you can also place multiple summations in one expression `sum(sum(sum ... for ...) for ...) for ...)`.
+
+A slightly advanced feature to improve readability is defining variables as *placeholders*.
+These are not decision variables and do not have to be (and should not!!!) in the addVar-section.
+You could for example use the following snippet to improve readability:
+``` python
+sum_invests = sum(x[dev] * c_inv[dev] for dev in ("chp", "hp", "boi"))
+model.addConstr(inv == sum_invests,
+                "Investment_costs")
+```
+
+Please note that `sum_invests` has to be defined before using it within addConstr.
+`sum_invests` may also be used in other constraints.
+
+If you intend to **add multiple constraints** that follow a certain logic, you can create a loop and add individual constraints.
+For example, if the temperature in a room must not increase by more than 2 K in consecutive time steps, you can model this as follows:
+
+``` python
+for time in range(1, 100):
+    model.addConstr(temperature[time] <= temperature[time-1] + 2,
+                    "Max_temp_increase_"+str(time))
+```
+
 [Go back :arrow_up:](#table-of-contents)
+
+##Setting parameters
+
 [Go back :arrow_up:](#table-of-contents)
+
+##Solving a model
+
 [Go back :arrow_up:](#table-of-contents)
+
+##Retrieving the solution
+
 [Go back :arrow_up:](#table-of-contents)
-[Go back :arrow_up:](#table-of-contents)
+
+##Debugging
+
 [Go back :arrow_up:](#table-of-contents)
