@@ -104,7 +104,7 @@ After the installation is done, you could fire up Notepad and write your code.
    You probably ask your advisor which IDE he or she uses and settle 
    on the same.
 
-An IDE can **not** run any code without an interpreter. 
+An IDE **cannot** run any code without an interpreter. 
 Although PyCharm and Spyder are __Python only__ IDEs, Eclipse for 
 example is not (and even Spyder and PyCharm will have to handle different 
 language versions of Python). Depending on your installation, the IDE may be 
@@ -189,7 +189,7 @@ created in step 1.
 ## Working with Anaconda's environments
 
 When using python often version conflicts occur. This primarily affects v2.X vs. 3.X. By the way, for Anaconda there exist <Path-to-your-Anaconda-folder>\Scripts\2to3.exe (at least speaking for Windows).
-Anyway, it might be beneficious to have multiple python environments. After creating and activating one of these 
+Anyway, it might be beneficial to have multiple python environments. After creating and activating one of these 
 environments you force your current console to use this particular python version.
 
 Here are two examples how to create environments (use any python=<version> you want):
@@ -197,7 +197,7 @@ Here are two examples how to create environments (use any python=<version> you w
     conda create --name py27 python=2.7 anaconda
     conda create --name py34 python=3.4 anaconda
 
-Hereby, "py27" and "py34" are just exemplaric names for your enverionment (<env-name>). Afterwards you will 
+Hereby, "py27" and "py34" are just exemplary names for your environment (<env-name>). Afterwards you will 
 find an almost full new installation of Anaconda in the folder <Path-to-your-Anaconda-folder>\envs\<env-name>
 
 Then you can use
@@ -219,7 +219,7 @@ Check your current `PATH`variable by entering `echo %PATH%` in your console (or 
 You receive all folders that are in Windows' `PATH` environment variable. Maybe you find one, two or even more 
 python installation folders in this `PATH` variable. Yes, the separation character is a semicolon and there is no 
 line break, which makes it a bit difficult to read. But eventually help yourself with a text editor.
-Anyhow, the command `python` will find the python.exe in the first folder of youer `PATH` variable, containing a python.exe.
+Anyhow, the command `python` will find the python.exe in the first folder of your `PATH` variable, containing a python.exe.
 
 In order to define temporarily the python folder you want to use for the current console session, 
 create a \*.bat file with kind of the following content:
@@ -269,7 +269,7 @@ In case your system path points at another Python distribution and you do not ha
     
 pip install does a "static" installation into the site-packages of your Python distribution.
 This is interesting for package releases, which should only be used and not be further developed (by you).
-If you want/need to install a package, which is still under active development (such as EBC internal packges),
+If you want/need to install a package, which is still under active development (such as EBC internal packages),
 you might want to make a "dynamic" installation via egg-link. 
 
     pip install -e <path_to_your_local_python_package>
