@@ -165,7 +165,7 @@ You can use underscores to separate certain parts of the naming.
 
 [Go back :arrow_up:](#table-of-contents)
 
-###Objective functions
+## Objective functions
 
 Previously, we explained how minimization works.
 If we try to maximize an `expression`, we can either minimize it's negative value or use `gp.GRB.MAXIMIZE`.
@@ -179,7 +179,7 @@ For example, we can either define a new decision variable (e.g. `dvar`) that sha
 
 [Go back :arrow_up:](#table-of-contents)
 
-##Adding constraints
+## Adding constraints
 
 Adding constraints is typically the most important part of the model and usually takes up the largest space of your code.
 We strongly advise you to use an easy to read notation.
@@ -233,18 +233,74 @@ for time in range(1, 100):
 
 [Go back :arrow_up:](#table-of-contents)
 
-##Setting parameters
+## Setting parameters
+
+
+After we have finished adding our variables, we can optionally set parameters.
+
+These can either be solver parameters or variable related settings.
+
+For example, if we want to force Gurobi to primarily branch on a certain variable `x`, we can set the BranchPriority:
+
+```python 
+x.BranchPriority = 100
+```
+
+If we want to set a maximum time limit or the number of parallel threads, we do so by writing:
+```python 
+model.Params.TimeLimit = 3600  # in seconds
+model.Params.Threads = 4       # Maximum 4 threads
+```
 
 [Go back :arrow_up:](#table-of-contents)
 
-##Solving a model
+## Solving a model
+
+Solving a model is as easy as calling the optimize function:
+
+```python 
+model.optimize()
+```
+
+At this point, your model is transfered to Gurobi's C/C++ application and solved with the specified parameters.
+At this point, you should see some log-file in your console describing the current process of the optimization.
+
+Please note that since your model is not directly solved after adding individual constraints, the order of adding constraints is irrelevant.
+Also, the position of specifying an objective is not important. 
+However, we advise you to set the objective after adding variables, so that we have a more uniform character of our models.
 
 [Go back :arrow_up:](#table-of-contents)
 
-##Retrieving the solution
+## Retrieving the solution
+
+If the solver found at least one feasible (hopefully the optimal) solution within the giving time limit, you can now retrieve this solution.
+
+You can read the solution by querying the .X argument of your variables.
+For instance, the value of variable `var` in the optimal solution is read with:
+
+```python 
+result_var = var.X
+```
+
+You can now save all variables that are necessary for your postprocessing and return them.
 
 [Go back :arrow_up:](#table-of-contents)
 
-##Debugging
+## Debugging
+
+Errors can occur at multiple steps.
+If your error occurs before solving the model, you can use a regular Python debugger to investigate the exact position of your error and hopefully solve it.
+
+If your model is infeasible, you can usually return to a step in which your model used to work and try to analyze which change led to the error.
+Alternatively, you can compute the so called Irreducible Inconsistent Subsystem (IIS), which is the smallest subset of your equations that lead to a contradiction.
+
+You can compute the IIS by running the following command.
+Please note that this results in an error (*cannot compute IIS on a feasible model*) if your model is fine!
+```python 
+model.computeIIS()
+model.write("model.ilp")
+```
+
+When computing and reading the IIS file stored in "model.ilp", you will definitely benefit from using names for constraints and variables!
 
 [Go back :arrow_up:](#table-of-contents)
