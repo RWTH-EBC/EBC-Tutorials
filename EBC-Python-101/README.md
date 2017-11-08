@@ -173,9 +173,13 @@ Please check the dependencies of the Gurobi version you are using.
 Gurobi 7.5 is currently the most recent version at our institute (October 2017).
 Gurobi 7.5 has in interface to Python 2.7 and Python 3.6. 
 For those of you, who want/need to use open-source solvers (such as CBC or 
-GLPK solver): Consider using pyomo (Python package) as interface. 
+GLPK solver): Consider using pyomo or ortools (both Python packages) as interface. 
 Pyomo is able to deal with different open-source solvers as well as 
 commercial solvers (such as Gurobi or CPLEX).
+Ortools is a package distributed by Google that automatically installs CBC and
+allows for coupling with other solvers like Gurobi or SCIP. If you are using
+Windows, you can easily install ortools through pip ("pip install ortools").
+If you are using Linux or Mac, please refer to the [official installation guide] (https://developers.google.com/optimization/).
 
 3. Use the installer to install the Python distribution into the path you 
 created in step 1.
