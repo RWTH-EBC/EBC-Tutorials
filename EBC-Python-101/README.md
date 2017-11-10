@@ -21,6 +21,7 @@
             1. [Make TeX render your Text](#make-tex-render-your-text)
     1. [Object Orientation](#object-orientation)
     1. [Debugging](#debugging)
+    1. [Testing](#testing)
 
 ﻿﻿**This is currently under construction**
 
@@ -886,6 +887,13 @@ Handy commands:
 ### Take away
 There are more efficient ways to debug your program code then print statements, one is the use of the Python integreated debugger pdb.
 
+[Go back :arrow_up:](#table-of-contents)
+
+## Testing
+This section should introduce the method of testing code. Testing code is a simple and effective way to ensure a certain state of code quality. It can be used to test certain calculations and methods or / and can be used to test the functionality of certain program parts.
+
+### Take away
+This section should get you in touch with testing code. Writing a test is simple and useful. With additional features like automated testing with Travis-CI (Link) and gitlab-runner (Link) its and feature which gives you direct feedback about your code.
 [Go back :arrow_up:](#table-of-contents)
 
 ### Zen of Python
