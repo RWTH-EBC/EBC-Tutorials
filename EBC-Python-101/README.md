@@ -885,15 +885,52 @@ Handy commands:
 `l`: list source code for the current file (default: 11 lines including the being executed)
 
 ### Take away
-There are more efficient ways to debug your program code then print statements, one is the use of the Python integreated debugger pdb.
+There are more efficient ways to debug your program code then print statements, one is the use of the Python integrated debugger pdb.
 
 [Go back :arrow_up:](#table-of-contents)
 
 ## Testing
-This section should introduce the method of testing code. Testing code is a simple and effective way to ensure a certain state of code quality. It can be used to test certain calculations and methods or / and can be used to test the functionality of certain program parts.
+This section should introduce the method of testing code. Testing code is a simple and effective way to ensure a certain state of code quality. It can be used to test certain calculations and methods or / and can be used to test the functionality of program parts.
+
+As we are in the python section of the EBC-Tutorials, we will cover a bit of python code testing with py.test. As an example explains more then a hundred words and we are at the Institute for Energy Efficient Buildings and Indoor Climate, we cover a simple test related to a building calculation. We assume that we wrote a python program which contains a class, e.g. Building. This class has the attributes area and height. As we need the volume too, we are calculating this volume with a method calc_volume. With this simple example we want to test this method and check if the output of this method is right. So let's start with the code:
+
+```python
+
+class Building(object):
+    """ docstring goes here
+    """
+
+    self.area = None # in [m2]
+    self.height = None # in [m]
+
+    def calc_volume(self):
+      """ again the docstring
+      """
+      volume = self.area * self.height
+
+      return volume
+```
+
+So thats it. Now we want to make sure that this method works and returns the right volume. Let's do it with a test. Therefore we create a folder within our python package (for examples how testing works have a look at [TEASER](https://github.com/RWTH-EBC/TEASER)) and name it tests. In this folder we create a testfile, e.g. test_building.
+In this test file we create a test function for example test_building_volume_calculation. This test will then be tested automatically using py.test.
+Let's start with the test code:
+```python
+def test_building_volume_calcualtion():
+    from your_project.Building import Building
+    bldg = Building()
+    bldg.area = 10
+    bldg.height = 3
+
+    assert round(bldg.calc_volume(), 2) == 30.00
+```
+
+To trigger the code for testing you simple execute py.test or pytest (more infos in the docu [pytest](https://docs.pytest.org/en/latest/)) out of a cmd within your project root. It will search for tests and execute the tests. It gives you feedback whether it fails or it passes.
+
+Thats it! Keep it simple!
+
 
 ### Take away
-This section should get you in touch with testing code. Writing a test is simple and useful. With additional features like automated testing with Travis-CI (Link) and gitlab-runner (Link) its and feature which gives you direct feedback about your code.
+This section should get you in touch with testing code. Writing a test is simple and useful. With additional features like automated testing with [Travis-CI](https://docs.travis-ci.com/) (Very straight forward) and [gitlab-runner](https://about.gitlab.com/2016/03/01/gitlab-runner-with-docker/) (Not sure if this is still up to date), you do not even need to trigger the tests by yourself. In addition you can use tools like [coveralls.io](https://coveralls.io/) to do automated reporting and coverage testing of your program. All in all strong and useful add-ons. 
 [Go back :arrow_up:](#table-of-contents)
 
 ### Zen of Python
