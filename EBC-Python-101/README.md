@@ -197,12 +197,12 @@ Here are two examples how to create environments (use any python=<version> you w
     conda create --name py27 python=2.7 anaconda
     conda create --name py34 python=3.4 anaconda
 
-Hereby, "py27" and "py34" are just exemplary names for your environment (<env-name>). Afterwards you will 
-find an almost full new installation of Anaconda in the folder <Path-to-your-Anaconda-folder>\envs\<env-name>
+Hereby, "py27" and "py34" are just exemplary names for your environment (\<env-name\>). Afterwards you will 
+find an almost full new installation of Anaconda in the folder \<Path-to-your-Anaconda-folder\>\envs\\<env-name\>
 
 Then you can use
 
-    conda create --name py27 python=2.7 anaconda
+    activate <env-name>
     
 to activate the desired environment.
 
