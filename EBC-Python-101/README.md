@@ -927,7 +927,8 @@ def test_building_volume_calcualtion():
 To trigger the code for testing you simple execute py.test or pytest (more infos in the docu [pytest](https://docs.pytest.org/en/latest/)) out of a cmd within your project root. It will search for tests and execute the tests. It gives you feedback whether it fails or it passes.
 
 Thats it! Keep it simple!
-To learn more about how to write tests you can have a look at the [Basic Coding Tutorial](https://github.com/RWTH-EBC/EBC-Tutorials/tree/pytests/EBC-Python-101/basic_coding_tutorial).
+
+To learn more about how to write tests you can have a look at the [Basic Coding Tutorial](https://github.com/RWTH-EBC/EBC-Tutorials/tree/master/EBC-Python-101/basic_coding_tutorial).
 
 ### Take away
 This section should get you in touch with testing code. Writing a test is simple and useful. With additional features like automated testing with [Travis-CI](https://docs.travis-ci.com/) (Very straight forward) and [gitlab-runner](https://about.gitlab.com/2016/03/01/gitlab-runner-with-docker/) (Not sure if this is still up to date), you do not even need to trigger the tests by yourself. In addition you can use tools like [coveralls.io](https://coveralls.io/) to do automated reporting and coverage testing of your program. All in all strong and useful add-ons. 
