@@ -158,7 +158,7 @@ For instance, the folder could be named with your ERC tag, e.g. D:\abc-xyz\Pytho
 
 2. Download a current Python distribution, such as Anaconda or WinPython.
 - For Anaconda use this link:
-[Anaconda](https://www.continuum.io/downloads)
+[Anaconda](https://www.anaconda.com/download/)
 - For WinPython go to:
 [WinPython Download Site](http://winpython.github.io/#releases).
 
