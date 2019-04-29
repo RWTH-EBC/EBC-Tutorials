@@ -210,7 +210,7 @@ With `git clone https://...` (or with SSH-key access `git clone git@...`)we crea
 
 ### Creating example1.txt
 
-Now we can start to demonstrate a few Git features and workflows. First we'll add an empty text file to the working copy (The green symbol on the newly created text file is added by Tortoise Git, a GUI that we will talk about in a short while. Please ignore the symbol for now):
+Now we can start to demonstrate a few Git features and workflows. First we'll add an empty text file to the working copy (The green symbol on the newly created text file is added by Tortoise Git, a GUI that we will talk about in a short while. Please ignore the symbol for now. If you cannot see the `.git` folder, please [enable visibility of hidden folders](https://support.microsoft.com/en-us/help/14201/windows-show-hidden-files).):
 
 ![13_newfile](https://cloud.githubusercontent.com/assets/5516900/16154534/a136e660-34ab-11e6-89e5-7aca9feb1a42.gif)
 
