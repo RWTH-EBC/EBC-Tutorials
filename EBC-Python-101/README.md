@@ -300,7 +300,7 @@ This is the part, where we would like to wish you good bye for some time. Go awa
 
 - For those of you who read, [A Byte of Python](http://python.swaroopch.com/) is not only a silly pun but also a good introduction to Python. May take you some days to work through it.
 - If you are really ambitious, you may want to take the really good (but also really time consuming) Python course on [edx](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-8).
-- We'd also suggest that you take a short look at pandas, this is a package that can really help you to get work done. There is a [10 minutes to pandas](http://pandas.pydata.org/pandas-docs/stable/10min.htmlhttp://pandas.pydata.org/pandas-docs/stable/10min.html) guide, we are sure this won't be the 10 most wasted minutes in your life (remember the "cute cat" videos you watched last week? Or the last lecture you attended?).
+- We'd also suggest that you take a short look at pandas, this is a package that can really help you to get work done. There is a [10 minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html) guide, we are sure this won't be the 10 most wasted minutes in your life (remember the "cute cat" videos you watched last week? Or the last lecture you attended?).
 - For specific questions on programming, [stackoverflow](http://stackoverflow.com/) is normally the place to go.
 
 How deep you dive into learning to code is probably up to your interest and specific needs. We think that the ability to code efficiently is a key requirement (but we are also the guys that fancy [octocat](https://octodex.github.com/), so your mileage may vary). But before you continue, you should have at least an idea about these concepts (and if all of the concepts below are already clear to you: You may directly proceed):
@@ -891,7 +891,7 @@ There are more efficient ways to debug your program code then print statements, 
 ## Testing
 This section should introduce the method of testing code. Testing code is a simple and effective way to ensure a certain state of code quality. It can be used to test certain calculations and methods or / and can be used to test the functionality of program parts.
 
-As we are in the python section of the EBC-Tutorials, we will cover a bit of python code testing with py.test. As an example explains more then a hundred words and we are at the Institute for Energy Efficient Buildings and Indoor Climate, we cover a simple test related to a building calculation. We assume that we wrote a python program which contains a class, e.g. Building. This class has the attributes area and height. As we need the volume too, we are calculating this volume with a method calc_volume. With this simple example we want to test this method and check if the output of this method is right. So let's start with the code:
+As we are in the python section of the EBC-Tutorials, we will cover a bit of python code testing with py.test. As an example explains more than a hundred words and we are at the Institute for Energy Efficient Buildings and Indoor Climate, we cover a simple test related to a building calculation. We assume that we wrote a python program which contains a class, e.g. Building. This class has the attributes area and height. As we need the volume too, we are calculating this volume with a method calc_volume. With this simple example we want to test this method and check if the output of this method is right. So let's start with the code:
 
 ```python
 

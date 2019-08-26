@@ -37,7 +37,7 @@ Now, we are going to add a function call at the bottom.
 Code execution results in the print statement "Squared number is: 4".
 The function call seems to deliver correct results. 
 However, the function would accept floats, although we only wanted to process intergers.
-To prevent squaring of floats, we are going to at an _assert_ statement.
+To prevent squaring of floats, we are going to add an _assert_ statement.
 
 	def square_int_number(number):
 		#  Assert function. Checks if input parameter is of type integer
@@ -126,7 +126,7 @@ Helpful entries are:
 The Numpy docstring style is a good reference for usage:
 [https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt)
 
-Now let us add an more elaborated docstring to our function:
+Now let us add a more elaborated docstring to our function:
 
 	#  I am a function (defined by 'def')
 	def square_int_number(number):
@@ -155,7 +155,7 @@ Testing, especially automated testing, can save you a lot of debugging time. Dif
 - unittest (Python in-built)
 - pytest
 
-Via unittest, pytest and co. you can test your functions and methods, if they perform the way to expect them to perform. 
+Via unittest, pytest and co. you can test if your functions and methods perform the wayyou expect them to perform. 
 This is mainly done by defining different inputs for each function and check the output with an assert statement. 
 You can find an example pytest file under ../test_example_1.py
 
