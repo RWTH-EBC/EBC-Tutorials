@@ -891,7 +891,7 @@ There are more efficient ways to debug your program code then print statements, 
 ## Testing
 This section should introduce the method of testing code. Testing code is a simple and effective way to ensure a certain state of code quality. It can be used to test certain calculations and methods or / and can be used to test the functionality of program parts.
 
-As we are in the python section of the EBC-Tutorials, we will cover a bit of python code testing with py.test. As an example explains more then a hundred words and we are at the Institute for Energy Efficient Buildings and Indoor Climate, we cover a simple test related to a building calculation. We assume that we wrote a python program which contains a class, e.g. Building. This class has the attributes area and height. As we need the volume too, we are calculating this volume with a method calc_volume. With this simple example we want to test this method and check if the output of this method is right. So let's start with the code:
+As we are in the python section of the EBC-Tutorials, we will cover a bit of python code testing with py.test. As an example explains more than a hundred words and we are at the Institute for Energy Efficient Buildings and Indoor Climate, we cover a simple test related to a building calculation. We assume that we wrote a python program which contains a class, e.g. Building. This class has the attributes area and height. As we need the volume too, we are calculating this volume with a method calc_volume. With this simple example we want to test this method and check if the output of this method is right. So let's start with the code:
 
 ```python
 

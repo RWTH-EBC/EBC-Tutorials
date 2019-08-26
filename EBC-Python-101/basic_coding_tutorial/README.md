@@ -155,7 +155,7 @@ Testing, especially automated testing, can save you a lot of debugging time. Dif
 - unittest (Python in-built)
 - pytest
 
-Via unittest, pytest and co. you can test your functions and methods, if they perform the way to expect them to perform. 
+Via unittest, pytest and co. you can test if your functions and methods perform the wayyou expect them to perform. 
 This is mainly done by defining different inputs for each function and check the output with an assert statement. 
 You can find an example pytest file under ../test_example_1.py
 
