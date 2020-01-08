@@ -9,6 +9,7 @@
     1. [Excursus](#excursus)
         1. [How-to generate SSH key](#how-to-generate-ssh-key)
 1. [A simple Git example](#a-simple-git-example)
+    1. [Set credentials on RWTH Git server](#set-credentials-on-rwth-git-server)
     1. [Creating a new project on the server](#creating-a-new-project-on-the-server)
     1. [Cloning the repo to our local machine](#cloning-the-repo-to-our-local-machine)
     1. [Commiting a text file to the repo](#commiting-a-text-file-to-the-repo)
@@ -166,6 +167,14 @@ For this example, we will use the RWTH GitLab Server. The appearance of GitLab
 has changed a bit since we created this tutorial, but we hope you will find your
 way around nonetheless. If you have no access to that server, any other Git
 Server is pretty similar.
+
+[Go back :arrow_up:](#table-of-contents)
+## Set credentials on RWTH Git server
+
+After logging into RWTH GitLab at [https://git.rwth-aachen.de/](https://git.rwth-aachen.de/) for the first time via _DFN-AAI Single Sign-On_, the first thing to do is to set a password for the `git.rwth-aachen.de` server.  
+For this purpose click on the profile icon in the upper right corner --> Settings --> Password --> Set a new password of your choice --> Save password.  
+Be aware that your username is normally `forename.surname`. If you interact with this server URL via Git and a username and password is requested, this one is meant. 
+Your RWTH TIM credentials (DFN-AAI Single Sign-On) can only be used to access the web interface of this GitLab server.
 
 [Go back :arrow_up:](#table-of-contents)
 ## Creating a new project on the server
