@@ -33,3 +33,6 @@ __pycache__/
 *.eggs
 dist
 *.pypirc
+
+#jupyter
+*.ipynb_checkpoints
