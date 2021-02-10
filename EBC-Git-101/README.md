@@ -34,7 +34,7 @@ The intended audience of this tutorial are students with no prior experience in 
 [Go back :arrow_up:](#table-of-contents)
 # Motivation: Why version control?
 
-There are many good reasons for using version control and we couldn't agree more with Michael Tiller's [What Engineers Need to Know About Version Control](http://blog.xogeny.com/blog/version-control/). We encourage you to take a minute and read that blog post. (Also, we like the image he uses to illustrate the dangers of not using version control.) In case you feel like [tl;dr](https://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn't_read) (which you shouldn't) here is quick summary of the main arguments for using version control:
+There are many good reasons for using version control and we couldn't agree more with Michael Tiller's [What Engineers Need to Know About Version Control](http://whiteboard.modelica.university/blog/version-control/). We encourage you to take a minute and read that blog post. (Also, we like the image he uses to illustrate the dangers of not using version control.) In case you feel like [tl;dr](https://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn't_read) (which you shouldn't) here is quick summary of the main arguments for using version control:
 
 * **Danger**: You can lose work by computer crashes or accidentally deleting/not saving. Version control helps to prevent that.
 * **History**: Especially when writing a thesis or developing code (e.g. in Modelica or Python), many people make safety copies along the way, resulting in file names like `thesis_2016-06-17_v4_corrected_final.docx` (often followed by `thesis_2016-06-17_v4_corrected_final2.docx`...)  or  `HeatingSystem_test-4_-new-control_valid.mo`. Version control helps to prevent that.
