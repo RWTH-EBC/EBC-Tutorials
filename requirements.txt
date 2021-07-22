@@ -1,3 +1,5 @@
+### Tested with Python 3.7.10
+# Necessary for ./EBC-Python-101/Plotting.ipynb
 Cycler==0.10.0
 numpy==1.21.1
 pandas==1.3.0
