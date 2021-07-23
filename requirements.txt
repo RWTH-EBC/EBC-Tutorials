@@ -6,4 +6,4 @@ matplotlib==3.4.2
 numpy==1.21.1
 Cycler==0.10.0
 # Necessary for ./EBC-Python-101/ObjectOrientation.ipynb
-xlrd=2.0.1
+xlrd==2.0.1
