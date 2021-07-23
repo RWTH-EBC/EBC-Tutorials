@@ -1,6 +1,9 @@
 ### Tested with Python 3.7.10
-# Necessary for ./EBC-Python-101/Plotting.ipynb
-Cycler==0.10.0
-numpy==1.21.1
+# Necessary for ./EBC-Python-101/Plotting.ipynb AND ./EBC-Python-101/ObjectOrientation.ipynb
 pandas==1.3.0
 matplotlib==3.4.2
+# Necessary for ./EBC-Python-101/Plotting.ipynb
+numpy==1.21.1
+Cycler==0.10.0
+# Necessary for ./EBC-Python-101/ObjectOrientation.ipynb
+xlrd=2.0.1
