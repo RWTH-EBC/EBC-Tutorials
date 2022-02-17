@@ -118,7 +118,7 @@ Every IDE has somewhere in its options something called "configure interpreter"
 
 ![Python IDE Code Interpreter and Machine](https://github.com/RWTH-EBC/EBC-Tutorials/blob/master/EBC-Python-101/img/python_structure.png)
 
-The following figures shows an example how to change the Python interpreter
+The following figure shows an example how to change the Python interpreter
 in PyCharm. Open PyCharm settings and select Project/Project Interpreter. 
 You are able to define different interpreters for different projects.
 
@@ -172,7 +172,7 @@ independent.
 Attention: For those of you, who need to work with Gurobi, gurobipy etc.:
 Please check the dependencies of the Gurobi version you are using. 
 Gurobi 7.5 is currently the most recent version at our institute (October 2017).
-Gurobi 7.5 has in interface to Python 2.7 and Python 3.6. 
+Gurobi 7.5 has an interface to Python 2.7 and Python 3.6. 
 For those of you, who want/need to use open-source solvers (such as CBC or 
 GLPK solver): Consider using pyomo or ortools (both Python packages) as interface. 
 Pyomo is able to deal with different open-source solvers as well as 
@@ -280,7 +280,7 @@ or
     "D:\your_path_to_Python\Python.exe" -m pip install -e <path_to_your_local_python_package>
     
 The -e is important! It defines a link to <path_to_your_local_python_package>
-It will NOT going to install this package into the site-packages folder of your Python distribution.
+It will NOT install this package into the site-packages folder of your Python distribution.
 If you want to import this package, Python will use the egglink to identify its path.
 If you make changes within the package, they have direct effect on the package and its import/usage.
 
