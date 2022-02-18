@@ -460,7 +460,7 @@ Helpful entries are:
 - Annotations, References, Examples...
 
 The Numpy docstring style is a good reference for usage:
-[https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt). Additionally, graphical interpreters for docstrings that come along with some IDEs highlight parts of the docstring as long as you stick to these conventions (e.g. a space before and after the colon).
+[https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard). Additionally, graphical interpreters for docstrings that come along with some IDEs highlight parts of the docstring as long as you stick to these conventions (e.g. a space before and after the colon).
 
 Now let us add an more elaborated docstring to our function:
 
